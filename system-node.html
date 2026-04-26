@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Node Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        animation: flicker 2s infinite;
+      }
+
+      @keyframes flicker {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.9;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-black text-white flex items-center justify-center h-screen text-center"
+  >
+    <div>
+      ```
+      <p class="text-gray-600 text-xs mb-4">SYSTEM NODE: UNREGISTERED</p>
+
+      <p class="text-gray-400 text-sm">
+        This file does not exist in the current index.
+      </p>
+
+      <p class="text-gray-400 text-sm mt-2">Access should not be possible.</p>
+
+      <p class="text-red-500 text-xs mt-6">Observation detected.</p>
+      ```
+    </div>
+  </body>
+</html>

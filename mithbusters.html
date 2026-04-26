@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mithbusters | Azairen Studios</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-black text-white">
+    <!-- NAV -->
+
+    <header
+      class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur border-b border-gray-800 z-50"
+    >
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
+      >
+        <a href="index.html" class="text-xl font-semibold tracking-wide">
+          AZAIREN
+        </a>
+
+        <div class="space-x-6 text-sm text-gray-300">
+          <a href="index.html" class="hover:text-white">Home</a>
+          <a href="universes.html" class="hover:text-white">Universes</a>
+          <a href="mithbusters.html" class="text-white">Mithbusters</a>
+          <a href="projects.html" class="hover:text-white">Projects</a>
+          <a href="about.html" class="hover:text-white">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HEADER -->
+
+    <section class="pt-32 pb-16 text-center px-6">
+      <h1 class="text-4xl md:text-5xl font-light mb-4">MITHBUSTERS</h1>
+      <p class="text-gray-400 max-w-xl mx-auto">
+        Active investigations into anomalies, entities, and system
+        irregularities.
+      </p>
+    </section>
+
+    <!-- CONTROLS -->
+
+    <section class="max-w-7xl mx-auto px-6 mb-10">
+      <!-- SEARCH -->
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search cases..."
+        class="w-full mb-6 p-3 bg-black border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-white"
+      />
+
+      <!-- FILTER BUTTONS -->
+
+      <div class="flex gap-4 flex-wrap">
+        <button
+          onclick="filterCases('all')"
+          class="filter-btn border px-4 py-2 text-sm"
+        >
+          All
+        </button>
+
+        <button
+          onclick="filterCases('entity')"
+          class="filter-btn border px-4 py-2 text-sm"
+        >
+          Entity
+        </button>
+
+        <button
+          onclick="filterCases('signal')"
+          class="filter-btn border px-4 py-2 text-sm"
+        >
+          Signal
+        </button>
+
+        <button
+          onclick="filterCases('temporal')"
+          class="filter-btn border px-4 py-2 text-sm"
+        >
+          Temporal
+        </button>
+      </div>
+    </section>
+
+    <!-- CASE INDEX -->
+
+    <section class="px-6 pb-20 max-w-7xl mx-auto">
+      <h2 class="text-2xl mb-10">Case Index</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- CASE 001 -->
+        <a
+          href="universes/cases/case-001.html"
+          class="case-card border border-gray-800 p-6 hover:border-white transition block"
+          data-type="signal"
+        >
+          <h3 class="text-lg mb-2">Case #001</h3>
+          <p class="text-gray-400 text-sm">
+            Unidentified signal pattern detected across multiple sources.
+          </p>
+        </a>
+
+        <!-- CASE 002 -->
+        <a
+          href="/universes/cases/case-002.html"
+          class="case-card border border-gray-800 p-6 hover:border-white transition block"
+          data-type="entity"
+        >
+          <h3 class="text-lg mb-2">Case #002</h3>
+          <p class="text-gray-400 text-sm">
+            Entity interference with predictive behavior observed.
+          </p>
+        </a>
+
+        <!-- CASE 003 -->
+        <a
+          href="/universes/cases/case-003.html"
+          class="case-card border border-gray-800 p-6 hover:border-white transition block"
+          data-type="temporal"
+        >
+          <h3 class="text-lg mb-2">Case #003</h3>
+          <p class="text-gray-400 text-sm">
+            Temporal inconsistencies detected within localized zones.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <p id="noResults" class="text-center text-gray-500 mt-10 hidden">
+      No cases found.
+    </p>
+
+    <!-- SYSTEM NOTE -->
+
+    <section class="py-20 text-center border-t border-gray-800">
+      <p class="text-gray-500 text-sm">
+        Additional cases are continuously being logged.
+      </p>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer
+      class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm"
+    >
+      © 2026 Azairen Studios. All systems active.
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.case-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+        const noResults = document.getElementById('noResults');
+
+        let currentFilter = 'all';
+
+        // FILTER
+        window.filterCases = function (type) {
+          currentFilter = type;
+          updateDisplay();
+        };
+
+        // SEARCH
+        searchInput.addEventListener('input', updateDisplay);
+
+        function updateDisplay() {
+          const searchValue = searchInput.value.toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const text = card.innerText.toLowerCase();
+            const type = card.getAttribute('data-type');
+
+            const matchesSearch = text.includes(searchValue);
+            const matchesFilter =
+              currentFilter === 'all' || type === currentFilter;
+
+            if (matchesSearch && matchesFilter) {
+              card.style.display = 'block';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // SHOW / HIDE MESSAGE
+          if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+          } else {
+            noResults.classList.add('hidden');
+          }
+        }
+
+        // ACTIVE BUTTON STYLE
+        buttons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            buttons.forEach((b) =>
+              b.classList.remove('bg-white', 'text-black')
+            );
+            btn.classList.add('bg-white', 'text-black');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
