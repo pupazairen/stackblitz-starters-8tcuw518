@@ -1,129 +1,176 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | Azairen Studios</title>
+    <title>Azairen Media Group | Corporate Operations & Governance</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
+      .font-sans-clean { font-family: 'Inter', sans-serif; }
+      .font-mono-data { font-family: 'JetBrains Mono', font-mono; }
     </style>
   </head>
 
-  <body class="bg-black text-white">
-    <!-- NAV -->
+  <body class="bg-[#121315] text-zinc-400 font-sans-clean min-h-full flex flex-col antialiased selection:bg-blue-600 selection:text-white">
 
-    <header
-      class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur border-b border-gray-800 z-50"
-    >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
-        <a href="index.html" class="text-xl font-semibold tracking-wide">
-          AZAIREN
-        </a>
-
-        <div class="space-x-6 text-sm text-gray-300">
-          <a href="index.html" class="hover:text-white">Home</a>
-          <a href="universes/index.html" class="hover:text-white">Universes</a>
-          <a href="mithbusters/index.html" class="hover:text-white"
-            >Mithbusters</a
-          >
-          <a href="projects.html" class="hover:text-white">Projects</a>
-          <a href="about.html" class="text-white">About</a>
-        </div>
-      </nav>
-    </header>
-
-    <!-- HEADER -->
-
-    <section class="pt-32 pb-16 text-center px-6">
-      <h1 class="text-4xl md:text-5xl font-light mb-4">AZAIREN STUDIOS</h1>
-      <p class="text-gray-400 max-w-xl mx-auto">
-        Building interconnected worlds across story, system, and experience.
-      </p>
-    </section>
-
-    <!-- IDENTITY -->
-
-    <section class="max-w-4xl mx-auto px-6 py-20 text-center">
-      <h2 class="text-2xl mb-6">What This Is</h2>
-
-      <p class="text-gray-400 leading-relaxed">
-        Azairen Studios is a narrative system built around interconnected
-        universes. Each story operates independently, but all are part of a
-        larger structure.
-      </p>
-    </section>
-
-    <!-- PHILOSOPHY -->
-
-    <section
-      class="max-w-4xl mx-auto px-6 py-20 text-center border-t border-gray-800"
-    >
-      <h2 class="text-2xl mb-6">How It Works</h2>
-
-      <p class="text-gray-400 leading-relaxed">
-        Stories are not isolated. Events, characters, and systems overlap across
-        different formats. A single moment may appear as narrative,
-        investigation, or anomaly depending on where it is accessed.
-      </p>
-    </section>
-
-    <!-- SYSTEM -->
-
-    <section class="max-w-5xl mx-auto px-6 py-20 border-t border-gray-800">
-      <h2 class="text-2xl mb-10 text-center">System Structure</h2>
-
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="border border-gray-800 p-6">
-          <h3 class="mb-2">Universes</h3>
-          <p class="text-gray-400 text-sm">
-            Core story environments where narratives unfold.
-          </p>
-        </div>
-
-        <div class="border border-gray-800 p-6">
-          <h3 class="mb-2">Characters</h3>
-          <p class="text-gray-400 text-sm">
-            Individuals connected to events across multiple systems.
-          </p>
-        </div>
-
-        <div class="border border-gray-800 p-6">
-          <h3 class="mb-2">Cases</h3>
-          <p class="text-gray-400 text-sm">
-            Documented anomalies that connect narrative and investigation.
-          </p>
+    <!-- FORMAL CORPORATE UTILITY HEADER -->
+    <header class="w-full bg-[#18191c] border-b border-zinc-800 px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 shrink-0">
+      <div class="flex items-center gap-3">
+        <!-- Minimal Corporate Mark -->
+        <div class="w-6 h-6 bg-blue-600 flex items-center justify-center text-white font-bold text-xs tracking-tighter">AZ</div>
+        <div>
+          <span class="text-white font-semibold text-sm tracking-wide block uppercase">Azairen Media Group</span>
+          <span class="text-[10px] font-mono-data text-zinc-500 uppercase tracking-wider">Internal Reference Directory // Archive-ID: 2026-CORP-04</span>
         </div>
       </div>
-    </section>
+      <div class="flex items-center gap-2 text-[11px] font-mono-data bg-zinc-900 border border-zinc-800 px-2.5 py-1 text-zinc-400 rounded">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 inline-block animate-pulse"></span>
+        RESTRICTED TO PARTNERS & INTERNAL EXECUTIVE COMPLIANCE
+      </div>
+    </header>
 
-    <!-- FUTURE -->
+    <!-- CORE DIRECTORY WRAPPER -->
+    <div class="flex-1 max-w-7xl w-full mx-auto p-6 md:p-8 space-y-8">
+      
+      <!-- SUB-NAVIGATION / INDEX TRACKS -->
+      <div class="flex flex-wrap items-center gap-2 border-b border-zinc-800 pb-4 text-xs font-mono-data">
+        <span class="text-zinc-600 uppercase font-bold tracking-wider mr-2">Jump_to:</span>
+        <a href="#about" class="px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-zinc-700 transition rounded">01_Corporate_Overview</a>
+        <a href="#members" class="px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-zinc-700 transition rounded">02_Membership_Framework</a>
+        <a href="#governance" class="px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-zinc-700 transition rounded">03_Entity_Governance</a>
+      </div>
 
-    <section class="py-20 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-sm max-w-xl mx-auto">
-        Additional systems, universes, and interactive layers are currently in
-        development.
-      </p>
-    </section>
+      <!-- SECTION 1: ABOUT THE CORPORATE IDENTITY -->
+      <section id="about" class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4">
+        <div class="space-y-2">
+          <div class="text-[11px] font-mono-data text-blue-500 font-semibold tracking-widest uppercase">Section_01 // Profile</div>
+          <h2 class="text-xl font-bold text-white tracking-tight">Corporate Overview & Architecture</h2>
+          <p class="text-xs text-zinc-500 leading-relaxed">
+            Legal definitions, institutional strategies, and structural operational profiles dictating the expansion of the primary enterprise infrastructure.
+          </p>
+        </div>
+        
+        <div class="lg:col-span-2 space-y-6">
+          <div class="bg-[#18191c] border border-zinc-800 p-6 rounded-lg space-y-4">
+            <h3 class="text-white font-semibold text-sm tracking-wide">The Venture Thesis</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed font-light">
+              Azairen Media Group operates as a highly specialized, boutique multimedia production architecture. Our strategic objective is the institutional scale and distribution of advanced fictional realities, simulated subnetworks, and proprietary text configurations. By decoupling the background administrative structure from public engagement channels, the entity maintains operational stability while scaling underlying infrastructure.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+              <div class="p-3 bg-zinc-900/60 border border-zinc-800 rounded">
+                <span class="text-zinc-500 font-mono-data block mb-1 uppercase text-[10px]">Primary Strategy</span>
+                <span class="text-zinc-300 font-medium">Asymmetric Multi-Platform Syndication</span>
+              </div>
+              <div class="p-3 bg-zinc-900/60 border border-zinc-800 rounded">
+                <span class="text-zinc-500 font-mono-data block mb-1 uppercase text-[10px]">Operational Focus</span>
+                <span class="text-zinc-300 font-medium">Hypertext Framework Engineering & Audio-Visual Media</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- FOOTER -->
+      <hr class="border-zinc-800" />
 
-    <footer
-      class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm"
-    >
-      © 2026 Azairen Studios. All systems active.
+      <!-- SECTION 2: MEMBER TIERS & PARTNERSHIP MODEL -->
+      <section id="members" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="space-y-2">
+          <div class="text-[11px] font-mono-data text-blue-500 font-semibold tracking-widest uppercase">Section_02 // Stakeholders</div>
+          <h2 class="text-xl font-bold text-white tracking-tight">Membership Architecture</h2>
+          <p class="text-xs text-zinc-500 leading-relaxed">
+            Classification of verified partners, internal tier systems, and stakeholder distribution protocols governing capitalization models.
+          </p>
+        </div>
+
+        <div class="lg:col-span-2 space-y-4">
+          <!-- Corporate Membership Table -->
+          <div class="bg-[#18191c] border border-zinc-800 rounded-lg overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="bg-zinc-900 border-b border-zinc-800 text-zinc-500 font-mono-data text-[10px] uppercase tracking-wider">
+                    <th class="p-4">Classification</th>
+                    <th class="p-4">Operational Status</th>
+                    <th class="p-4">Clearance / Privileges</th>
+                    <th class="p-4 text-right">Data Logs</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-800/60 font-mono-data text-zinc-300">
+                  <tr class="hover:bg-zinc-900/20">
+                    <td class="p-4 font-bold text-white font-sans-clean text-sm">Founding Partners</td>
+                    <td class="p-4 text-emerald-500">Core Executive Pool</td>
+                    <td class="p-4 text-zinc-400">Full Operational Control / Architecture Access</td>
+                    <td class="p-4 text-right text-zinc-600">DIR_ROOT_01</td>
+                  </tr>
+                  <tr class="hover:bg-zinc-900/20">
+                    <td class="p-4 font-bold text-white font-sans-clean text-sm">Syndicate Stakeholders</td>
+                    <td class="p-4 text-blue-400">Capital Sourcing Node</td>
+                    <td class="p-4 text-zinc-400">Quarterly Business Briefings / Audit Validation</td>
+                    <td class="p-4 text-right text-zinc-600">FIN_LEDGER_26</td>
+                  </tr>
+                  <tr class="hover:bg-zinc-900/20">
+                    <td class="p-4 font-bold text-white font-sans-clean text-sm">Verified Internal Members</td>
+                    <td class="p-4 text-zinc-400">Privileged Network Tiers</td>
+                    <td class="p-4 text-zinc-400">Early Manifest Testing / Production Pipeline Drops</td>
+                    <td class="p-4 text-right text-zinc-600">MEM_REG_094</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="bg-zinc-950 border border-zinc-800 rounded-lg p-4 text-xs leading-relaxed text-zinc-500">
+            <span class="font-bold text-zinc-400 block mb-1">Corporate Note regarding Membership Capitalization:</span>
+            Membership mechanics within Azairen operate strictly via closed-loop registration models. These protocols guarantee that capital injected into internal tiers scales raw backend computing environments, system hosting features, and media output pipelines without external interference.
+          </div>
+        </div>
+      </section>
+
+      <hr class="border-zinc-800" />
+
+      <!-- SECTION 3: CORPORATE GOVERNANCE -->
+      <section id="governance" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="space-y-2">
+          <div class="text-[11px] font-mono-data text-blue-500 font-semibold tracking-widest uppercase">Section_03 // Oversight</div>
+          <h2 class="text-xl font-bold text-white tracking-tight">Entity Governance & Mandates</h2>
+          <p class="text-xs text-zinc-500 leading-relaxed">
+            Compliance guidelines, partner protocols, and long-term ecosystem viability parameters.
+          </p>
+        </div>
+
+        <div class="lg:col-span-2 space-y-4 font-light text-sm text-zinc-400 leading-relaxed">
+          <div class="bg-[#18191c] border border-zinc-800 p-6 rounded-lg space-y-4">
+            <p>
+              Azairen Media Group enforces strict narrative separation clauses to safeguard intellectual property. All associated creative systems—such as **The Fissure-Verse**, public streaming assets on **Azaire TV**, and auxiliary technical logs—are structured legally as independent functional subsidiaries under the umbrella corporation.
+            </p>
+            
+            <div class="border-l-2 border-blue-600 pl-4 py-1 my-2 text-xs font-mono-data text-zinc-500 italic">
+              "System integrity is preserved when the administrative model remains unburdened by consumer-facing presentation standards."
+            </div>
+
+            <p>
+              This institutional structure ensures that business operations, technical updates, and monetization frameworks are fully isolated, mitigating design friction and shielding internal assets from broader network visibility.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- CLEAN FORMAL FOOTER -->
+    <footer class="w-full bg-[#18191c] border-t border-zinc-800 text-[11px] font-mono-data px-6 py-4 text-center sm:text-left shrink-0 text-zinc-600 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div>
+        © 2026 AZAIREN MEDIA GROUP LLC. ALL RIGHTS RESERVED. NON-DISCLOSURE RESTRICTIONS APPLY.
+      </div>
+      <div class="flex gap-4">
+        <span class="text-zinc-500">SECURITY_CLASS: ALPHA</span>
+        <span class="text-zinc-500">STATUS: CLASSIFIED_INDEX</span>
+      </div>
     </footer>
+
   </body>
 </html>
