@@ -1,132 +1,205 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="h-full overflow-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Azairen Studios</title>
+    <title>AZAIREN://PROJ_OUT</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Share Tech Mono', monospace;
+      }
+      .grid-noise {
+        background-size: 20px 20px;
+        background-image: 
+          linear-gradient(to right, rgba(29, 78, 216, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(29, 78, 216, 0.04) 1px, transparent 1px);
+      }
+      /* Custom thin scrollbar for timeline tracking */
+      ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1d4ed8;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #dc2626;
       }
     </style>
   </head>
 
-  <body class="bg-black text-white">
-    <!-- NAV -->
+  <body class="bg-black text-zinc-300 h-full w-full relative grid-noise overflow-hidden select-none">
 
-    <header
-      class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur border-b border-gray-800 z-50"
-    >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
-        <a href="index.html" class="text-xl font-semibold tracking-wide">
-          AZAIREN
-        </a>
-
-        <div class="space-x-6 text-sm text-gray-300">
-          <a href="index.html" class="hover:text-white">Home</a>
-          <a href="universes/index.html" class="hover:text-white">Universes</a>
-          <a href="mithbusters/index.html" class="hover:text-white"
-            >Mithbusters</a
-          >
-          <a href="projects.html" class="text-white">Projects</a>
-          <a href="about.html" class="hover:text-white">About</a>
-        </div>
-      </nav>
+    <!-- SYSTEM SUB-HEADER STRIP -->
+    <header class="w-full bg-zinc-950 border-b border-blue-950 text-xs px-4 py-2 flex justify-between items-center tracking-wider font-mono z-50 relative">
+      <div class="flex items-center gap-3">
+        <span class="inline-block w-2 h-2 bg-blue-500 animate-pulse"></span>
+        <a href="index.html" class="font-bold text-blue-400 tracking-widest text-sm hover:text-white transition">AZAIREN://</a>
+        <span class="text-zinc-600 hidden sm:inline">PROJ_DISTRIBUTION_MATRIX</span>
+      </div>
+      <div class="text-red-500 font-bold tracking-widest text-[11px]">
+        [VECTOR_STREAM: ACTIVE]
+      </div>
+      <div class="text-[10px] text-zinc-600 font-mono">
+        MANIFEST: 2026.05.23
+      </div>
     </header>
 
-    <!-- HEADER -->
-
-    <section class="pt-32 pb-16 text-center px-6">
-      <h1 class="text-4xl md:text-5xl font-light mb-4">PROJECTS</h1>
-      <p class="text-gray-400 max-w-xl mx-auto">
-        Active builds, narrative expansions, and system development.
-      </p>
-    </section>
-
-    <!-- ACTIVE PROJECTS -->
-
-    <section class="px-6 pb-20 max-w-7xl mx-auto">
-      <h2 class="text-2xl mb-10">Active Projects</h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- DRAGON WAR -->
-        <div class="border border-gray-800 p-6">
-          <h3 class="text-lg mb-2">Dragon War</h3>
-          <p class="text-gray-400 text-sm mb-4">
-            A large-scale conflict expanding the Vampire Guardians universe.
-          </p>
-          <p class="text-xs text-gray-500">Status: In Development</p>
-        </div>
-
-        <!-- VG SEASON 2 -->
-        <div class="border border-gray-800 p-6">
-          <h3 class="text-lg mb-2">Vampire Guardians — Season 2</h3>
-          <p class="text-gray-400 text-sm mb-4">
-            New characters and deeper system connections emerge.
-          </p>
-          <p class="text-xs text-gray-500">Status: Expanding</p>
-        </div>
-
-        <!-- MITHBUSTERS SYSTEM -->
-        <div class="border border-gray-800 p-6">
-          <h3 class="text-lg mb-2">Mithbusters System</h3>
-          <p class="text-gray-400 text-sm mb-4">
-            Interactive anomaly tracking and case expansion.
-          </p>
-          <p class="text-xs text-gray-500">Status: Active</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- IN DEVELOPMENT -->
-
-    <section
-      class="px-6 pb-20 max-w-7xl mx-auto border-t border-gray-800 pt-20"
-    >
-      <h2 class="text-2xl mb-10">In Development</h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="border border-gray-800 p-6">
-          <h3 class="text-lg mb-2">LOFV Expansion</h3>
-          <p class="text-gray-400 text-sm">
-            Further anomaly integration and narrative layering.
+    <!-- CORE INTERFACE SPLIT GRID -->
+    <div class="h-[calc(100vh-2.5rem)] w-full p-4 flex flex-col lg:flex-row gap-4 relative box-border">
+      
+      <!-- LEFT TIER: LIVE WORK & DISTRIBUTION FEED -->
+      <main class="flex-1 flex flex-col gap-4 overflow-y-auto pr-2">
+        
+        <!-- SECTION TITLE -->
+        <div class="border border-blue-950 bg-zinc-950/40 p-4 relative">
+          <div class="absolute -top-[1px] -left-[1px] w-2 h-2 bg-red-600"></div>
+          <div class="text-[10px] text-blue-500 uppercase tracking-widest mb-1">DATA_ARRAY_01</div>
+          <h2 class="text-xl font-bold text-white tracking-tight uppercase">Project Deployments & Outflow</h2>
+          <p class="text-xs text-zinc-500 mt-1 leading-relaxed">
+            Tracking active creative systems, media formats, and narrative data sets currently originating from the core architecture.
           </p>
         </div>
 
-        <div class="border border-gray-800 p-6">
-          <h3 class="text-lg mb-2">System Archives</h3>
-          <p class="text-gray-400 text-sm">
-            Expanded access to characters, locations, and hidden files.
+        <!-- WORK STREAM MODULE 1 -->
+        <div class="border border-blue-900 bg-black p-4 relative shadow-[3px_3px_0px_0px_rgba(29,78,216,0.1)]">
+          <div class="absolute top-0 right-0 bg-blue-950/60 border-l border-b border-blue-900 px-2 py-0.5 text-[9px] font-mono text-blue-400 uppercase tracking-widest">
+            CORE_STREAM
+          </div>
+          <div class="text-xs text-red-500 font-bold uppercase tracking-wider mb-1">[PRIMARY_NARRATIVE]</div>
+          <h3 class="text-white text-lg font-semibold tracking-wide">The Fissure-Verse</h3>
+          <p class="text-xs text-zinc-400 mt-1 leading-relaxed max-w-2xl">
+            A non-linear multimedia continuity centered around regional fractures in structural grid code. Distributed as interactive system entries, recovered system logs, and direct text transmissions.
           </p>
+          <div class="mt-4 pt-3 border-t border-blue-950/60 flex items-center gap-4 text-[10px] font-mono">
+            <span class="text-blue-500">FORMAT: <span class="text-zinc-400">HYPERTEXT_DECONSTRUCTION</span></span>
+            <span class="text-blue-500">DEVEL_STAGE: <span class="text-amber-500 font-bold">REBUILDING</span></span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- FUTURE NOTE -->
+        <!-- WORK STREAM MODULE 2 -->
+        <div class="border border-blue-900 bg-black p-4 relative shadow-[3px_3px_0px_0px_rgba(29,78,216,0.1)]">
+          <div class="absolute top-0 right-0 bg-blue-950/60 border-l border-b border-blue-900 px-2 py-0.5 text-[9px] font-mono text-zinc-500 uppercase tracking-widest">
+            SUB_STREAM_02
+          </div>
+          <div class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1">[TEXT_ARCHIVE]</div>
+          <h3 class="text-white text-lg font-semibold tracking-wide">The Day the Library Failed</h3>
+          <p class="text-xs text-zinc-400 mt-1 leading-relaxed max-w-2xl">
+            The foundational temporal bottleneck marker. Documentation regarding the exact moment local indexing arrays spontaneously collapsed, leaving structural remnants floating within the client cache.
+          </p>
+          <div class="mt-4 pt-3 border-t border-blue-950/60 flex items-center gap-4 text-[10px] font-mono">
+            <span class="text-blue-500">FORMAT: <span class="text-zinc-400">LOG_CHRONICLE</span></span>
+            <span class="text-blue-500">DEVEL_STAGE: <span class="text-blue-400">STABLE</span></span>
+          </div>
+        </div>
 
-    <section class="py-20 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-sm max-w-xl mx-auto">
-        Additional projects will be integrated as the system expands.
-      </p>
-    </section>
+        <!-- WORK STREAM MODULE 3 -->
+        <div class="border border-blue-900 bg-black p-4 relative shadow-[3px_3px_0px_0px_rgba(29,78,216,0.1)]">
+          <div class="absolute top-0 right-0 bg-blue-950/60 border-l border-b border-blue-900 px-2 py-0.5 text-[9px] font-mono text-red-900/60 uppercase tracking-widest">
+            BROADCAST_01
+          </div>
+          <div class="text-xs text-zinc-600 font-bold uppercase tracking-wider mb-1">[EXTERNAL_VECTOR]</div>
+          <h3 class="text-zinc-500 text-lg font-semibold tracking-wide">Azaire TV</h3>
+          <p class="text-xs text-zinc-600 mt-1 leading-relaxed max-w-2xl">
+            Streaming visual nodes and direct interface relays mapping spatial synchronization changes. Signals temporarily isolated due to ongoing firewall restrictions.
+          </p>
+          <div class="mt-4 pt-3 border-t border-blue-950/60 flex items-center gap-4 text-[10px] font-mono">
+            <span class="text-zinc-700">FORMAT: <span class="text-zinc-700">LIVE_DATA_STREAM</span></span>
+            <span class="text-red-700 font-bold animate-pulse">CONNECTION_BLOCKED</span>
+          </div>
+        </div>
 
-    <!-- FOOTER -->
+      </main>
 
-    <footer
-      class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm"
-    >
-      © 2026 Azairen Studios. All systems active.
-    </footer>
+      <!-- RIGHT TIER: THE OFFICIAL CRITICAL TIMELINE COMPASS -->
+      <aside class="w-full lg:w-96 border border-blue-900/60 bg-zinc-950/80 p-4 flex flex-col justify-between relative shadow-[0_0_15px_rgba(29,78,216,0.03)]">
+        <div class="absolute -top-[1px] -right-[1px] w-2 h-2 bg-blue-600"></div>
+        <div class="absolute -bottom-[1px] -left-[1px] w-2 h-2 bg-red-600"></div>
+
+        <div class="flex flex-col h-full">
+          <!-- Timeline Header -->
+          <div class="border-b border-blue-950 pb-3 mb-4">
+            <div class="text-[10px] text-red-500 uppercase tracking-widest mb-0.5 font-bold">SYSTEM_MASTER_TIMELINE</div>
+            <h2 class="text-base font-bold text-white uppercase tracking-tight">Temporal Vector Log</h2>
+            <p class="text-[10px] text-zinc-500 mt-0.5 leading-relaxed">Structural overview of non-linear synchronization milestones across localized system anomalies.</p>
+          </div>
+
+          <!-- Vertical Timeline Scroller -->
+          <div class="flex-1 overflow-y-auto space-y-4 pr-1 relative font-mono text-xs">
+            
+            <!-- Timeline Track line accent -->
+            <div class="absolute left-[9px] top-2 bottom-2 w-[1px] bg-blue-950"></div>
+
+            <!-- Event 1 -->
+            <div class="relative pl-6 group">
+              <!-- Node dot -->
+              <div class="absolute left-[6px] top-1.5 w-2 h-2 bg-blue-600 border border-black rounded-full group-hover:bg-red-500 transition-colors"></div>
+              <div class="text-[10px] text-blue-500 font-bold">1991 // INITIALIZATION</div>
+              <h4 class="text-zinc-200 font-semibold text-xs mt-0.5">The Legacy Node Baseline</h4>
+              <p class="text-[11px] text-zinc-500 leading-normal mt-0.5">The earliest registered anchor point detected within current system tracking indices. Baseline variables set.</p>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="relative pl-6 group">
+              <div class="absolute left-[6px] top-1.5 w-2 h-2 bg-blue-600 border border-black rounded-full group-hover:bg-red-500 transition-colors"></div>
+              <div class="text-[10px] text-red-500 font-bold">2006 // LOCALIZED_RESET</div>
+              <h4 class="text-zinc-200 font-semibold text-xs mt-0.5">The Indexing Definition Re-alignment</h4>
+              <p class="text-[11px] text-zinc-500 leading-normal mt-0.5">Major regional sorting re-allocations execute, shifting core structural naming protocols and creating minor timeline drift anomalies.</p>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="relative pl-6 group">
+              <!-- Active/Current event highlight -->
+              <div class="absolute left-[5px] top-1 w-2.5 h-2.5 bg-red-600 border border-black rounded-full shadow-[0_0_8px_rgba(220,38,38,0.6)] animate-pulse"></div>
+              <div class="text-[10px] text-blue-400 font-bold flex items-center gap-1.5">
+                <span>2025 // CRITICAL_COLLAPSE</span>
+                <span class="bg-blue-950 text-blue-400 px-1 py-0.5 text-[8px] tracking-normal font-normal">EVENT_ZERO</span>
+              </div>
+              <h4 class="text-white font-semibold text-xs mt-0.5">The Day the Library Failed</h4>
+              <p class="text-[11px] text-zinc-400 leading-normal mt-0.5">The temporal singularity event. Master database indices drop, resulting in structural duplication arrays and the immediate appearance of Alternate Colby traces.</p>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="relative pl-6 group">
+              <div class="absolute left-[6px] top-1.5 w-2 h-2 bg-blue-950 border border-black rounded-full group-hover:bg-blue-600 transition-colors"></div>
+              <div class="text-[10px] text-zinc-600 font-bold">2026 // SYSTEM_CURRENT</div>
+              <h4 class="text-zinc-500 font-semibold text-xs mt-0.5">Azairen Terminal Active</h4>
+              <p class="text-[11px] text-zinc-600 leading-normal mt-0.5">Current system window deployment. Local data compilation actively running under local memory encryption loops.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Anchor Dependency Indicator -->
+        <div id="timeline-sync-box" class="mt-4 border-t border-blue-950 pt-3 text-[10px] text-zinc-600 uppercase tracking-wider flex items-center justify-between">
+          <span>TIMELINE_LOCK: RESTRICTED</span>
+          <span class="text-red-900 font-bold font-mono">X_SECURE</span>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- TRANSMISSION SYNC SCRIPT -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const syncBox = document.getElementById('timeline-sync-box');
+        
+        // Let's hook back into the home page passcode token again
+        const anchor = localStorage.getItem('watcher_anchor');
+        if (anchor === 'LEVEL_02') {
+          syncBox.innerHTML = `
+            <span class="text-blue-400 font-bold">TIMELINE_LOCK: SYNCHRONIZED_UNCHECKED</span>
+            <span class="text-blue-400 font-bold animate-pulse">● DECR_OK</span>
+          `;
+        }
+      });
+    </script>
   </body>
 </html>

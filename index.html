@@ -205,6 +205,50 @@
           }
         });
       });
+
+      document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('anchor-input');
+  const btn = document.getElementById('anchor-btn');
+  const feedback = document.getElementById('anchor-feedback');
+
+  // Unified Token Processing Dictionary (Web Only)
+  const TOKEN_MATRIX = {
+    'SYVN': { file: 'syvn.html', level: 'LEVEL_02', msg: 'CORE_ANCHOR_SYNC_OK' },
+    'FSRV': { file: 'fissure-verse.html', level: 'LEVEL_CORE', msg: 'STREAM_INDEX_MOUNTED' },
+    'COLB': { file: 'universes/characters/colby.html', level: 'SUBJ_01_OPEN', msg: 'COLBY_VCTR_ACTIVE' },
+    'ALTC': { file: 'universes/characters/alt-colby.html', level: 'SUBJ_02_WARN', msg: 'ALT_COLB_TRC_UNLOCKED' },
+    'FAIL': { file: 'the-day-the-library-failed.html', level: 'EVENT_ZERO', msg: 'BOTTLENECK_DATA_LOADED' }
+  };
+
+  btn.addEventListener('click', () => {
+    const token = input.value.trim().toUpperCase();
+    
+    if (TOKEN_MATRIX[token]) {
+      const target = TOKEN_MATRIX[token];
+      
+      // 1. Commit the found security clearance to local storage
+      localStorage.setItem('watcher_anchor', target.level);
+      
+      // 2. Flash tactical validation response
+      feedback.innerText = `LOG_STATE: ${target.msg}`;
+      feedback.className = "text-[10px] text-blue-400 font-bold animate-pulse";
+      
+      // 3. Force system warp to the corresponding hidden page after short delay
+      setTimeout(() => {
+        window.location.href = target.file;
+      }, 900);
+      
+    } else {
+      // Error handling for dead keys
+      feedback.innerText = "LOG_STATE: INVALID_TOKEN_REJECTED";
+      feedback.className = "text-[10px] text-red-500 font-bold";
+      setTimeout(() => {
+        feedback.innerText = "LOG_STATE: SECURE";
+        feedback.className = "text-[10px] text-zinc-600";
+      }, 2000);
+    }
+  });
+});
     </script>
   </body>
 </html>

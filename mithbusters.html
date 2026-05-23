@@ -1,223 +1,185 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="h-full overflow-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mithbusters | Azairen Studios</title>
+    <title>AZAIREN://MITH_LOGS</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
+      body { font-family: 'Share Tech Mono', monospace; }
+      .grid-noise {
+        background-size: 20px 20px;
+        background-image: 
+          linear-gradient(to right, rgba(29, 78, 216, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(29, 78, 216, 0.03) 1px, transparent 1px);
+      }
+      .active-case {
+        background-color: rgba(29, 78, 216, 0.15);
+        border-color: #1d4ed8 !important;
+        color: #ffffff !important;
       }
     </style>
   </head>
 
-  <body class="bg-black text-white">
-    <!-- NAV -->
+  <body class="bg-black text-zinc-400 h-full w-full relative grid-noise overflow-hidden select-none">
 
-    <header
-      class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur border-b border-gray-800 z-50"
-    >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
-        <a href="index.html" class="text-xl font-semibold tracking-wide">
-          AZAIREN
-        </a>
-
-        <div class="space-x-6 text-sm text-gray-300">
-          <a href="index.html" class="hover:text-white">Home</a>
-          <a href="universes.html" class="hover:text-white">Universes</a>
-          <a href="mithbusters.html" class="text-white">Mithbusters</a>
-          <a href="projects.html" class="hover:text-white">Projects</a>
-          <a href="about.html" class="hover:text-white">About</a>
-        </div>
-      </nav>
+    <!-- SUB-NAV HEADER -->
+    <header class="w-full bg-zinc-950 border-b border-blue-950 text-xs px-4 py-2 flex justify-between items-center tracking-wider z-50 relative">
+      <div class="flex items-center gap-3">
+        <span class="inline-block w-2 h-2 bg-red-600 animate-ping"></span>
+        <a href="index.html" class="font-bold text-blue-500 tracking-widest text-sm hover:text-white transition">AZAIREN://</a>
+        <span class="text-zinc-600">RECOVERED_MITH_LOGS_v4.0</span>
+      </div>
+      <div class="text-[10px] text-zinc-500 bg-blue-950/40 px-2 py-0.5 border border-blue-900/40 font-mono">
+        CONTAINMENT_STATUS: <span class="text-emerald-500 font-bold">BUNDLED</span>
+      </div>
     </header>
 
-    <!-- HEADER -->
-
-    <section class="pt-32 pb-16 text-center px-6">
-      <h1 class="text-4xl md:text-5xl font-light mb-4">MITHBUSTERS</h1>
-      <p class="text-gray-400 max-w-xl mx-auto">
-        Active investigations into anomalies, entities, and system
-        irregularities.
-      </p>
-    </section>
-
-    <!-- CONTROLS -->
-
-    <section class="max-w-7xl mx-auto px-6 mb-10">
-      <!-- SEARCH -->
-
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search cases..."
-        class="w-full mb-6 p-3 bg-black border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-white"
-      />
-
-      <!-- FILTER BUTTONS -->
-
-      <div class="flex gap-4 flex-wrap">
-        <button
-          onclick="filterCases('all')"
-          class="filter-btn border px-4 py-2 text-sm"
-        >
-          All
-        </button>
-
-        <button
-          onclick="filterCases('entity')"
-          class="filter-btn border px-4 py-2 text-sm"
-        >
-          Entity
-        </button>
-
-        <button
-          onclick="filterCases('signal')"
-          class="filter-btn border px-4 py-2 text-sm"
-        >
-          Signal
-        </button>
-
-        <button
-          onclick="filterCases('temporal')"
-          class="filter-btn border px-4 py-2 text-sm"
-        >
-          Temporal
-        </button>
-      </div>
-    </section>
-
-    <!-- CASE INDEX -->
-
-    <section class="px-6 pb-20 max-w-7xl mx-auto">
-      <h2 class="text-2xl mb-10">Case Index</h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- CASE 001 -->
-        <a
-          href="universes/cases/case-001.html"
-          class="case-card border border-gray-800 p-6 hover:border-white transition block"
-          data-type="signal"
-        >
-          <h3 class="text-lg mb-2">Case #001</h3>
-          <p class="text-gray-400 text-sm">
-            Unidentified signal pattern detected across multiple sources.
+    <!-- MAIN DOSSIER INTERFACE -->
+    <div class="h-[calc(100vh-2.5rem)] w-full p-4 flex flex-col md:flex-row gap-4 box-border">
+      
+      <!-- LEFT MODULE: THE MANIFEST DIRECTORY -->
+      <nav class="w-full md:w-80 flex flex-col gap-3 shrink-0">
+        
+        <!-- Archive Header Info -->
+        <div class="border border-red-950 bg-zinc-950/60 p-3 relative">
+          <div class="absolute top-0 right-0 w-1.5 h-1.5 bg-red-600"></div>
+          <div class="text-[9px] text-red-500 font-bold tracking-widest mb-0.5">ARCHIVE_ENTITY_LOCK</div>
+          <h2 class="text-sm font-bold text-white uppercase tracking-wider">Mith_Logs Index</h2>
+          <p class="text-[11px] text-zinc-500 mt-1 leading-normal">
+            Isolated system records collected together. These files act independently of core web frameworks to map localized events.
           </p>
-        </a>
+        </div>
 
-        <!-- CASE 002 -->
-        <a
-          href="/universes/cases/case-002.html"
-          class="case-card border border-gray-800 p-6 hover:border-white transition block"
-          data-type="entity"
-        >
-          <h3 class="text-lg mb-2">Case #002</h3>
-          <p class="text-gray-400 text-sm">
-            Entity interference with predictive behavior observed.
-          </p>
-        </a>
+        <!-- Case Log Interactive List -->
+        <div class="flex-1 bg-zinc-950/30 border border-blue-950 p-2 overflow-y-auto space-y-2" id="case-selector-list">
+          
+          <!-- Case Item 1 -->
+          <button onclick="switchCase('case-01', this)" class="active-case w-full text-left p-3 border border-zinc-900 bg-black/40 hover:border-blue-900 hover:bg-zinc-950 transition flex flex-col gap-1 cursor-pointer">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-red-500 font-bold">[CASE_FILE_081]</span>
+              <span class="text-zinc-600">1991.10.12</span>
+            </div>
+            <h3 class="text-zinc-200 text-xs font-bold tracking-wide uppercase">The Baseline Anomalies</h3>
+          </button>
 
-        <!-- CASE 003 -->
-        <a
-          href="/universes/cases/case-003.html"
-          class="case-card border border-gray-800 p-6 hover:border-white transition block"
-          data-type="temporal"
-        >
-          <h3 class="text-lg mb-2">Case #003</h3>
-          <p class="text-gray-400 text-sm">
-            Temporal inconsistencies detected within localized zones.
-          </p>
-        </a>
-      </div>
-    </section>
+          <!-- Case Item 2 -->
+          <button onclick="switchCase('case-02', this)" class="w-full text-left p-3 border border-zinc-900 bg-black/40 hover:border-blue-900 hover:bg-zinc-950 transition flex flex-col gap-1 cursor-pointer">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-blue-500 font-bold">[CASE_FILE_144]</span>
+              <span class="text-zinc-600">2025.02.18</span>
+            </div>
+            <h3 class="text-zinc-400 text-xs font-bold tracking-wide uppercase">Library Core De-indexing</h3>
+          </button>
 
-    <p id="noResults" class="text-center text-gray-500 mt-10 hidden">
-      No cases found.
-    </p>
+          <!-- Case Item 3 -->
+          <button onclick="switchCase('case-03', this)" class="w-full text-left p-3 border border-zinc-900 bg-black/40 hover:border-blue-900 hover:bg-zinc-950 transition flex flex-col gap-1 cursor-pointer">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-yellow-600 font-bold">[CASE_FILE_309]</span>
+              <span class="text-zinc-600">2026.04.02</span>
+            </div>
+            <h3 class="text-zinc-400 text-xs font-bold tracking-wide uppercase">Colby_Echo Transmissions</h3>
+          </button>
 
-    <!-- SYSTEM NOTE -->
+        </div>
+      </nav>
 
-    <section class="py-20 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-sm">
-        Additional cases are continuously being logged.
-      </p>
-    </section>
+      <!-- RIGHT MODULE: THE CORE FILE VIEWPORT -->
+      <main class="flex-1 border border-blue-950 bg-black relative flex flex-col shadow-[inset_0_0_20px_rgba(0,0,0,0.8)]">
+        
+        <!-- Terminal Control Bar -->
+        <div class="w-full bg-zinc-950 border-b border-blue-950 px-4 py-2 flex justify-between items-center text-[10px] font-mono">
+          <div class="text-zinc-500 flex items-center gap-2">
+            <span class="inline-block w-1.5 h-1.5 bg-blue-500"></span>
+            <span>VIEWPORT: SECURE_READER_ACTIVE</span>
+          </div>
+          <div class="text-zinc-600 tracking-widest" id="viewport-id-tag">
+            LOG_REF: CASE_FILE_081
+          </div>
+        </div>
 
-    <!-- FOOTER -->
+        <!-- Dynamic Content Terminal Container -->
+        <div class="flex-1 p-6 overflow-y-auto text-xs leading-relaxed font-mono select-text" id="log-viewport">
+          
+          <!-- DEFAULT SHOWN: CASE 1 -->
+          <div id="case-01" class="case-content space-y-4">
+            <div class="border-b border-zinc-900 pb-2 text-[11px] text-zinc-500">
+              LOG_SOURCE: UNKNOWN_RECEIVER // DETECTED_TIMESTAMP: 1991-10-12
+            </div>
+            <p class="text-zinc-300">
+              Early logs indicate that temporal drift coordinates weren't completely spontaneous. Traces recovered from regional network switches indicate a conscious execution command originating from inside local architectural infrastructure.
+            </p>
+            <p class="text-zinc-300">
+              "The signals are grouping together now. It doesn't look like fragmentation anymore; it looks like collection." — <span class="text-red-400 font-bold">[REDACTED]</span>
+            </p>
+            <div class="bg-blue-950/20 border border-blue-900/40 p-3 text-blue-400 text-[11px]">
+              CRITICAL_INSIGHT: Finding token <span class="bg-black px-1 font-bold text-white">FSRV</span> will grant structural system access to the primary reality stream. Use at home console interface.
+            </div>
+          </div>
 
-    <footer
-      class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm"
-    >
-      © 2026 Azairen Studios. All systems active.
-    </footer>
+          <!-- CASE 2 (HIDDEN BY DEFAULT) -->
+          <div id="case-02" class="case-content space-y-4 hidden">
+            <div class="border-b border-zinc-900 pb-2 text-[11px] text-zinc-500">
+              LOG_SOURCE: SECURITY_TRANSCRIPT // DETECTED_TIMESTAMP: 2025-02-18
+            </div>
+            <p class="text-zinc-300">
+              The precise failure inside the main repository occurred at exactly 03:14:08. No alarms tripped. The database arrays simply ceased matching queries to structural files.
+            </p>
+            <p class="text-zinc-300">
+              When specialists investigated the physical memory nodes, they discovered the terminal interfaces were displaying direct fragments of text messages from another timeline iteration entirely.
+            </p>
+            <div class="bg-red-950/20 border border-red-900/40 p-3 text-red-400 text-[11px]">
+              CRITICAL_INSIGHT: The index collapse can be processed completely via token <span class="bg-black px-1 font-bold text-white">FAIL</span> at the home portal root.
+            </div>
+          </div>
 
+          <!-- CASE 3 (HIDDEN BY DEFAULT) -->
+          <div id="case-03" class="case-content space-y-4 hidden">
+            <div class="border-b border-zinc-900 pb-2 text-[11px] text-zinc-500">
+              LOG_SOURCE: WAVE_RECEIVER_09 // DETECTED_TIMESTAMP: 2026-04-02
+            </div>
+            <p class="text-zinc-300">
+              Intercepted audio packet remnants reveal multiple distinct signatures matching Subject: Colby. One signature registers directly within our current timezone vectors, while the other trails from an unverified future coordinate path.
+            </p>
+            <p class="text-zinc-300">
+              "Tell them the library didn't stop existing. It just stopped waiting for us to access it normally."
+            </p>
+            <div class="bg-blue-950/20 border border-blue-900/40 p-3 text-blue-400 text-[11px]">
+              CRITICAL_INSIGHT: Subject data paths are split across tokens <span class="bg-black px-1 font-bold text-white">COLB</span> and <span class="bg-black px-1 font-bold text-white">ALTC</span>.
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+
+    <!-- VIEWPORT SWITCHER LOADER -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const searchInput = document.getElementById('searchInput');
-        const cards = document.querySelectorAll('.case-card');
-        const buttons = document.querySelectorAll('.filter-btn');
-        const noResults = document.getElementById('noResults');
+      function switchCase(caseId, element) {
+        // Hide all case content blocks
+        const contents = document.querySelectorAll('.case-content');
+        contents.forEach(content => content.classList.add('hidden'));
 
-        let currentFilter = 'all';
+        // Remove active class styling from all folder tabs
+        const buttons = document.querySelectorAll('#case-selector-list button');
+        buttons.forEach(btn => btn.classList.remove('active-case'));
 
-        // FILTER
-        window.filterCases = function (type) {
-          currentFilter = type;
-          updateDisplay();
-        };
+        // Show the chosen file case content
+        document.getElementById(caseId).classList.remove('hidden');
 
-        // SEARCH
-        searchInput.addEventListener('input', updateDisplay);
+        // Apply active accent styling to selected element
+        element.classList.add('active-case');
 
-        function updateDisplay() {
-          const searchValue = searchInput.value.toLowerCase();
-          let visibleCount = 0;
-
-          cards.forEach((card) => {
-            const text = card.innerText.toLowerCase();
-            const type = card.getAttribute('data-type');
-
-            const matchesSearch = text.includes(searchValue);
-            const matchesFilter =
-              currentFilter === 'all' || type === currentFilter;
-
-            if (matchesSearch && matchesFilter) {
-              card.style.display = 'block';
-              visibleCount++;
-            } else {
-              card.style.display = 'none';
-            }
-          });
-
-          // SHOW / HIDE MESSAGE
-          if (visibleCount === 0) {
-            noResults.classList.remove('hidden');
-          } else {
-            noResults.classList.add('hidden');
-          }
-        }
-
-        // ACTIVE BUTTON STYLE
-        buttons.forEach((btn) => {
-          btn.addEventListener('click', () => {
-            buttons.forEach((b) =>
-              b.classList.remove('bg-white', 'text-black')
-            );
-            btn.classList.add('bg-white', 'text-black');
-          });
-        });
-      });
+        // Update the header reference code on the fly
+        const tag = document.getElementById('viewport-id-tag');
+        if (caseId === 'case-01') tag.innerText = 'LOG_REF: CASE_FILE_081';
+        if (caseId === 'case-02') tag.innerText = 'LOG_REF: CASE_FILE_144';
+        if (caseId === 'case-03') tag.innerText = 'LOG_REF: CASE_FILE_309';
+      }
     </script>
   </body>
 </html>
