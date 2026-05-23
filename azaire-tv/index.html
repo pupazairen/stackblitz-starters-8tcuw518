@@ -1,105 +1,238 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="h-full bg-black">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Azaire TV</title>
+    <title>AZAIRE TV // STREAM_MATRIX</title>
 
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
+      .font-mono-tech { font-family: 'Share Tech Mono', monospace; }
+      .font-sans-clean { font-family: 'Inter', sans-serif; }
+      
+      /* Cyberpunk Scanline & Noise Overlays */
+      .matrix-grid {
+        background-size: 30px 30px;
+        background-image: 
+          linear-gradient(to right, rgba(29, 78, 216, 0.02) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(29, 78, 216, 0.02) 1px, transparent 1px);
       }
-
-      .bg-cobalt {
-        background-color: #1e3a8a;
-      }
-
-      .text-cobalt {
-        color: #3b82f6;
+      .blue-glow:hover {
+        box-shadow: 0 0 15px rgba(29, 78, 216, 0.4);
       }
     </style>
   </head>
 
-  <body class="bg-black text-white">
-    <!-- NAV -->
+  <body class="h-full w-full text-zinc-300 font-sans-clean matrix-grid overflow-x-hidden antialiased selection:bg-blue-600 selection:text-white">
 
-    <header
-      class="fixed top-0 left-0 w-full bg-black/80 border-b border-blue-900 z-50"
-    >
-      <nav class="max-w-7xl mx-auto flex justify-between px-6 py-4">
-        <a href="/index.html">AZAIRE</a>
-        <div class="space-x-6 text-sm text-gray-400">
-          <a href="/index.html">Home</a>
-          <a href="/mithbusters/index.html">Mithbusters</a>
-          <a href="/azaire-tv/index.html" class="text-white">Azaire TV</a>
+    <!-- GLOBAL HUD NAVIGATION -->
+    <nav class="w-full bg-zinc-950/80 backdrop-blur-md border-b border-blue-950/60 sticky top-0 z-50 px-4 lg:px-8 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <!-- Logo Brand -->
+        <a href="index.html" class="font-mono-tech font-extrabold text-xl text-white tracking-widest flex items-center gap-2 group">
+          <span class="text-blue-500 group-hover:text-red-500 transition-colors">AZAIRE</span>
+          <span class="bg-blue-950 border border-blue-800 text-[11px] font-bold px-1.5 py-0.5 rounded text-blue-400 tracking-normal">TV</span>
+        </a>
+        <!-- Main Navigation Links -->
+        <div class="hidden md:flex items-center gap-1 text-xs font-mono-tech tracking-wider uppercase">
+          <a href="#" class="px-3 py-1.5 text-white bg-blue-950/40 border border-blue-900/50 rounded">01 // Broadcasts</a>
+          <a href="#" class="px-3 py-1.5 text-zinc-400 hover:text-white transition">02 // Timelines</a>
+          <a href="Mith_Logs.html" class="px-3 py-1.5 text-zinc-400 hover:text-red-400 transition">03 // Mith_Logs</a>
         </div>
-      </nav>
+      </div>
+
+      <!-- Feed Connection Status -->
+      <div class="font-mono-tech text-[11px] flex items-center gap-4">
+        <div class="hidden sm:flex items-center gap-1.5 text-zinc-500">
+          <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+          <span>NODE: DC_METRO_SIGNAL</span>
+        </div>
+        <div class="flex items-center gap-2 bg-black border border-zinc-800 px-3 py-1 rounded">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+          <span class="text-white font-bold tracking-widest">LIVE_FEED</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION: MAIN THEATRE COMPONENT -->
+    <header class="w-full max-w-7xl mx-auto px-4 lg:px-8 pt-6 pb-10">
+      <div class="relative w-full aspect-video md:h-[480px] bg-zinc-950 border border-blue-900/40 rounded-lg overflow-hidden group shadow-2xl flex flex-col justify-end">
+        
+        <!-- Video Placeholder / Background Aesthetic Art -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-950/30 via-black to-black object-cover opacity-80 mix-blend-screen"></div>
+        
+        <!-- Subtle Grid Line Graphic decoration inside the player -->
+        <div class="absolute inset-0 font-mono-tech text-[9px] text-zinc-800 p-4 pointer-events-none select-none z-0 hidden sm:block">
+          [AZAIRE_TV_STREAM_STREAMING_BAK_ONLINE_V4.0]<br>
+          LATENCY: 14ms // RESOLUTION: 2160p // BITRATE: SOURCE
+        </div>
+
+        <!-- Hero Context Text Overlay -->
+        <div class="p-6 md:p-10 z-20 relative max-w-2xl">
+          <div class="font-mono-tech text-xs text-blue-400 font-bold tracking-widest mb-2 flex items-center gap-2">
+            <span class="bg-red-900/30 border border-red-800/60 text-red-400 px-1.5 py-0.5 text-[10px] rounded uppercase">Premiere Event</span>
+            <span>THE FISSURE-VERSE S01</span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight font-sans-clean leading-none">
+            The Day the<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400">Library Failed</span>
+          </h1>
+          <p class="mt-4 text-zinc-400 text-sm md:text-base font-sans-clean leading-relaxed">
+            When the centralized index data arrays completely collapsed, alternative temporal timelines began leaking directly into the localized terminal displays. Trace the timeline network before access drops entirely.
+          </p>
+          
+          <!-- Action Controls -->
+          <div class="mt-6 flex flex-wrap items-center gap-3 font-mono-tech text-xs tracking-wider uppercase">
+            <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded flex items-center gap-2 transition blue-glow cursor-pointer">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Initialize Stream
+            </button>
+            <button class="px-5 py-3 bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-zinc-200 font-medium rounded transition cursor-pointer">
+              Review Dossier Data
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <!-- HERO -->
-
-    <section class="pt-32 pb-16 text-center bg-cobalt">
-      <h1 class="text-4xl mb-2">AZAIRE TV</h1>
-      <p class="text-sm text-blue-200">Broadcast Layer Active</p>
-    </section>
-
-    <!-- FEATURED -->
-
-    <section class="max-w-7xl mx-auto px-6 py-20">
-      <h2 class="text-xl mb-6 text-cobalt">Featured Transmission</h2>
-
-      <a
-        href="watch.html"
-        class="block border border-blue-900 hover:border-white transition"
-      >
-        <div
-          class="h-64 bg-black flex items-center justify-center text-gray-600"
-        >
-          Episode Preview
+    <!-- CONTENT SECTIONS GRID -->
+    <main class="w-full max-w-7xl mx-auto px-4 lg:px-8 pb-20 space-y-12">
+      
+      <!-- CATEGORY 1: ACTIVE TIMELINE LOGS -->
+      <section class="space-y-4">
+        <div class="border-b border-blue-950/60 pb-2 flex justify-between items-baseline font-mono-tech">
+          <h2 class="text-sm font-bold uppercase tracking-widest text-white flex items-center gap-2">
+            <span class="w-1.5 h-3 bg-blue-600 inline-block"></span> 01 // Current Transmission Rotations
+          </h2>
+          <span class="text-[11px] text-zinc-500">3 CHANNELS FOUND</span>
         </div>
 
-        <div class="p-6">
-          <h3 class="text-lg mb-2">Episode 01 — System Activation</h3>
-          <p class="text-gray-400 text-sm">
-            Initial signal detected. Behavioral anomalies emerging.
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- Card 1 -->
+          <div class="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden hover:border-blue-900/60 transition group flex flex-col justify-between">
+            <div class="aspect-video w-full bg-zinc-900 relative overflow-hidden flex items-center justify-center border-b border-zinc-900">
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-950/20 to-black opacity-60 z-0"></div>
+              <span class="font-mono-tech text-xs text-zinc-700 z-10 select-none">[PREVIEW_FEED_COLB]</span>
+              <span class="absolute bottom-2 left-2 font-mono-tech text-[10px] bg-black/80 px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-400">42:10</span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-sm font-bold text-zinc-200 group-hover:text-white transition uppercase tracking-wide">Colby // Signal Echoes</h3>
+                <p class="text-xs text-zinc-500 mt-1 line-clamp-2">Tracking data crumbs left behind across regional infrastructure relays by Subject: Colby.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-zinc-900/60 flex justify-between items-center font-mono-tech text-[11px]">
+                <span class="text-blue-500">STREAM // 01</span>
+                <span class="text-zinc-600">RECOVERED_1991</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden hover:border-blue-900/60 transition group flex flex-col justify-between">
+            <div class="aspect-video w-full bg-zinc-900 relative overflow-hidden flex items-center justify-center border-b border-zinc-900">
+              <div class="absolute inset-0 bg-gradient-to-br from-red-950/10 to-black opacity-60 z-0"></div>
+              <span class="font-mono-tech text-xs text-zinc-700 z-10 select-none">[PREVIEW_FEED_ALTC]</span>
+              <span class="absolute bottom-2 left-2 font-mono-tech text-[10px] bg-black/80 px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-400">1:15:32</span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-sm font-bold text-zinc-200 group-hover:text-white transition uppercase tracking-wide">Future Alt Colby Records</h3>
+                <p class="text-xs text-zinc-500 mt-1 line-clamp-2">Encrypted logs streaming from a cross-timeline intersection vector. High fragmentation risk.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-zinc-900/60 flex justify-between items-center font-mono-tech text-[11px]">
+                <span class="text-red-400">STREAM // 02</span>
+                <span class="text-zinc-600">RECOVERED_2025</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden hover:border-blue-900/60 transition group flex flex-col justify-between">
+            <div class="aspect-video w-full bg-zinc-900 relative overflow-hidden flex items-center justify-center border-b border-zinc-900">
+              <div class="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black opacity-60 z-0"></div>
+              <span class="font-mono-tech text-xs text-zinc-700 z-10 select-none">[PREVIEW_FEED_BASE]</span>
+              <span class="absolute bottom-2 left-2 font-mono-tech text-[10px] bg-black/80 px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-400">18:45</span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-sm font-bold text-zinc-200 group-hover:text-white transition uppercase tracking-wide">The Baseline Drift</h3>
+                <p class="text-xs text-zinc-500 mt-1 line-clamp-2">A technical video breakdown exploring the direct events preceding the database de-indexing matrix failure.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-zinc-900/60 flex justify-between items-center font-mono-tech text-[11px]">
+                <span class="text-blue-500">STREAM // 03</span>
+                <span class="text-zinc-600">RECOVERED_2026</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CATEGORY 2: THE INTERACTIVE CONSOLE INTEGRATION -->
+      <section class="bg-zinc-950 border border-blue-950/60 rounded-xl p-6 lg:p-8 relative overflow-hidden shadow-xl">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-900/5 blur-[80px] pointer-events-none"></div>
+        
+        <div class="max-w-3xl relative z-10">
+          <div class="font-mono-tech text-[10px] text-zinc-500 tracking-widest uppercase mb-1">TERMINAL_LINK_STATUS: INTEGRATED</div>
+          <h2 class="text-lg font-bold text-white uppercase tracking-wide font-mono-tech">System Token Override Entry</h2>
+          <p class="text-sm text-zinc-400 mt-2 leading-relaxed">
+            Acquired secret access token keys while searching through the interactive directory inside the <a href="Mith_Logs.html" class="text-blue-400 hover:underline inline-flex items-center gap-0.5">Mith_Logs Terminal</a>? Enter them below to bypass standard video restrictions and force core database playback modules.
           </p>
+
+          <!-- Input Group Frame -->
+          <div class="mt-6 flex flex-col sm:flex-row items-stretch gap-2 max-w-md font-mono-tech text-xs uppercase tracking-wider">
+            <input type="text" placeholder="ENTER_ACCESS_TOKEN (e.g., FSRV, FAIL)" class="flex-1 bg-black border border-zinc-800 rounded px-4 py-3 text-white placeholder:text-zinc-700 focus:outline-none focus:border-blue-600 transition tracking-widest text-center sm:text-left" id="terminal-token-input" />
+            <button onclick="submitToken()" class="px-6 py-3 bg-zinc-900 hover:bg-blue-950 text-white font-bold border border-zinc-800 hover:border-blue-900 rounded transition cursor-pointer">
+              Validate_
+            </button>
+          </div>
+          
+          <!-- Dynamic System Notification Box -->
+          <div id="token-feedback" class="mt-3 hidden font-mono-tech text-[11px] px-3 py-2 border rounded max-w-md"></div>
         </div>
-      </a>
-    </section>
+      </section>
 
-    <!-- LIBRARY -->
+    </main>
 
-    <section class="max-w-7xl mx-auto px-6 pb-20">
-      <h2 class="text-xl mb-6 text-cobalt">Library</h2>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <a
-          href="watch.html"
-          class="border border-blue-900 p-4 hover:border-white transition"
-        >
-          Episode 01
-        </a>
-
-        <a
-          href="watch.html"
-          class="border border-blue-900 p-4 hover:border-white transition"
-        >
-          Episode 02
-        </a>
-
-        <a href="watch.html" class="border border-red-900 p-4 text-red-500">
-          ████████
-        </a>
+    <!-- SYSTEM FOOTER DATA -->
+    <footer class="w-full bg-zinc-950 border-t border-zinc-900/60 py-8 px-4 lg:px-8 text-center font-mono-tech text-xs text-zinc-600 tracking-wider">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>&copy; 2026 AZAIREN STUDIOS // ALL PLATFORMS OPERATIONAL</div>
+        <div class="flex gap-4 text-[11px]">
+          <a href="#" class="hover:text-zinc-400 transition">SYSTEM_DIAGNOSTICS</a>
+          <span>//</span>
+          <a href="#" class="hover:text-zinc-400 transition">SECURE_ROOT_NODE</a>
+        </div>
       </div>
-    </section>
+    </footer>
 
-    <!-- SYSTEM NOTE -->
+    <!-- INTERACTIVE OVERRIDE MODULE SCRIPT -->
+    <script>
+      function submitToken() {
+        const input = document.getElementById('terminal-token-input').value.trim().toUpperCase();
+        const feedback = document.getElementById('token-feedback');
+        
+        feedback.classList.remove('hidden', 'bg-blue-950/30', 'border-blue-900/50', 'text-blue-400', 'bg-red-950/30', 'border-red-900/50', 'text-red-400');
+        
+        if (!input) {
+          feedback.classList.add('hidden');
+          return;
+        }
 
-    <section class="text-center pb-20">
-      <p class="text-blue-400 text-xs">Some transmissions may be incomplete.</p>
-    </section>
+        // Token Mapping Options
+        const validTokens = ['FSRV', 'FAIL', 'COLB', 'ALTC'];
+
+        if (validTokens.includes(input)) {
+          feedback.classList.add('bg-blue-950/30', 'border-blue-900/50', 'text-blue-400');
+          feedback.innerHTML = `SUCCESS: TOKEN [${input}] VALIDATED. RECONFIGURING BROADCAST VECTORS FOR PRIMARY TIMELINE DIRECT READ...`;
+        } else {
+          feedback.classList.add('bg-red-950/30', 'border-red-900/50', 'text-red-400');
+          feedback.innerHTML = `ERROR: INVALID ACCESS KEY [${input}]. THREAT SIGNATURE LOGGED TO SYSTEM ARCHIVE.`;
+        }
+      }
+    </script>
   </body>
 </html>
