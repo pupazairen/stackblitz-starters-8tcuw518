@@ -1,146 +1,181 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="h-full overflow-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case #002 | Mithbusters</title>
+    <title>SYS_LOG://CASE_001_DOSSIER</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Keeping our consistent raw monospace system font -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Share Tech Mono', monospace;
+      }
+      .scanlines {
+        background: linear-gradient(
+          rgba(18, 16, 16, 0) 50%, 
+          rgba(0, 0, 0, 0.25) 50%
+        );
+        background-size: 100% 4px;
+        z-index: 999;
       }
     </style>
   </head>
 
-  <body class="bg-black text-white">
-    <!-- NAV -->
+  <body class="bg-black text-emerald-400 h-full w-full relative select-none scanlines overflow-hidden">
 
-    <header
-      class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur border-b border-gray-800 z-50"
-    >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
-        <a href="/../index.html" class="text-xl font-semibold tracking-wide">
-          AZAIREN
-        </a>
-
-        <div class="space-x-6 text-sm text-gray-300">
-          <a href="/../index.html" class="hover:text-white">Home</a>
-          <a href="/../universes.html" class="hover:text-white">Universes</a>
-          <a href="/../mithbusters.html" class="hover:text-white"
-            >Mithbusters</a
-          >
-          <a href="/../projects.html" class="hover:text-white">Projects</a>
-          <a href="/../about.html" class="hover:text-white">About</a>
-        </div>
-      </nav>
+    <!-- TOP SYSTEM STATUS MARQUEE -->
+    <header class="w-full bg-zinc-950 border-b border-emerald-900/40 text-xs px-4 py-1.5 flex justify-between items-center tracking-wider">
+      <div class="flex items-center gap-2">
+        <a href="../index.html" class="text-emerald-200 hover:underline">← RETURN_TO_ROOT</a>
+        <span>// SEC_FILE_READOUT</span>
+      </div>
+      <div id="case-lock-banner" class="text-amber-500 animate-pulse">INTEGRITY_CHECK: PENDING</div>
+      <div>CORE_INDEX: 001_FISSURE</div>
     </header>
 
-    <!-- HEADER -->
+    <!-- MAIN DOSSIER WINDOW LAYOUT (Locks to exactly the screen height) -->
+    <div class="flex h-[calc(100vh-2rem)] w-full">
+      
+      <!-- LEFT PANEL: TACTICAL METADATA & INTEGRITY DATA -->
+      <aside class="w-72 border-r border-emerald-900/40 bg-zinc-950/60 p-4 text-xs flex flex-col justify-between">
+        <div class="space-y-6">
+          <!-- File Details -->
+          <div>
+            <div class="text-[10px] text-emerald-600 uppercase tracking-widest mb-1">Dossier ID:</div>
+            <div class="text-xl font-bold text-emerald-200">CASE #001</div>
+            <div class="text-emerald-500/70 mt-1">RECORDED BY: THE_WATCHER</div>
+          </div>
 
-    <section class="pt-32 pb-16 text-center px-6">
-      <h1 class="text-4xl mb-2">CASE #002</h1>
-      <p class="text-gray-400 mb-2">Entity Interference</p>
-      <p class="text-xs text-gray-500">File Status: Active</p>
-    </section>
+          <!-- System Variables -->
+          <div class="border-t border-emerald-900/30 pt-3 space-y-2">
+            <div class="flex justify-between">
+              <span class="text-emerald-600">COORDINATE:</span>
+              <span class="text-emerald-300">FISSURE-VERSE</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-emerald-600">TIMELINE_DRFT:</span>
+              <span class="text-emerald-300">HIGH (+0.042)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-emerald-600">FILE_STATUS:</span>
+              <span id="meta-status" class="text-amber-500">FRAGMENTED</span>
+            </div>
+          </div>
 
-    <!-- SUMMARY -->
+          <!-- The Anchor Dependent Hint Box -->
+          <div class="border border-emerald-900 bg-emerald-950/20 p-2 text-[11px] leading-relaxed text-emerald-500/80">
+            <span class="font-bold text-emerald-300">SYSTEM NOTE:</span> Some data blocks inside this timeline are missing or heavily redacted. The machine requires a local storage synchronization anchor to run data reconstruction.
+          </div>
+        </div>
 
-    <section class="max-w-3xl mx-auto px-6 py-10">
-      <h2 class="text-xl mb-4">Summary</h2>
-      <p class="text-gray-400">
-        Multiple reports indicate the presence of an unidentified entity capable
-        of predictive positioning and behavioral manipulation.
-      </p>
-    </section>
+        <!-- System Readout Footer -->
+        <div class="bg-zinc-900 border border-emerald-900/40 p-2 text-[10px] text-emerald-600">
+          <div>DATA_STREAM: AT_RESTRAINT</div>
+          <div>SCAN_LOG: 2026-05-21</div>
+        </div>
+      </aside>
 
-    <!-- RECOVERED FOOTAGE -->
+      <!-- RIGHT PANEL: CONTENT INTERFACE (WHERE THE EVIDENCE LIVES) -->
+      <main class="flex-1 bg-[radial-gradient(circle_at_center,_#051a05_0%,_#000000_70%)] p-6 overflow-y-auto space-y-6 max-w-4xl">
+        
+        <!-- SECTION 1: SUMMARY -->
+        <div class="border border-emerald-500 p-1 bg-black shadow-[3px_3px_0px_0px_rgba(16,185,129,0.2)]">
+          <div class="bg-emerald-900/30 px-3 py-1 text-xs font-bold border-b border-emerald-500 text-emerald-200 uppercase tracking-wider">
+            SUMMARY // EVIDENCE_LOG
+          </div>
+          <div class="p-4 space-y-3 text-sm text-emerald-300 leading-relaxed">
+            <p>
+              A severe localized collapse occurred at the center of the grid coordinate plane, heavily matching patterns documented during <span class="text-emerald-100 font-semibold underline decoration-emerald-600">The Day the Library Failed</span>. 
+            </p>
+            <p id="secret-paragraph" class="text-zinc-600 bg-zinc-950 p-2 border border-zinc-900 select-all font-mono text-xs cursor-help">
+              █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ 
+            </p>
+          </div>
+        </div>
 
-    <section class="max-w-3xl mx-auto px-6 py-10 border-t border-gray-800">
-      <h2 class="text-xl mb-4">Recovered Footage</h2>
+        <!-- SECTION 2: OBSERVED EFFECTS -->
+        <div class="border border-emerald-500 p-1 bg-black shadow-[3px_3px_0px_0px_rgba(16,185,129,0.2)]">
+          <div class="bg-emerald-900/30 px-3 py-1 text-xs font-bold border-b border-emerald-500 text-emerald-200 uppercase tracking-wider">
+            OBSERVED ANOMALOUS EFFECTS
+          </div>
+          <div class="p-4">
+            <ul class="text-sm text-emerald-300 space-y-3">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-500">[01]</span>
+                <span>Initial signal spike detected at exactly midnight. System communication protocols dropped to absolute silence.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-500">[02]</span>
+                <span>Visual feeds caught overlapping entity traces. Subjects appear to exist simultaneously in mutually exclusive positions.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-500">[03]</span>
+                <span>Physical documentation records altered retroactively. Paper files in the vicinity spontaneously shifted text to log contradictions.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-      <a href="/../hidden/hardwell-access.html">
-        <video controls class="w-full border border-gray-800">
-          <source src="../media/HWL_SEC_03_RECOVERED.mp4" type="video/mp4" />
-        </video>
-      </a>
+        <!-- SECTION 3: LINKED SUBJECTS -->
+        <div class="border border-emerald-500 p-1 bg-black shadow-[3px_3px_0px_0px_rgba(16,185,129,0.2)]">
+          <div class="bg-emerald-900/30 px-3 py-1 text-xs font-bold border-b border-emerald-500 text-emerald-200 uppercase tracking-wider">
+            CROSS_REFERENCED_SUBJECT_FILES
+          </div>
+          <div class="p-4">
+            <p class="text-xs text-emerald-500/60 mb-3 uppercase">Select cross-reference node to mount subject file:</p>
+            <div class="flex gap-4 flex-wrap">
+              <a href="../universes/characters/ash.html" class="border border-emerald-900 bg-zinc-950 px-4 py-2 text-xs text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/20 transition flex items-center gap-2">
+                <span>📁</span> SUBJ_FILE://ASH.DAT
+              </a>
+              <a href="../universes/characters/onika.html" class="border border-emerald-900 bg-zinc-950 px-4 py-2 text-xs text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/20 transition flex items-center gap-2">
+                <span>📁</span> SUBJ_FILE://ONIKA.DAT
+              </a>
+              <a href="../universes/characters/kira.html" class="border border-emerald-900 bg-zinc-950 px-4 py-2 text-xs text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/20 transition flex items-center gap-2">
+                <span>📁</span> SUBJ_FILE://KIRA.DAT
+              </a>
+            </div>
+          </div>
+        </div>
 
-      <p class="text-gray-500 text-xs mt-2">Frame anomaly detected at 00:09</p>
+        <!-- SECTION 4: GLOBAL CASE ARCHIVE STATUS -->
+        <div class="border border-red-900 bg-red-950/10 p-4 text-center">
+          <div class="text-xs font-bold text-red-500 uppercase tracking-widest">
+            CASE_LOG_THREAT_LEVEL: UNSTABLE // RESTRAINT OVERRIDE DETECTED
+          </div>
+        </div>
 
-      <p class="text-gray-500 text-xs mt-2">
-        File recovered from Hardwell Tech internal systems.
-      </p>
-    </section>
+      </main>
+    </div>
 
-    <p class="text-gray-400 text-sm mt-4">
-      Initial review suggests standard visual distortion.
-    </p>
+    <!-- LOCAL STORAGE RECONSTRUCTION SCRIPT -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Look for the anchor token we dropped on the homepage
+        const anchor = localStorage.getItem('watcher_anchor');
+        const banner = document.getElementById('case-lock-banner');
+        const statusMeta = document.getElementById('meta-status');
+        const secretPara = document.getElementById('secret-paragraph');
 
-    <p class="text-red-500 text-xs mt-2">
-      Note: Subject behavior does not align with distortion patterns.
-    </p>
-
-    <!-- OBSERVED EFFECTS -->
-
-    <section class="max-w-3xl mx-auto px-6 py-10">
-      <h2 class="text-xl mb-4">Observed Effects</h2>
-      <ul class="text-gray-400 text-sm space-y-2">
-        <li>- Targeted appearances</li>
-        <li>- Awareness of future movement</li>
-        <li>- Psychological influence</li>
-      </ul>
-    </section>
-
-    <!-- LINKED SUBJECTS -->
-
-    <section class="max-w-3xl mx-auto px-6 py-10">
-      <h2 class="text-xl mb-4">Linked Subjects</h2>
-
-      <div class="flex gap-4 flex-wrap">
-        <a
-          href="/../universes/characters/ash.html"
-          class="border px-4 py-2 text-sm hover:bg-white hover:text-black transition"
-        >
-          Ash
-        </a>
-
-        <a
-          href="/../universes/characters/onika.html"
-          class="border px-4 py-2 text-sm hover:bg-white hover:text-black transition"
-        >
-          Onika
-        </a>
-
-        <a
-          href="/../universes/characters/kira.html"
-          class="border px-4 py-2 text-sm hover:bg-white hover:text-black transition"
-        >
-          Kira
-        </a>
-      </div>
-    </section>
-
-    <!-- STATUS -->
-
-    <section class="py-20 text-center border-t border-gray-800">
-      <p class="text-red-500 text-sm">Status: Ongoing Investigation</p>
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer
-      class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm"
-    >
-      © 2026 Azairen Studios. All systems active.
-    </footer>
+        if (anchor === 'LEVEL_02') {
+          // System states when logged in/synchronized
+          banner.innerText = 'INTEGRITY_CHECK: RESTORED';
+          banner.className = 'text-emerald-400';
+          statusMeta.innerText = 'RECONSTRUCTED';
+          statusMeta.className = 'text-emerald-400';
+          
+          // Reconstruct the redacted paragraph with real hidden lore!
+          secretPara.innerText = "CRITICAL DATA FOUND: The entity traces tracked at the grid core directly corroborate the presence of Alt Colby. This confirms that the timeline duplication event was not spontaneous—it was a deliberate breach initialized by the secondary system architecture.";
+          secretPara.className = "text-sm text-amber-400 bg-amber-950/10 p-3 border border-amber-800 font-sans leading-relaxed select-text";
+        } else {
+          // System states when data remains locked
+          banner.innerText = 'INTEGRITY_CHECK: ANOMALY DETECTED';
+          banner.className = 'text-red-500 animate-pulse';
+        }
+      });
+    </script>
   </body>
 </html>

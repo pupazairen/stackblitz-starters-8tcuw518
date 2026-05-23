@@ -1,136 +1,221 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="h-full overflow-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Azairen Studios</title>
+    <title>AZAIREN://COMMS_TRANSCEIVER</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Share Tech Mono', monospace;
       }
-
-      .input {
-        background: black;
-        border: 1px solid #333;
-        padding: 12px;
-        width: 100%;
-        color: white;
-      }
-
-      .input:focus {
-        outline: none;
-        border-color: white;
+      .grid-noise {
+        background-size: 20px 20px;
+        background-image: 
+          linear-gradient(to right, rgba(29, 78, 216, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(29, 78, 216, 0.04) 1px, transparent 1px);
       }
     </style>
   </head>
 
-  <body class="bg-black text-white">
-    <!-- NAV -->
+  <body class="bg-black text-zinc-300 h-full w-full relative grid-noise overflow-hidden select-none">
 
-    <header
-      class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur border-b border-gray-800 z-50"
-    >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
-        <a href="/index.html" class="text-xl font-semibold tracking-wide">
-          AZAIREN
-        </a>
-
-        <div class="space-x-6 text-sm text-gray-300">
-          <a href="/index.html" class="hover:text-white">Home</a>
-          <a href="/universes/index.html" class="hover:text-white">Universes</a>
-          <a href="/universes/characters/index.html" class="hover:text-white"
-            >Characters</a
-          >
-          <a href="/mithbusters/index.html" class="hover:text-white"
-            >Mithbusters</a
-          >
-          <a href="/projects.html" class="hover:text-white">Projects</a>
-          <a href="/business.html" class="hover:text-white">Studio</a>
-          <a href="/contact.html" class="text-white">Contact</a>
-        </div>
-      </nav>
+    <!-- TOP TELEMETRY STRIP -->
+    <header class="w-full bg-zinc-950 border-b border-blue-950 text-xs px-4 py-2 flex justify-between items-center tracking-wider font-mono z-50 relative">
+      <div class="flex items-center gap-3">
+        <span class="inline-block w-2 h-2 bg-blue-500 animate-ping"></span>
+        <a href="index.html" class="font-bold text-blue-400 tracking-widest text-sm hover:text-white transition">AZAIREN://</a>
+        <span class="text-zinc-600 hidden sm:inline">COMMS_OUTBOUND</span>
+      </div>
+      <div id="signal-strength" class="text-red-500 font-bold tracking-widest text-[11px]">
+        SIGNAL_STRENGTH: 1.04% (CRITICAL_LOW)
+      </div>
+      <div class="text-[10px] text-zinc-600 font-mono">
+        FREQ: 144.800MHZ
+      </div>
     </header>
 
-    <!-- HEADER -->
+    <!-- TRANSCEIVER INTERFACE -->
+    <div class="max-w-2xl mx-auto h-[calc(100vh-2.5rem)] flex flex-col justify-center px-6 relative">
+      
+      <!-- COBALT/RED WARNING PANEL -->
+      <div class="border border-red-950 bg-red-950/10 p-4 mb-6 relative">
+        <div class="absolute -top-[1px] -left-[1px] w-1.5 h-1.5 bg-red-600"></div>
+        <div class="absolute -bottom-[1px] -right-[1px] w-1.5 h-1.5 bg-blue-600"></div>
+        
+        <div class="text-xs font-bold text-red-500 uppercase tracking-widest mb-1 flex items-center gap-2">
+          <span>⚠️</span> WARNING: BROADCAST IS UNENCRYPTED
+        </div>
+        <p class="text-[11px] text-zinc-400 leading-relaxed">
+          Primary network routing is down. Sub-buffers are force-feeding raw text packages into the regional spectrum. Incoming response loops may corrupt local cache vectors. Keep message signatures brief.
+        </p>
+      </div>
 
-    <section class="pt-32 pb-16 text-center px-6">
-      <h1 class="text-4xl mb-4">CONTACT</h1>
-      <p class="text-gray-500 text-sm">Submit inquiry to system.</p>
-    </section>
+      <!-- THE OUTBOUND CONSOLE BOX -->
+      <div class="border border-blue-900 p-1 bg-black shadow-[4px_4px_0px_0px_rgba(29,78,216,0.15)] relative">
+        <div class="absolute -top-[1px] -right-[1px] w-2 h-2 bg-blue-600"></div>
+        <div class="absolute -bottom-[1px] -left-[1px] w-2 h-2 bg-red-600"></div>
 
-    <!-- FORM -->
+        <div class="bg-blue-950/30 px-3 py-1.5 text-xs font-bold border-b border-blue-900 text-blue-400 flex justify-between items-center">
+          <span>PACKET_COMPOSER_v4.1</span>
+          <span class="text-[10px] text-zinc-500 font-normal">STATUS: READY_TO_BURST</span>
+        </div>
 
-    <section>
-      <form
-        action="https://formspree.io/f/xeevdday"
-        method="POST"
-        class="space-y-6"
-      >
-        <label>
-          <input
-            type="text"
-            name="name"
-            class="input"
-            placeholder="Enter identifier"
-          />
-        </label>
-        <label>
-          <input
-            type="email"
-            name="email"
-            class="input"
-            placeholder="Contact channel"
-          />
-        </label>
-        <label>
-          <input
-            type="text"
-            name="subject"
-            class="input"
-            placeholder="Reason for inquiry"
-          />
-        </label>
-        <label>
-          <textarea
-            name="message"
-            class="input h-32"
-            placeholder="Submit message..."
-          ></textarea>
-        </label>
-        <!-- your other form fields go here -->
-        <button type="submit">Send</button>
+        <!-- CONTACT INTERACTIVE FORM -->
+        <form id="transceiver-form" class="p-4 space-y-4">
+          
+          <!-- SIGNATURE -->
+          <div>
+            <label class="block text-xs text-blue-500 uppercase tracking-wider mb-1">Sender_Signature:</label>
+            <input 
+              type="text" 
+              name="identity"
+              required
+              placeholder="e.g., NODE_IDENT_UNKNOWN" 
+              class="w-full bg-zinc-950 border border-blue-950 p-2 text-sm text-zinc-200 focus:outline-none focus:border-red-600 font-mono tracking-wide placeholder-zinc-800"
+            />
+          </div>
 
-        <input
-          type="hidden"
-          name="_redirect"
-          value="https://yourdomain.com/thank-you.html"
-        />
-      </form>
-    </section>
+          <!-- EMAIL -->
+          <div>
+            <label class="block text-xs text-blue-500 uppercase tracking-wider mb-1">Return_Subnet_Address (Email):</label>
+            <input 
+              type="email" 
+              name="email"
+              required
+              placeholder="operator@subnet.net" 
+              class="w-full bg-zinc-950 border border-blue-950 p-2 text-sm text-zinc-200 focus:outline-none focus:border-red-600 font-mono tracking-wide placeholder-zinc-800"
+            />
+          </div>
 
-    <!-- SYSTEM NOTE -->
+          <!-- MESSAGE PAYLOAD -->
+          <div>
+            <label class="block text-xs text-blue-500 uppercase tracking-wider mb-1">Payload_Data_Burst (Message):</label>
+            <textarea 
+              name="payload"
+              required
+              rows="4"
+              placeholder="Type transmission here... System logs automatically track local routing headers." 
+              class="w-full bg-zinc-950 border border-blue-950 p-2 text-sm text-zinc-200 focus:outline-none focus:border-red-600 font-mono tracking-wide placeholder-zinc-800 resize-none"
+            ></textarea>
+          </div>
 
-    <section class="text-center pb-20">
-      <p class="text-gray-600 text-xs">Response is not guaranteed.</p>
-    </section>
+          <!-- BOTTOM FORM BAR -->
+          <div class="pt-2 flex items-center justify-between border-t border-blue-950/50">
+            <div class="text-[10px] text-zinc-600 flex flex-col uppercase tracking-wider">
+              <span>SIZE: COMPRESSING_PACKETS</span>
+              <span id="sync-status">ANCHOR: UNLINKED</span>
+            </div>
+            
+            <button 
+              type="submit" 
+              class="bg-blue-950/50 border border-blue-500 text-blue-400 px-6 py-2 text-sm uppercase font-bold tracking-widest hover:bg-red-950 hover:text-red-400 hover:border-red-600 transition-all duration-150 active:translate-y-0.5"
+            >
+              INITIALIZE_BURST_→
+            </button>
+          </div>
 
-    <!-- FOOTER -->
+        </form>
+      </div>
 
-    <footer
-      class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm"
-    >
-      © 2026 Azairen Studios. All systems active.
-    </footer>
+      <!-- TELEMETRY OUTFLOW / TWIST INTERCEPT LOG -->
+      <div id="console-outflow" class="mt-4 bg-zinc-950 border border-blue-950/40 p-3 h-28 overflow-y-auto text-[10px] text-blue-600 font-mono space-y-1">
+        <div>[LOG] Listening for transceiver frequencies...</div>
+        <div>[LOG] Warning: Local node security clearance defaults to standard client.</div>
+      </div>
+
+    </div>
+
+    <!-- TRANSMISSION SCRIPT WITH MESSAGE TWIST -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('transceiver-form');
+        const outflow = document.getElementById('console-outflow');
+        const syncStatus = document.getElementById('sync-status');
+        const signalStrength = document.getElementById('signal-strength');
+        
+        // Check if homepage code was found
+        const anchor = localStorage.getItem('watcher_anchor');
+        if (anchor === 'LEVEL_02') {
+          syncStatus.innerText = 'ANCHOR: SYNCED_LEVEL_02';
+          syncStatus.className = 'text-blue-400 font-bold';
+          signalStrength.innerText = 'SIGNAL_STRENGTH: 94.7% (BOOSTED)';
+          signalStrength.className = 'text-blue-400 font-bold';
+          
+          let entry = document.createElement('div');
+          entry.innerText = '[LOG] Regional system block bypassed using local anchor code. Routing clear.';
+          entry.className = 'text-red-500 font-bold';
+          outflow.appendChild(entry);
+        }
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          let steps = [
+            `[PACKETIZER] Compressing message headers into a unified raw string...`,
+            `[TRANSCEIVER] Pushing signal to 144.800MHz frequency stack...`,
+            `[BURST] Signal pulse dispatched. Monitoring carrier return wave...`
+          ];
+
+          steps.forEach((text, idx) => {
+            setTimeout(() => {
+              let line = document.createElement('div');
+              line.innerText = text;
+              outflow.appendChild(line);
+              outflow.scrollTop = outflow.scrollHeight;
+            }, idx * 350);
+          });
+
+          // The Narrative Twist Execution
+          setTimeout(() => {
+            // Drop carrier line indicator
+            signalStrength.innerText = "SIGNAL_STRENGTH: 0.0% (CARRIER TERMINATED)";
+            signalStrength.className = "text-zinc-700";
+
+            // Determine customized payload message based on their decryption status
+            let promptHeadline = "BURST_COMPLETED";
+            let promptMessage = "";
+
+            if (anchor === 'LEVEL_02') {
+              promptHeadline = "TRANSMISSION INTERCEPTED // SYSTEM RE-ROUTE";
+              promptMessage = `
+                <div class="text-left bg-blue-950/20 border border-blue-900 p-3 text-xs text-zinc-300 space-y-2 leading-relaxed">
+                  <span class="text-red-500 font-bold block">[ALERT] INCOMING RESPONSE DETECTED FROM THE LIBRARY INDEX:</span>
+                  <p>"Signal sequence confirmed. The logs you are parsing aren't simple records—they are remnants of iterations where the duplicate structure was too unstable to sustain itself. Do not stop pushing the system connections. The Watcher is aware of your trace."</p>
+                </div>
+              `;
+            } else {
+              promptHeadline = "BURST UNSTABLE // REJECTED BY SYSTEM FIREWALL";
+              promptMessage = `
+                <div class="text-left bg-red-950/20 border border-red-900 p-3 text-xs text-zinc-400 space-y-1 font-mono">
+                  <span class="text-red-500 font-bold block">[ERROR] RESTRAINT SEQUENCE TRIGGERED:</span>
+                  <p>Your connection route lacks a synchronization anchor. The burst packet was fractured before clearing the localized network borders. Locate the root validation parameter to force complete communication override.</p>
+                </div>
+              `;
+            }
+
+            // Replace form contents with the dynamic narrative confirmation module
+            form.innerHTML = `
+              <div class="py-6 text-center space-y-4">
+                <div class="text-red-500 font-bold tracking-widest text-base animate-pulse uppercase">${promptHeadline}</div>
+                ${promptMessage}
+                <p class="text-[11px] text-zinc-500 max-w-sm mx-auto leading-relaxed">
+                  The transceiver interface has been shut down automatically to protect local client memory arrays from deep system tracking loops.
+                </p>
+                <div class="pt-2">
+                  <a href="index.html" class="border border-blue-950 bg-zinc-950 px-4 py-2 text-xs text-blue-400 hover:border-red-600 hover:text-red-400 transition inline-block uppercase font-bold tracking-wider">
+                    DISCONNECT_LINK
+                  </a>
+                </div>
+              </div>
+            `;
+          }, 1400);
+
+        });
+      });
+    </script>
   </body>
 </html>
