@@ -1,158 +1,179 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Onika | Azairen Studios</title>
+    <title>Personnel Entry: ASH | Azairen</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
+      .font-sans-clean { font-family: 'Inter', sans-serif; }
+      .font-mono-data { font-family: 'JetBrains Mono', monospace; }
+      
+      /* Subtle scanline overlay to emphasize the "found/monitored" terminal nature */
+      .scanlines {
+        position: relative;
+      }
+      .scanlines::after {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background: linear-gradient(rgba(18, 19, 21, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+        z-index: 999;
+        background-size: 100% 4px, 6px 100%;
+        pointer-events: none;
       }
     </style>
   </head>
 
-  <body class="bg-black text-white">
-    <!-- NAV -->
+  <body class="bg-[#121315] text-zinc-400 font-sans-clean min-h-full flex flex-col antialiased selection:bg-blue-600 selection:text-white scanlines">
 
-    <header
-      class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur border-b border-gray-800 z-50"
-    >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
-        <a href="../../index.html" class="text-xl font-semibold tracking-wide">
-          AZAIREN
-        </a>
-
-        <div class="space-x-6 text-sm text-gray-300">
-          <a href="/../../index.html" class="hover:text-white">Home</a>
-          <a href="/../../universes.html" class="hover:text-white">Universes</a>
-          <a href="/../../mithbusters.html" class="hover:text-white"
-            >Mithbusters</a
-          >
-          <a href="../../projects.html" class="hover:text-white">Projects</a>
-          <a href="../../about.html" class="hover:text-white">About</a>
-        </div>
-      </nav>
+    <!-- STANDARD NAVIGATION BAR -->
+    <header class="w-full bg-[#18191c] border-b border-zinc-800 px-6 py-4 flex justify-between items-center shrink-0 z-50">
+      <a href="/index.html" class="text-white font-semibold tracking-wide uppercase text-sm flex items-center gap-2">
+        <span class="w-2 h-2 bg-blue-600 inline-block"></span>
+        Azairen
+      </a>
     </header>
 
-    <!-- HERO -->
+    <!-- CORE CARD GRID -->
+    <main class="flex-1 max-w-6xl w-full mx-auto p-4 md:p-8 flex flex-col justify-center">
+      
+      <!-- MAIN DOSSIER INTERFACE CARD -->
+      <div class="bg-[#18191c] border border-zinc-800 rounded-lg overflow-hidden grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-zinc-800 shadow-2xl">
+        
+        <!-- SIDE A: METADATA & IDENTIFICATION PROFILE -->
+        <div class="p-6 flex flex-col justify-between space-y-6 bg-zinc-950/40">
+          <div class="space-y-4">
+            <!-- Asset Header Block -->
+            <div class="flex justify-between items-start border-b border-zinc-800/80 pb-3">
+              <div>
+                <span class="text-[10px] font-mono-data text-zinc-600 block uppercase tracking-widest">Subject_Record</span>
+                <h1 class="text-3xl font-light text-white tracking-wide uppercase">Ash</h1>
+              </div>
+              <span class="bg-blue-950/60 text-blue-400 border border-blue-900/50 font-mono-data text-[10px] px-2 py-0.5 rounded tracking-widest uppercase">
+                Active
+              </span>
+            </div>
 
-    <section class="h-screen flex items-center justify-center text-center px-6">
-      <div>
-        <h1 class="text-5xl md:text-6xl font-light mb-4">ONIKA</h1>
+            <!-- Conceptual Character Silhouette / Asset Card Frame -->
+            <div class="w-full aspect-square bg-[#121315] border border-zinc-800 rounded flex flex-col items-center justify-center p-4 text-center relative overflow-hidden group">
+              <!-- Grid Background Simulation -->
+              <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              
+              <div class="font-mono-data text-[11px] text-zinc-600 z-10 space-y-1">
+                <div>[ IMAGE_RENDER_FAILED ]</div>
+                <div class="text-[9px] text-zinc-700">ERR_SOURCE_MUTED</div>
+              </div>
+              
+              <!-- Bottom left card tag -->
+              <div class="absolute bottom-2 left-2 font-mono-data text-[9px] text-zinc-600 uppercase">
+                ID: 404-ASH-ALPHA
+              </div>
+            </div>
 
-        <p class="text-gray-400 mb-6">Status: Unknown</p>
+            <!-- Isolated Summary Parameters -->
+            <div class="space-y-2 text-xs font-mono-data bg-zinc-900/40 p-3 border border-zinc-800/50 rounded">
+              <div class="flex justify-between">
+                <span class="text-zinc-600">INTEGRITY:</span>
+                <span class="text-amber-500">COMPROMISED</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600">CLEARANCE:</span>
+                <span class="text-zinc-400">LEVEL_02_REQ</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600">ORIGIN_NODE:</span>
+                <span class="text-blue-500 hover:underline"><a href="/universes/vg.html">VAMP_GUARDIAN</a></span>
+              </div>
+            </div>
+          </div>
 
-        <p class="text-gray-500 text-sm max-w-md mx-auto">
-          Access to full profile is restricted by internal authority.
-        </p>
-      </div>
-    </section>
-
-    <!-- PROFILE -->
-
-    <section class="py-20 px-6 max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl mb-6">Profile</h2>
-
-      <p class="text-gray-400 leading-relaxed">
-        Onika operates with a level of awareness that exceeds standard
-        observation. Her actions suggest long-term planning, with outcomes that
-        extend beyond immediate events. Motives remain unclear.
-      </p>
-    </section>
-
-    <!-- OBSERVATION LOG -->
-
-    <section class="py-20 px-6 max-w-5xl mx-auto">
-      <h2 class="text-2xl mb-10 text-center">Observation Log</h2>
-
-      <div class="space-y-6">
-        <div class="border border-gray-800 p-4">
-          <p class="text-xs text-gray-500 mb-1">Entry 01</p>
-          <p class="text-gray-400 text-sm">
-            Presence detected prior to recorded incident. No clear entry point.
-          </p>
+          <!-- Profile Narrative Block -->
+          <div class="pt-4 border-t border-zinc-800/80 text-xs space-y-2">
+            <span class="font-mono-data text-[10px] text-zinc-500 uppercase tracking-wider block">System_Observation:</span>
+            <p class="leading-relaxed text-zinc-400 font-light">
+              Ash is directly linked to a sequence of events that should not have occurred. Initial observations suggest he may not fully understand his role within the system.
+            </p>
+          </div>
         </div>
 
-        <div class="border border-gray-800 p-4">
-          <p class="text-xs text-gray-500 mb-1">Entry 02</p>
-          <p class="text-gray-400 text-sm">
-            Interaction with Kira observed. Subject used as defensive leverage.
-          </p>
+        <!-- SIDE B: INCIDENT LOG TRACKER (COMPACTED) -->
+        <div class="p-6 lg:col-span-2 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="border-b border-zinc-800 pb-2">
+              <h2 class="text-xs font-mono-data text-zinc-500 uppercase tracking-widest font-bold">Chronological_Incident_Log //</h2>
+            </div>
+
+            <!-- Dense Log Container -->
+            <div class="space-y-3">
+              
+              <!-- Log Entry 1 -->
+              <div class="bg-zinc-900/30 border border-zinc-800 p-3.5 rounded flex items-start gap-4 hover:border-zinc-700 transition">
+                <span class="font-mono-data text-[10px] text-zinc-600 bg-zinc-900 px-1.5 py-0.5 border border-zinc-800 rounded">01</span>
+                <div class="text-xs space-y-1">
+                  <span class="text-zinc-500 font-mono-data block text-[9px]">SYS_ACTIVATE // TIME_STAMP_PENDING</span>
+                  <p class="text-zinc-300 font-light">System activation detected. Source linked to Ash.</p>
+                </div>
+              </div>
+
+              <!-- Log Entry 2 -->
+              <div class="bg-zinc-900/30 border border-zinc-800 p-3.5 rounded flex items-start gap-4 hover:border-zinc-700 transition">
+                <span class="font-mono-data text-[10px] text-zinc-600 bg-zinc-900 px-1.5 py-0.5 border border-zinc-800 rounded">02</span>
+                <div class="text-xs space-y-1">
+                  <span class="text-zinc-500 font-mono-data block text-[9px]">BEHAVIOR_ANOMALY // CRITICAL</span>
+                  <p class="text-zinc-300 font-light">Behavioral inconsistencies observed. Further monitoring required.</p>
+                </div>
+              </div>
+
+              <!-- Log Entry 3 -->
+              <div class="bg-zinc-900/30 border border-zinc-800 p-3.5 rounded flex items-start gap-4 hover:border-blue-900/50 transition">
+                <span class="font-mono-data text-[10px] text-zinc-600 bg-zinc-900 px-1.5 py-0.5 border border-zinc-800 rounded">03</span>
+                <div class="text-xs space-y-1">
+                  <span class="text-zinc-500 font-mono-data block text-[9px]">SYS_INTERFERENCE // RECORD_LINKED</span>
+                  <p class="text-zinc-300 font-light">
+                    Entity interference suspected. 
+                    <a href="/universes/cases/case-002.html" class="text-blue-400 underline hover:text-blue-300 font-mono-data text-[11px] ml-1">
+                      View Case #002 →
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CROSS-REFERENCE PANEL & SECURITY HOLD -->
+          <div class="pt-4 border-t border-zinc-800 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+            <!-- Networks Connections -->
+            <div class="space-y-1.5">
+              <span class="text-[10px] font-mono-data text-zinc-600 uppercase tracking-wider block">Network_Cross_References:</span>
+              <div class="flex gap-2">
+                <a href="/../mithbusters.html" class="text-[11px] font-mono-data px-2 py-1 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 rounded transition">
+                  LINKED_CASES
+                </a>
+              </div>
+            </div>
+
+            <!-- Terminal Restriction Warning -->
+            <div class="sm:text-right font-mono-data text-[10px] text-red-500 bg-red-950/10 border border-red-900/30 rounded p-2.5">
+              ⚠️ EXHAUSTIVE RECORDS RESTRICTED // ELEVATED PARTNER CLEARANCE MANDATORY
+            </div>
+          </div>
+
         </div>
 
-        <div class="border border-gray-800 p-4">
-          <p class="text-xs text-gray-500 mb-1">Entry 03</p>
-          <p class="text-gray-400 text-sm">
-            Awareness of system structure suspected.
-            <a
-              href="/universes/cases/case-002.html"
-              class="underline hover:text-white"
-            >
-              Linked anomaly detected
-            </a>
-          </p>
-        </div>
       </div>
-    </section>
 
-    <!-- CONNECTIONS -->
+    </main>
 
-    <section class="py-20 px-6 max-w-5xl mx-auto text-center">
-      <h2 class="text-2xl mb-6">Connections</h2>
-
-      <p class="text-gray-400 mb-6">
-        Multiple individuals appear to be directly or indirectly influenced.
-      </p>
-
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a
-          href="/universes/characters/ash.html"
-          class="border px-4 py-2 text-sm hover:bg-white hover:text-black transition"
-        >
-          Ash
-        </a>
-
-        <a
-          href="/universes/characters/kira.html"
-          class="border px-4 py-2 text-sm hover:bg-white hover:text-black transition"
-        >
-          Kira
-        </a>
-
-        <a
-          href="/universes/vg.html"
-          class="border px-4 py-2 text-sm hover:bg-white hover:text-black transition"
-        >
-          Vampire Guardians
-        </a>
-      </div>
-    </section>
-
-    <!-- RESTRICTION -->
-
-    <section class="py-20 text-center border-t border-gray-800">
-      <p class="text-red-500 text-sm">
-        Clearance level insufficient for full data access.
-      </p>
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer
-      class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm"
-    >
-      © 2026 Azairen Studios. All systems active.
+    <!-- CLEAN FORMAL SYSTEM FOOTER -->
+    <footer class="w-full bg-[#18191c] border-t border-zinc-800 text-[10px] font-mono-data px-6 py-3 text-center text-zinc-600 tracking-wider mt-auto shrink-0 uppercase">
+      © 2026 Azairen Studios// Operational System Node Alpha // Security Non-Disclosure Act Applies
     </footer>
+
   </body>
 </html>

@@ -1,46 +1,128 @@
-* {
-  box-sizing: border-box;
+/* ==========================================================================
+   AZAIREN MEDIA GROUP - CORE CORPORATE LAYOUT STYLESHEET
+   System ID: 2026-CORP-CORE
+   ========================================================================== */
+
+/* 1. ROOT DESIGN SYSTEM VARIABLES */
+:root {
+  --bg-primary: #121315;      /* Deep flat charcoal slate */
+  --bg-secondary: #18191c;    /* Elevated panel grey */
+  --bg-tertiary: #0f1012;     /* Dropdowns and deep backgrounds */
+  
+  --border-sterile: #27272a;  /* Clean slate-800 border line */
+  --border-focus: #2563eb;    /* Alert / Action corporate blue */
+  
+  --text-pure: #ffffff;       /* Pure white for prominent headings */
+  --text-body: #a1a1aa;       /* Muted gray for standard technical prose */
+  --text-muted: #52525b;      /* Dark gray for indexes and meta timestamps */
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  color: black;
-  background-color: white;
+/* 2. BASE INTERFACE SETTINGS */
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  scroll-behavior: smooth;
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  gap: 0.5rem;
-  border-bottom: solid 1px #aaa;
-  background-color: #eee;
+/* 3. TYPOGRAPHY MATRIX */
+h1, h2, h3, h4, .corp-heading {
+  color: var(--text-pure);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-nav a {
-  display: inline-block;
-  min-width: 9rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: solid 1px #aaa;
-  text-align: center;
-  text-decoration: none;
-  color: #555;
+.font-mono-data {
+  font-family: 'JetBrains Mono', 'Share Tech Mono', monospace;
+  letter-spacing: 0.05em;
 }
 
-nav a[aria-current='page'] {
-  color: #000;
-  background-color: #d4d4d4;
+/* 4. STERILE INTERFACE TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-main {
-  padding: 1rem;
+th {
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--border-sterile);
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 1.5rem;
+td {
+  border-bottom: 1px solid rgba(39, 39, 42, 0.4);
+  transition: background-color 0.15s ease;
+}
+
+tr:hover td {
+  background-color: rgba(24, 25, 28, 0.4);
+}
+
+/* 5. BACKEND ADMINISTRATIVE COMPONENTS */
+.corporate-panel {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-sterile);
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.corporate-panel:hover {
+  border-color: rgba(37, 99, 213, 0.3); /* Subtle blue response on panel hover */
+}
+
+/* Sterile Input Fields for Login/Admin Prompts */
+.corporate-input {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-sterile);
+  color: var(--text-pure);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.corporate-input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 1px rgba(37, 99, 213, 0.15);
+}
+
+/* 6. SYSTEM WATERMARKS & ALERTS */
+.watermark-restricted::before {
+  content: "AZAIREN MEDIA GROUP // NDA RESTRICTED INTERNAL DATA";
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: rgba(161, 161, 170, 0.05); /* Barely visible institutional stamp */
+  letter-spacing: 0.15em;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* 7. HYPER-MINIMAL SYSTEM SCROLLBARS */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-sterile);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
