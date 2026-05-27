@@ -6,6 +6,7 @@
     <title>Azairen | Temporal Verification Portal</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="database.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
     <style>
@@ -148,7 +149,48 @@
         window.onload = function() {
           switchMode('login');
         };
+
+        // INTERCEPT SUBMISSION & CONNECT TO DATABASE
+  document.getElementById('auth-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const emailInput = document.getElementById('user-email').value;
+    const buttonText = document.getElementById('button-text');
+    
+    // Aesthetic delay terms
+    buttonText.innerText = currentMode === 'login' ? 'Syncing_Metadata...' : 'Anchoring_Iteration...';
+    buttonText.classList.add('animate-pulse', 'text-blue-400');
+
+    try {
+      // 1. Check if user already exists in IndexedDB
+      let existingProfile = await getUserProfile(emailInput);
+      
+      // 2. If they don't exist (or it's a sign-up), initialize a flat corporate schema
+      if (!existingProfile) {
+        existingProfile = {
+          email: emailInput,
+          alias: "User_" + Math.floor(100 + Math.random() * 900), // Random iteration ID
+          affinity: "Observer Node",
+          anchorEra: "Baseline-Current",
+          notes: ""
+        };
+        await saveUserProfile(existingProfile);
+      }
+
+      // 3. Keep tracking the current logged-in user session email in localStorage
+      localStorage.setItem('azairen_user_node', emailInput);
+      
+      setTimeout(() => {
+        window.location.href = 'profile_preliminary.html';
+      }, 1200);
+
+    } catch (err) {
+      console.error("Database connection failure:", err);
+      buttonText.innerText = "ERR_DB_SYNC_FAILED";
+    }
+  });
       </script>
+      
 
   </body>
 </html>
