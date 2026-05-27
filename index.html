@@ -7,7 +7,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css">
 
     <style>
       body {
@@ -25,27 +24,30 @@
 
   <body class="bg-black text-zinc-300 h-full w-full relative grid-noise overflow-hidden select-none">
 
-    <!-- TOP TELEMETRY STRIP -->
-    <header class="w-full bg-zinc-950 border-b border-blue-950 text-xs px-4 py-2 flex justify-between items-center tracking-wider font-mono z-50 relative">
+    <header class="w-full bg-zinc-950 border-b border-blue-950 text-xs px-4 py-2 flex justify-between items-center tracking-wider z-50 relative">
       <div class="flex items-center gap-3">
         <span class="inline-block w-2 h-2 bg-red-600 animate-pulse"></span>
         <span class="font-bold text-blue-400 tracking-widest text-sm">AZAIREN://</span>
         <span class="text-zinc-600 hidden sm:inline">CORE_INIT_OK</span>
       </div>
-      <div id="system-status-ticker" class="text-red-500 font-bold tracking-widest text-[11px]">
-        [SYSTEM_STATE: REBUILDING_V2.0]
+      
+      <div class="flex items-center gap-4">
+        <div id="system-status-ticker" class="text-red-500 font-bold tracking-widest text-[11px] hidden xs:block">
+          [SYSTEM_STATE: REBUILDING_V2.0]
+        </div>
+        <a href="portal_temporal.html" class="bg-blue-950/30 hover:bg-blue-900/40 border border-blue-800/60 text-blue-400 hover:text-blue-300 px-2 py-0.5 rounded text-[10px] uppercase tracking-widest transition-colors font-bold">
+          [AUTH_LOGIN]
+        </a>
       </div>
-      <div class="text-[10px] text-zinc-600 font-mono">
-        SYS_TIME: 2026.05.21_UTC
+
+      <div class="text-[10px] text-zinc-600">
+        SYS_TIME: 2026.05.27_UTC
       </div>
     </header>
 
-    <!-- MAIN CONSOLE CONTAINER (Locks perfectly to viewport) -->
-    <div class="h-[calc(100vh-2.5rem)] w-full p-4 flex flex-col md:flex-row gap-4 relative box-border">
+    <div class="h-[calc(100vh-2.5rem)] w-full p-4 flex flex-col md:flex-row gap-4 relative box-border overflow-hidden">
       
-      <!-- LEFT MODULE: ARCHIVE INDEX & PATHS -->
-      <aside class="w-full md:w-80 border border-blue-900/60 bg-zinc-950/80 p-4 flex flex-col justify-between relative shadow-[0_0_15px_rgba(29,78,216,0.05)]">
-        <!-- Structural corner accents to feel manufactured -->
+      <aside class="w-full md:w-80 border border-blue-900/60 bg-zinc-950/80 p-4 flex flex-col justify-between relative shadow-[0_0_15px_rgba(29,78,216,0.05)] shrink-0">
         <div class="absolute -top-[1px] -left-[1px] w-2 h-2 bg-red-600"></div>
         <div class="absolute -bottom-[1px] -right-[1px] w-2 h-2 bg-blue-600"></div>
 
@@ -56,36 +58,34 @@
             <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Select a destination link to mount the corresponding narrative or project directory segment into the sub-buffer.</p>
           </div>
 
-          <!-- Refactored Deconstructed Directory Paths -->
-          <nav class="space-y-2 font-mono">
-            <a href="/index.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
+          <nav class="space-y-2 text-xs">
+            <a href="index.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
               <span class="text-blue-400 text-sm group-hover:text-white"><span class="text-xs text-zinc-600 mr-2">00//</span>ROOT</span>
               <span class="text-[10px] text-zinc-600 group-hover:text-blue-400">ONLINE</span>
             </a>
             
-            <a href="/universes.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
+            <a href="stream_matrix.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
               <span class="text-blue-400 text-sm group-hover:text-white"><span class="text-xs text-zinc-600 mr-2">01//</span>UNV_CORE</span>
               <span class="text-[10px] text-zinc-600 group-hover:text-blue-400">READY</span>
             </a>
 
-            <a href="/mithbusters.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
+            <a href="Mith_Logs.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
               <span class="text-blue-400 text-sm group-hover:text-white"><span class="text-xs text-zinc-600 mr-2">02//</span>MITH_LOGS</span>
               <span class="text-[10px] text-red-500 font-bold group-hover:animate-pulse">3_UNREAD</span>
             </a>
 
-            <a href="/projects.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
+            <a href="profile_preliminary.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
               <span class="text-blue-400 text-sm group-hover:text-white"><span class="text-xs text-zinc-600 mr-2">03//</span>PROJ_OUT</span>
               <span class="text-[10px] text-zinc-600 group-hover:text-blue-400">RESTRICTED</span>
             </a>
 
-            <a href="/contact.html" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
+            <a href="#" class="group flex items-center justify-between p-2 border border-blue-950 bg-black hover:border-blue-500 transition-all duration-150">
               <span class="text-blue-400 text-sm group-hover:text-white"><span class="text-xs text-zinc-600 mr-2">04//</span>TRANSCEIVER</span>
               <span class="text-[10px] text-blue-500 group-hover:text-white">BEACON_ON</span>
             </a>
           </nav>
         </div>
 
-        <!-- Terminal Diagnostic Box -->
         <div class="mt-6 border-t border-blue-950 pt-4">
           <div class="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Local_Decryption_Anchor:</div>
           <div class="flex gap-2">
@@ -103,58 +103,50 @@
         </div>
       </aside>
 
-<!-- ==========================================================================
-     AZAIREN INTERFACE GATEWAY: SYNC-AWAKEN MODULE
-     ========================================================================== -->
-     <div class="max-w-xs w-full bg-[#18191c]/40 border border-zinc-900 rounded p-4 font-mono-data backdrop-blur-sm mx-auto text-center">
-  
-      <!-- Diagnostic Header Tracking -->
-      <div class="flex justify-between items-center text-[9px] text-zinc-600 border-b border-zinc-900 pb-2 mb-3 uppercase tracking-widest">
-        <span>Node_Gateway // Initializing</span>
-        <span id="gateway-timer">0.00s</span>
-      </div>
-    
-      <!-- Terminal Feedback Field -->
-      <div class="h-12 flex items-center justify-center text-center px-2 mb-3">
-        <p id="gateway-log" class="text-[11px] text-zinc-500 uppercase tracking-wide leading-relaxed">
-          System dormant. Awaiting structural ping...
-        </p>
-      </div>
-    
-      <!-- The Button (Starts locked/hidden, awakens via script) -->
-      <div class="relative h-10 w-full overflow-hidden rounded">
-        <a href="portal_temporal.html" id="gateway-action-btn" 
-           class="absolute inset-0 flex items-center justify-center bg-zinc-950 text-zinc-600 border border-zinc-800 text-[11px] uppercase tracking-widest font-medium opacity-30 pointer-events-none transition-all duration-700 ease-out">
-          <span class="flex items-center gap-2">
-            <!-- Tiny processing indicator -->
-            <span id="gateway-status-dot" class="w-1 h-1 bg-zinc-700 rounded-full"></span>
-            <span id="gateway-btn-text">Access_Restricted</span>
-          </span>
-        </a>
-      </div>
-    </div>
+      <aside class="w-full md:w-80 border border-blue-900/60 bg-zinc-950/80 p-4 flex flex-col justify-between relative shadow-[0_0_15px_rgba(29,78,216,0.05)] shrink-0">
+        <div class="absolute -top-[1px] -left-[1px] w-2 h-2 bg-blue-600"></div>
+        <div class="absolute -bottom-[1px] -right-[1px] w-2 h-2 bg-red-600"></div>
 
+        <div class="space-y-4 w-full">
+          <div class="flex justify-between items-center text-[9px] text-zinc-600 border-b border-zinc-900/60 pb-2 uppercase tracking-widest">
+            <span>Login Gateway Node</span>
+            <span id="gateway-timer">0.00s</span>
+          </div>
+        
+          <div class="h-16 flex items-center justify-start text-left px-1">
+            <p id="gateway-log" class="text-[11px] text-zinc-500 uppercase tracking-wide leading-relaxed">
+              System dormant. Awaiting structural ping...
+            </p>
+          </div>
+        </div>
+      
+        <div class="relative h-10 w-full overflow-hidden rounded mt-auto">
+          <a href="portal_temporal.html" id="gateway-action-btn" 
+             class="absolute inset-0 flex items-center justify-center bg-zinc-950 text-zinc-600 border border-zinc-800 text-[11px] uppercase tracking-widest font-medium opacity-30 pointer-events-none transition-all duration-700 ease-out">
+            <span class="flex items-center gap-2">
+              <span id="gateway-status-dot" class="w-1.5 h-1.5 bg-zinc-700 rounded-full"></span>
+              <span id="gateway-btn-text">Access_Restricted</span>
+            </span>
+          </a>
+        </div>
+      </aside>
 
-      <!-- RIGHT MODULE: THE CORE COBALT INTEL GRID -->
       <main class="flex-1 flex flex-col justify-between border border-blue-900/60 bg-zinc-950/40 p-6 overflow-y-auto relative">
         <div class="absolute -top-[1px] -right-[1px] w-2 h-2 bg-blue-600"></div>
         <div class="absolute -bottom-[1px] -left-[1px] w-2 h-2 bg-red-600"></div>
 
         <div class="max-w-3xl space-y-8">
-          <!-- Live Assembly Header -->
           <div class="border-b border-blue-950 pb-4">
             <span class="text-xs text-red-500 font-bold tracking-widest block mb-1">AUTOMATED_INTRUSION_ALERT</span>
             <p class="text-lg md:text-xl text-zinc-200 leading-relaxed font-light">
-              This terminal has intercepted active memory blocks originating from <span class="text-blue-400 font-mono font-semibold">The Library of Failed Versions</span>. The code blocks listed below are actively rebuilding local arrays.
+              This terminal has intercepted active memory blocks originating from <span class="text-blue-400 font-semibold">The Library of Failed Versions</span>. The code blocks listed below are actively rebuilding local arrays.
             </p>
           </div>
 
-          <!-- Electric Content Nodes -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             
-            <!-- Block 1 -->
             <div class="border border-blue-950 bg-black p-4 space-y-2 hover:border-blue-900/80 transition-colors">
-              <div class="flex justify-between items-center text-xs text-blue-500 font-mono">
+              <div class="flex justify-between items-center text-xs text-blue-500">
                 <span>[CASE_FILE_STREAM]</span>
                 <span class="text-red-500 font-bold">● LIVE</span>
               </div>
@@ -163,13 +155,12 @@
                 Core data traces uncovered within regional system infrastructure suggest direct presence of alternate subject arriving. File remains heavily encrypted.
               </p>
               <div class="pt-2">
-                <a href="/universes/cases/case-001.html" class="text-xs text-red-500 hover:text-red-400 font-mono tracking-wider hover:underline">ACCESS_LOG_FILE →</a>
+                <a href="#" class="text-xs text-red-500 hover:text-red-400 tracking-wider hover:underline">ACCESS_LOG_FILE →</a>
               </div>
             </div>
 
-            <!-- Block 2 -->
             <div class="border border-blue-950 bg-black p-4 space-y-2 hover:border-blue-900/80 transition-colors">
-              <div class="flex justify-between items-center text-xs text-blue-500 font-mono">
+              <div class="flex justify-between items-center text-xs text-blue-500">
                 <span>[NARRATIVE_NODE]</span>
                 <span class="text-zinc-600">ARCHIVED</span>
               </div>
@@ -178,14 +169,13 @@
                 Comprehensive evaluation parameters regarding structural stability across localized shifts. The red panda vector remains anomalous.
               </p>
               <div class="pt-2">
-                <span class="text-xs text-zinc-600 font-mono tracking-wider">[SEGMENT_LINK_LOCKED]</span>
+                <span class="text-xs text-zinc-600 tracking-wider">[SEGMENT_LINK_LOCKED]</span>
               </div>
             </div>
 
           </div>
 
-          <!-- Dynamic Raw System Warning banner -->
-          <div class="border border-red-950 bg-red-950/10 p-4 font-mono">
+          <div class="border border-red-950 bg-red-950/10 p-4">
             <div class="text-xs font-bold text-red-500 tracking-widest mb-1">CRITICAL_EXCEPTION_LOG:</div>
             <p class="text-[11px] text-zinc-400 leading-relaxed">
               If local storage variables drop out of correlation parameters, the connection root will reset automatically. Treat all found documents as temporary. Do not attempt direct trace back to local subnet.
@@ -193,8 +183,7 @@
           </div>
         </div>
 
-        <!-- FOUND SYSTEMS FOOTER (No corporate branding) -->
-        <footer class="mt-8 border-t border-blue-950 pt-4 flex flex-col sm:flex-row justify-between text-[10px] text-zinc-600 font-mono uppercase tracking-widest gap-2">
+        <footer class="mt-8 border-t border-blue-950 pt-4 flex flex-col sm:flex-row justify-between text-[10px] text-zinc-600 uppercase tracking-widest gap-2">
           <div>PROCESS_ID: AZR_NODE_ROOT_4112</div>
           <div>STATUS: COMPILING_LOCAL_MATRICES</div>
         </footer>
@@ -202,32 +191,50 @@
 
     </div>
 
-    <!-- LIVE ASSEMBLY INTERACTION LOGIC -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener('DOMContentLoaded', () => {
         const input = document.getElementById('anchor-input');
         const btn = document.getElementById('anchor-btn');
         const feedback = document.getElementById('anchor-feedback');
         const ticker = document.getElementById('system-status-ticker');
 
-        // Check if passcode anchor state is already verified in browser
-        if(localStorage.getItem('watcher_anchor') === 'LEVEL_02') {
+        const TOKEN_MATRIX = {
+          'SYVN': { file: 'syvn.html', level: 'LEVEL_02', msg: 'CORE_ANCHOR_SYNC_OK' },
+          'FSRV': { file: 'fissure-verse.html', level: 'LEVEL_CORE', msg: 'STREAM_INDEX_MOUNTED' },
+          'COLB': { file: 'universes/characters/colby.html', level: 'SUBJ_01_OPEN', msg: 'COLBY_VCTR_ACTIVE' },
+          'ALTC': { file: 'universes/characters/alt-colby.html', level: 'SUBJ_02_WARN', msg: 'ALT_COLB_TRC_UNLOCKED' },
+          'FAIL': { file: 'the-day-the-library-failed.html', level: 'EVENT_ZERO', msg: 'BOTTLENECK_DATA_LOADED' }
+        };
+
+        const existingAnchor = localStorage.getItem('watcher_anchor');
+        if (existingAnchor === 'LEVEL_02') {
           feedback.innerText = "LOG_STATE: RECONSTRUCTION_ANCHOR_ACTIVE";
           feedback.className = "text-[10px] text-blue-400 font-bold";
-          ticker.innerText = "[SYSTEM_STATE: SYNCHRONIZED_LEVEL_02]";
-          ticker.className = "text-blue-400 font-bold tracking-widest text-[11px]";
+          if (ticker) {
+            ticker.innerText = "[SYSTEM_STATE: SYNCHRONIZED_LEVEL_02]";
+            ticker.className = "text-blue-400 font-bold tracking-widest text-[11px]";
+          }
         }
 
         btn.addEventListener('click', () => {
-          const val = input.value.trim().toUpperCase();
+          const token = input.value.trim().toUpperCase();
           
-          if(val === 'SYVN') {
-            localStorage.setItem('watcher_anchor', 'LEVEL_02');
-            feedback.innerText = "LOG_STATE: ANCHOR_SYNCH_SUCCESSFUL";
+          if (TOKEN_MATRIX[token]) {
+            const target = TOKEN_MATRIX[token];
+            localStorage.setItem('watcher_anchor', target.level);
+            
+            feedback.innerText = `LOG_STATE: ${target.msg}`;
             feedback.className = "text-[10px] text-blue-400 font-bold animate-pulse";
-            ticker.innerText = "[SYSTEM_STATE: SYNCHRONIZED_LEVEL_02]";
-            ticker.className = "text-blue-400 font-bold tracking-widest text-[11px]";
-            input.value = '';
+            
+            if (token === 'SYVN' && ticker) {
+              ticker.innerText = "[SYSTEM_STATE: SYNCHRONIZED_LEVEL_02]";
+              ticker.className = "text-blue-400 font-bold tracking-widest text-[11px]";
+            }
+            
+            setTimeout(() => {
+              window.location.href = target.file;
+            }, 900);
+            
           } else {
             feedback.innerText = "LOG_STATE: INVALID_TOKEN_REJECTED";
             feedback.className = "text-[10px] text-red-500 font-bold";
@@ -237,99 +244,41 @@
             }, 2000);
           }
         });
-      });
 
-      document.addEventListener('DOMContentLoaded', () => {
-  const input = document.getElementById('anchor-input');
-  const btn = document.getElementById('anchor-btn');
-  const feedback = document.getElementById('anchor-feedback');
+        // Gateway Boot Animation Routine
+        const logField = document.getElementById('gateway-log');
+        const actionBtn = document.getElementById('gateway-action-btn');
+        const btnText = document.getElementById('gateway-btn-text');
+        const statusDot = document.getElementById('gateway-status-dot');
+        const timerField = document.getElementById('gateway-timer');
 
-  // Unified Token Processing Dictionary (Web Only)
-  const TOKEN_MATRIX = {
-    'SYVN': { file: 'syvn.html', level: 'LEVEL_02', msg: 'CORE_ANCHOR_SYNC_OK' },
-    'FSRV': { file: 'fissure-verse.html', level: 'LEVEL_CORE', msg: 'STREAM_INDEX_MOUNTED' },
-    'COLB': { file: 'universes/characters/colby.html', level: 'SUBJ_01_OPEN', msg: 'COLBY_VCTR_ACTIVE' },
-    'ALTC': { file: 'universes/characters/alt-colby.html', level: 'SUBJ_02_WARN', msg: 'ALT_COLB_TRC_UNLOCKED' },
-    'FAIL': { file: 'the-day-the-library-failed.html', level: 'EVENT_ZERO', msg: 'BOTTLENECK_DATA_LOADED' }
-  };
+        if (logField && actionBtn) {
+          const syncSteps = [
+            { delay: 600,  log: "Locating anchor coordinates...", time: "0.41s" },
+            { delay: 1400, log: "Querying Library of Failed Versions...", time: "1.02s" },
+            { delay: 2200, log: "Establishing baseline-current handshake...", time: "1.89s" },
+            { delay: 3000, log: "Node_Gateway // Initializing", time: "2.50s" }
+          ];
 
-  btn.addEventListener('click', () => {
-    const token = input.value.trim().toUpperCase();
-    
-    if (TOKEN_MATRIX[token]) {
-      const target = TOKEN_MATRIX[token];
-      
-      // 1. Commit the found security clearance to local storage
-      localStorage.setItem('watcher_anchor', target.level);
-      
-      // 2. Flash tactical validation response
-      feedback.innerText = `LOG_STATE: ${target.msg}`;
-      feedback.className = "text-[10px] text-blue-400 font-bold animate-pulse";
-      
-      // 3. Force system warp to the corresponding hidden page after short delay
-      setTimeout(() => {
-        window.location.href = target.file;
-      }, 900);
-      
-    } else {
-      // Error handling for dead keys
-      feedback.innerText = "LOG_STATE: INVALID_TOKEN_REJECTED";
-      feedback.className = "text-[10px] text-red-500 font-bold";
-      setTimeout(() => {
-        feedback.innerText = "LOG_STATE: SECURE";
-        feedback.className = "text-[10px] text-zinc-600";
-      }, 2000);
-    }
-  });
-});
+          syncSteps.forEach((step) => {
+            setTimeout(() => {
+              logField.innerText = step.log;
+              if (timerField) timerField.innerText = step.time;
+            }, step.delay);
+          });
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const logField = document.getElementById('gateway-log');
-    const actionBtn = document.getElementById('gateway-action-btn');
-    const btnText = document.getElementById('gateway-btn-text');
-    const statusDot = document.getElementById('gateway-status-dot');
-    const timerField = document.getElementById('gateway-timer');
-
-    if (!logField || !actionBtn) return;
-
-    // Progression of background system checks
-    const syncSteps = [
-      { delay: 600,  log: "Locating anchor coordinates...", time: "0.41s" },
-      { delay: 1400, log: "Querying Library of Failed Versions...", time: "1.02s" },
-      { delay: 2200, log: "Establishing baseline-current handshake...", time: "1.89s" },
-      { delay: 3000, log: "Sync complete. Interface authority cleared.", time: "2.50s" }
-    ];
-
-    // Cycle through system messages
-    syncSteps.forEach((step) => {
-      setTimeout(() => {
-        logField.innerText = step.log;
-        timerField.innerText = step.time;
-        
-        // Slight cosmetic accent change on step 3
-        if (step.time === "1.89s") {
-          logField.classList.remove('text-zinc-500');
-          logField.classList.add('text-zinc-400');
+          setTimeout(() => {
+            actionBtn.classList.remove('opacity-30', 'pointer-events-none', 'bg-zinc-950', 'text-zinc-600', 'border-zinc-800');
+            actionBtn.classList.add('opacity-100', 'bg-blue-950/20', 'text-blue-400', 'border-blue-900/50', 'hover:bg-blue-900/30', 'hover:text-blue-300', 'hover:border-blue-500');
+            actionBtn.style.pointerEvents = 'auto'; 
+            if (btnText) btnText.innerText = "Initialize_Entry_Sequence";
+            if (statusDot) {
+              statusDot.classList.remove('bg-zinc-700');
+              statusDot.classList.add('bg-blue-500', 'animate-pulse');
+            }
+          }, 3200);
         }
-      }, step.delay);
-    });
-
-    // Final Stage: Awaken the control node
-    setTimeout(() => {
-      // 1. Swap styling states to make it high-contrast and awake
-      actionBtn.classList.remove('opacity-30', 'pointer-events-none', 'bg-zinc-950', 'text-zinc-600', 'border-zinc-800');
-      actionBtn.classList.add('opacity-100', 'bg-blue-950/20', 'text-blue-400', 'border-blue-900/50', 'hover:bg-blue-900/30', 'hover:text-blue-300', 'hover:border-blue-500');
-      
-      // 2. Flip functional properties and internal labels
-      actionBtn.style.pointerEvents = 'auto'; 
-      btnText.innerText = "Initialize_Entry_Sequence";
-      
-      // 3. Turn processing dot into an active beacon
-      statusDot.classList.remove('bg-zinc-700');
-      statusDot.classList.add('bg-blue-500', 'animate-pulse');
-    }, 3200);
-  });
-
+      });
     </script>
   </body>
 </html>

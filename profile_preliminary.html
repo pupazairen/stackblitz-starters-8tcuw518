@@ -177,4 +177,32 @@
     <script>
       let activeUserEmail = "";
 
-      window.addEventListener('DOMContentLoaded'), async
+      // Corrected structural event handler binding
+      window.addEventListener('DOMContentLoaded', async () => {
+        activeUserEmail = localStorage.getItem('azairen_user_node');
+        const emailDisplay = document.getElementById('profile-email');
+        
+        // Eject traveler back to authentication terminal if session anchor is lost
+        if (!activeUserEmail) {
+          window.location.href = 'portal_temporal.html';
+          return;
+        }
+
+        if (emailDisplay) emailDisplay.innerText = activeUserEmail;
+
+        try {
+          // Await database query initialized via database.js
+          const profile = await getUserProfile(activeUserEmail);
+          
+          if (profile) {
+            document.getElementById('input-alias').value = profile.alias || '';
+            document.getElementById('input-affinity').value = profile.affinity || '';
+            document.getElementById('input-anchor').value = profile.anchorEra || '';
+            document.getElementById('input-notes').value = profile.notes || '';
+            
+            // Map live database states directly to sidebar elements
+            document.getElementById('session-alias-sidebar').innerText = profile.alias || 'User_Iter_094';
+            document.getElementById('session-alias-display').innerText = profile.alias || 'UNKNOWN';
+            document.getElementById('sidebar-affinity').innerText = profile.affinity || 'Observer Node';
+            document.getElementById('sidebar-anchor').innerText = profile.anchorEra || 'Baseline-Current';
+          }
