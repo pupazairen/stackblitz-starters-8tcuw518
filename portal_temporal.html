@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azairen | Temporal Verification Portal</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <style>
+      .font-sans-clean { font-family: 'Inter', sans-serif; }
+      .font-mono-data { font-family: 'JetBrains Mono', monospace; }
+      
+      /* Active state highlights for the mode selector */
+      .active-tab {
+        background-color: #18191c;
+        border-color: #27272a #27272a transparent #27272a;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#121315] text-zinc-400 font-sans-clean min-h-full flex flex-col antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- BRIEF FORMAL HEADER -->
+    <header class="w-full bg-[#18191c] border-b border-zinc-800 px-6 py-4 flex justify-between items-center shrink-0">
+      <a href="/../../index.html" class="text-white font-semibold tracking-wide uppercase text-sm flex items-center gap-2">
+        <span class="w-2 h-2 bg-blue-600 inline-block"></span>
+        Azairen
+      </a>
+      <span class="text-[10px] font-mono-data text-zinc-600 uppercase tracking-widest">Node: LOFV_GATEWAY_V2</span>
+    </header>
+
+    <!-- CORE AUTH CONTAINER -->
+    <main class="flex-1 flex flex-col items-center justify-center p-4 md:p-8">
+      
+      <div class="max-w-md w-full space-y-6">
+        
+        <!-- INTRO DUCTION META -->
+        <div class="text-center space-y-1.5">
+          <span class="text-[10px] font-mono-data text-blue-500 font-semibold tracking-widest uppercase">Identity Synchronization</span>
+          <h1 class="text-xl font-bold text-white tracking-tight">Access Chronology Index</h1>
+          <p class="text-xs text-zinc-500 max-w-xs mx-auto leading-relaxed">
+            Initialize an internal registration profile or verify existing metadata anchors to sync with system archives.
+          </p>
+        </div>
+
+        <!-- STYLED INTERFACE NODE -->
+        <div class="bg-[#18191c] border border-zinc-800 rounded-lg overflow-hidden shadow-2xl">
+          
+          <!-- MODE SELECTOR TABS -->
+          <div class="flex border-b border-zinc-800 bg-zinc-950/40 font-mono-data text-[11px] uppercase tracking-wider">
+            <button id="tab-login" onclick="switchMode('login')" class="flex-1 py-3 text-center border-b border-transparent text-zinc-500 hover:text-zinc-300 transition font-medium">
+              [ 01_Verify_Existing ]
+            </button>
+            <button id="tab-signup" onclick="switchMode('signup')" class="flex-1 py-3 text-center border-b border-transparent text-zinc-500 hover:text-zinc-300 transition font-medium">
+              [ 02_Anchor_New_Iter ]
+            </button>
+          </div>
+
+          <!-- Locate your <form> tag and ensure it looks like this -->
+<form id="auth-form" class="p-6 space-y-4">
+  
+    <div class="space-y-1.5">
+      <label class="block text-[10px] font-mono-data text-zinc-500 uppercase tracking-wider">Designated Identity Key (Email)</label>
+      <!-- ADDED id="user-email" -->
+      <input type="email" id="user-email" required placeholder="identity@node.azairen.com" 
+             class="w-full bg-zinc-950 border border-zinc-800 text-white font-mono-data text-xs px-3 py-2.5 rounded outline-none focus:border-blue-600 transition" />
+    </div>
+  
+    <div class="space-y-1.5">
+      <label class="block text-[10px] font-mono-data text-zinc-500 uppercase tracking-wider">Security Cipher Sequence (Password)</label>
+      <input type="password" required placeholder="••••••••••••" 
+             class="w-full bg-zinc-950 border border-zinc-800 text-white font-mono-data text-xs px-3 py-2.5 rounded outline-none focus:border-blue-600 transition" />
+    </div>
+  
+    <!-- ... (keep your optional signup-elements div exactly the same here) ... -->
+  
+    <button type="submit" class="w-full bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-800 font-mono-data text-xs py-2.5 rounded transition uppercase tracking-widest font-medium pt-3">
+      <span id="button-text">Execute_Sync</span>
+    </button>
+  </form>
+        </div>
+
+        <!-- SYSTEM STAMP FOOTNOTE -->
+        <div class="text-center font-mono-data text-[9px] text-zinc-600 uppercase tracking-widest">
+          SYSTEM_TIME: 2026.05.26 // ERR: SEQUENCE_NON_LINEAR
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- SYSTEM FOOTER -->
+    <footer class="w-full bg-[#18191c] border-t border-zinc-800 text-[10px] font-mono-data px-6 py-3 text-center text-zinc-600 tracking-wider shrink-0 uppercase">
+      © 2026 Azairen // Access Protocol Restricted
+    </footer>
+
+    <!-- INTERFACE TRANSITION LOGIC -->
+    <script>
+        let currentMode = 'login';
+      
+        function switchMode(mode) {
+          currentMode = mode;
+          const loginTab = document.getElementById('tab-login');
+          const signupTab = document.getElementById('tab-signup');
+          const signupElements = document.getElementById('signup-elements');
+          const buttonText = document.getElementById('button-text');
+      
+          if (mode === 'signup') {
+            signupTab.classList.add('text-white', 'border-b-blue-600');
+            signupTab.classList.remove('text-zinc-500');
+            loginTab.classList.remove('text-white', 'border-b-blue-600');
+            loginTab.classList.add('text-zinc-500');
+            signupElements.classList.remove('hidden');
+            buttonText.innerText = 'Establish_New_Anchor';
+          } else {
+            loginTab.classList.add('text-white', 'border-b-blue-600');
+            loginTab.classList.remove('text-zinc-500');
+            signupTab.classList.remove('text-white', 'border-b-blue-600');
+            signupTab.classList.add('text-zinc-500');
+            signupElements.classList.add('hidden');
+            buttonText.innerText = 'Execute_Sync';
+          }
+        }
+      
+        // INTERCEPT SUBMISSION & CONNECT TO PROFILE
+        document.getElementById('auth-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const emailInput = document.getElementById('user-email').value;
+          const buttonText = document.getElementById('button-text');
+          
+          // Save the identity key temporarily so the profile page can fetch it
+          localStorage.setItem('azairen_user_node', emailInput);
+          
+          // Aesthetic System delay to simulate timeline syncing
+          buttonText.innerText = currentMode === 'login' ? 'Syncing_Metadata...' : 'Anchoring_Iteration...';
+          buttonText.classList.add('animate-pulse', 'text-blue-400');
+          
+          setTimeout(() => {
+            // Redirects to your profile file in the same directory folder
+            window.location.href = 'profile_preliminary.html';
+          }, 1200);
+        });
+      
+        window.onload = function() {
+          switchMode('login');
+        };
+      </script>
+
+  </body>
+</html>

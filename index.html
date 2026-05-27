@@ -103,6 +103,38 @@
         </div>
       </aside>
 
+<!-- ==========================================================================
+     AZAIREN INTERFACE GATEWAY: SYNC-AWAKEN MODULE
+     ========================================================================== -->
+     <div class="max-w-xs w-full bg-[#18191c]/40 border border-zinc-900 rounded p-4 font-mono-data backdrop-blur-sm mx-auto text-center">
+  
+      <!-- Diagnostic Header Tracking -->
+      <div class="flex justify-between items-center text-[9px] text-zinc-600 border-b border-zinc-900 pb-2 mb-3 uppercase tracking-widest">
+        <span>Node_Gateway // Initializing</span>
+        <span id="gateway-timer">0.00s</span>
+      </div>
+    
+      <!-- Terminal Feedback Field -->
+      <div class="h-12 flex items-center justify-center text-center px-2 mb-3">
+        <p id="gateway-log" class="text-[11px] text-zinc-500 uppercase tracking-wide leading-relaxed">
+          System dormant. Awaiting structural ping...
+        </p>
+      </div>
+    
+      <!-- The Button (Starts locked/hidden, awakens via script) -->
+      <div class="relative h-10 w-full overflow-hidden rounded">
+        <a href="portal_temporal.html" id="gateway-action-btn" 
+           class="absolute inset-0 flex items-center justify-center bg-zinc-950 text-zinc-600 border border-zinc-800 text-[11px] uppercase tracking-widest font-medium opacity-30 pointer-events-none transition-all duration-700 ease-out">
+          <span class="flex items-center gap-2">
+            <!-- Tiny processing indicator -->
+            <span id="gateway-status-dot" class="w-1 h-1 bg-zinc-700 rounded-full"></span>
+            <span id="gateway-btn-text">Access_Restricted</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+
       <!-- RIGHT MODULE: THE CORE COBALT INTEL GRID -->
       <main class="flex-1 flex flex-col justify-between border border-blue-900/60 bg-zinc-950/40 p-6 overflow-y-auto relative">
         <div class="absolute -top-[1px] -right-[1px] w-2 h-2 bg-blue-600"></div>
@@ -250,6 +282,54 @@
     }
   });
 });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const logField = document.getElementById('gateway-log');
+    const actionBtn = document.getElementById('gateway-action-btn');
+    const btnText = document.getElementById('gateway-btn-text');
+    const statusDot = document.getElementById('gateway-status-dot');
+    const timerField = document.getElementById('gateway-timer');
+
+    if (!logField || !actionBtn) return;
+
+    // Progression of background system checks
+    const syncSteps = [
+      { delay: 600,  log: "Locating anchor coordinates...", time: "0.41s" },
+      { delay: 1400, log: "Querying Library of Failed Versions...", time: "1.02s" },
+      { delay: 2200, log: "Establishing baseline-current handshake...", time: "1.89s" },
+      { delay: 3000, log: "Sync complete. Interface authority cleared.", time: "2.50s" }
+    ];
+
+    // Cycle through system messages
+    syncSteps.forEach((step) => {
+      setTimeout(() => {
+        logField.innerText = step.log;
+        timerField.innerText = step.time;
+        
+        // Slight cosmetic accent change on step 3
+        if (step.time === "1.89s") {
+          logField.classList.remove('text-zinc-500');
+          logField.classList.add('text-zinc-400');
+        }
+      }, step.delay);
+    });
+
+    // Final Stage: Awaken the control node
+    setTimeout(() => {
+      // 1. Swap styling states to make it high-contrast and awake
+      actionBtn.classList.remove('opacity-30', 'pointer-events-none', 'bg-zinc-950', 'text-zinc-600', 'border-zinc-800');
+      actionBtn.classList.add('opacity-100', 'bg-blue-950/20', 'text-blue-400', 'border-blue-900/50', 'hover:bg-blue-900/30', 'hover:text-blue-300', 'hover:border-blue-500');
+      
+      // 2. Flip functional properties and internal labels
+      actionBtn.style.pointerEvents = 'auto'; 
+      btnText.innerText = "Initialize_Entry_Sequence";
+      
+      // 3. Turn processing dot into an active beacon
+      statusDot.classList.remove('bg-zinc-700');
+      statusDot.classList.add('bg-blue-500', 'animate-pulse');
+    }, 3200);
+  });
+
     </script>
   </body>
 </html>
