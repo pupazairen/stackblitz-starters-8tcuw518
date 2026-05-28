@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#090b08]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOFV://LAB_LEVELS_DIRECTORY</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lofvmil: {
+                700: '#3f4b35',
+                800: '#2b3324',
+                900: '#151b10',
+                950: '#090b08',
+              },
+              lofvtan: {
+                300: '#e5e0da',
+                400: '#cdc5b9',
+                600: '#918673',
+                800: '#4a4337',
+              },
+              lofvgold: {
+                400: '#fbbf24',
+                500: '#d97706',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        font-family: 'Share Tech Mono', monospace;
+      }
+      /* Lab Matrix Scan Grid Overlay */
+      .lab-grid {
+        background-size: 16px 16px;
+        background-image: 
+          linear-gradient(to right, rgba(63, 75, 53, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(63, 75, 53, 0.04) 1px, transparent 1px);
+      }
+      .scanlines {
+        background: linear-gradient(rgba(21, 27, 16, 0) 50%, rgba(9, 11, 8, 0.4) 50%);
+        background-size: 100% 4px;
+      }
+    </style>
+  </head>
+
+  <body class="h-full w-full bg-lofvmil-950 text-lofvtan-400 p-4 flex flex-col gap-4 overflow-y-auto uppercase tracking-wider text-xs lab-grid relative selection:bg-lofvgold-500 selection:text-black antialiased">
+    <div class="absolute inset-0 pointer-events-none scanlines z-50"></div>
+
+    <header class="w-full bg-black border border-lofvmil-800 p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 z-40 relative">
+      <div class="space-y-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-lofvgold-500 animate-pulse rounded-sm"></span>
+          <span class="text-lofvgold-400 font-bold tracking-widest text-sm">LOFV://LAB_SECTOR_INDEX</span>
+        </div>
+        <div class="text-zinc-600 text-[11px]">DIRECTORY_PATH: ROOT_DEVICES//CHRONO_CONTAINMENT_LABS</div>
+      </div>
+
+      <div class="flex items-center gap-6 text-[11px] font-bold border-t md:border-t-0 border-lofvmil-800 pt-3 md:pt-0 w-full md:w-auto">
+        <div><span class="text-lofvmil-700">LAB_SYSTEM_METRIC:</span> <span class="text-lofvgold-400">12_STAGES_LOADED</span></div>
+        <a href="network_root.html" class="text-blue-500 hover:text-blue-400 ml-auto md:ml-0 transition-colors">
+          [EXIT_TO_AZAIREN_ROOT]
+        </a>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 items-start z-40 relative">
+      
+      <aside class="lg:col-span-1 bg-black/60 border border-lofvmil-800 p-4 space-y-4">
+        <div class="text-lofvgold-400 font-bold border-b border-lofvmil-800 pb-2 text-[11px]">
+          // ARCHIVE_INSTRUCTIONS
+        </div>
+        <p class="text-lofvtan-600 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+          The containment levels listed here track the chronological descent of timeline variants into the Library of Failed Versions. Progression follows structured corruption sequences from Level 01 up to the singularity barrier at Level 12.
+        </p>
+        
+        <div class="border border-red-950 bg-red-950/10 p-3 text-red-400 text-[11px] leading-relaxed space-y-1">
+          <div class="font-bold">// SECURITY_CLEARANCE_ALERT:</div>
+          <p class="font-sans-clean text-xs normal-case tracking-normal text-zinc-400">Levels 09 through 12 demonstrate extreme narrative fluidity. Code architecture may shift without warning.</p>
+        </div>
+      </aside>
+
+      <section class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_01</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">PRELIMINARY_DRIFT</h3>
+            </div>
+            <span class="text-[9px] bg-lofvmil-800 text-lofvtan-400 px-1 rounded-sm">SAFE</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 100%</span>
+            <a href="lofv_lab.html?level=1" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_02</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">BUFFER_ISOLATION</h3>
+            </div>
+            <span class="text-[9px] bg-lofvmil-800 text-lofvtan-400 px-1 rounded-sm">SAFE</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 98.4%</span>
+            <a href="lofv_lab.html?level=2" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_03</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">RECOVERY_MATRIX</h3>
+            </div>
+            <span class="text-[9px] bg-lofvmil-800 text-lofvtan-400 px-1 rounded-sm">SAFE</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 94.1%</span>
+            <a href="lofv_lab.html?level=3" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_04</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">FISSURE_TRACKING</h3>
+            </div>
+            <span class="text-[9px] bg-lofvmil-800 text-lofvtan-400 px-1 rounded-sm">STABLE</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 89.0%</span>
+            <a href="lofv_lab.html?level=4" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_05</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">REPLICANT_HANDSHAKE</h3>
+            </div>
+            <span class="text-[9px] bg-lofvmil-800 text-lofvtan-400 px-1 rounded-sm">STABLE</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 82.5%</span>
+            <a href="lofv_lab.html?level=5" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_06</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">CHRONO_INTRUSION</h3>
+            </div>
+            <span class="text-[9px] bg-amber-950/60 text-amber-500 font-bold">WARN</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 74.2%</span>
+            <a href="lofv_lab.html?level=6" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_07</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">VAULT_COUPLING</h3>
+            </div>
+            <span class="text-[9px] bg-amber-950/60 text-amber-500 font-bold">WARN</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 61.9%</span>
+            <a href="lofv_lab.html?level=7" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_08</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">TIMELINE_OVERLAP</h3>
+            </div>
+            <span class="text-[9px] bg-amber-950/60 text-amber-500 font-bold">WARN</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 50.0%</span>
+            <a href="lofv_lab.html?level=8" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_09</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">HISTORICAL_DECAY</h3>
+            </div>
+            <span class="text-[9px] bg-red-950/60 text-red-500 font-bold animate-pulse">UNSTABLE</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 33.1%</span>
+            <a href="lofv_lab.html?level=9" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_10</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">VERSION_BOTTLENECK</h3>
+            </div>
+            <span class="text-[9px] bg-red-950/60 text-red-500 font-bold animate-pulse">UNSTABLE</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 19.8%</span>
+            <a href="lofv_lab.html?level=10" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-lofvmil-800 bg-black p-3 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/20 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-lofvgold-500"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-lofvgold-400 text-[10px] font-bold block">// STAGE_11</span>
+              <h3 class="text-white text-sm font-bold tracking-widest mt-0.5">CORRUPTION_SINGULARITY</h3>
+            </div>
+            <span class="text-[9px] bg-red-950/60 text-red-500 font-bold animate-pulse">UNSTABLE</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-lofvmil-900/60 pt-2 text-[10px]">
+            <span class="text-lofvmil-700">STABILITY: 04.2%</span>
+            <a href="lofv_lab.html?level=11" class="text-lofvgold-400 group-hover:underline">MOUNT_NODE &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-red-900/60 bg-black p-3 flex flex-col justify-between hover:border-red-500 hover:bg-red-950/10 transition-all group relative">
+          <div class="absolute top-0 left-0 w-1 h-1 bg-red-500 animate-ping"></div>
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <span class="text-red-500 text-[10px] font-bold block animate-pulse">// STAGE_12</span>
+              <h3 class="text-red-400 text-sm font-bold tracking-widest mt-0.5">THE_FAILED_VERSION</h3>
+            </div>
+            <span class="text-[9px] bg-red-600 text-white font-extrabold px-1 animate-pulse">CRITICAL</span>
+          </div>
+          <div class="flex justify-between items-end border-t border-red-950 pt-2 text-[10px]">
+            <span class="text-red-900">STABILITY: 00.0%</span>
+            <a href="lofv_lab.html?level=12" class="text-red-500 font-bold group-hover:underline">BREACH_NODE &rarr;</a>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <footer class="w-full bg-black border-t border-lofvmil-900/60 py-4 px-4 text-center font-mono-tech text-[11px] text-lofvmil-700 tracking-widest uppercase mt-auto">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div>LOFV_SECTOR_DIR // MANIFEST_LOADED</div>
+        <div>SYS_STATUS: <span class="text-lofvgold-400">MONITOR_STABLE</span></div>
+      </div>
+    </footer>
+
+  </body>
+</html>
