@@ -1,147 +1,260 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-black">
+<html lang="en" class="h-full bg-[#0a0b0e]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AZAIRE TV // STREAM_MATRIX</title>
+    <title>AZAIREN // AZAIRE_TV_BROADCAST_MATRIX</title>
 
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
     <style>
       .font-mono-tech { font-family: 'Share Tech Mono', monospace; }
       .font-sans-clean { font-family: 'Inter', sans-serif; }
       
-      /* Cyberpunk Scanline & Noise Overlays */
-      .matrix-grid {
-        background-size: 30px 30px;
+      /* CRT Broadcast Grid Overlay */
+      .broadcast-grid {
+        background-size: 24px 24px;
         background-image: 
-          linear-gradient(to right, rgba(29, 78, 216, 0.02) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(29, 78, 216, 0.02) 1px, transparent 1px);
+          linear-gradient(to right, rgba(59, 130, 246, 0.01) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(59, 130, 246, 0.01) 1px, transparent 1px);
       }
-      .blue-glow:hover {
-        box-shadow: 0 0 15px rgba(29, 78, 216, 0.4);
+      /* Scanning Feed Line Overlay */
+      .feed-scanline {
+        background: linear-gradient(rgba(18, 24, 38, 0) 50%, rgba(10, 11, 14, 0.3) 50%);
+        background-size: 100% 6px;
       }
     </style>
   </head>
 
-  <body class="h-full w-full text-zinc-300 font-sans-clean matrix-grid overflow-x-hidden antialiased selection:bg-blue-600 selection:text-white">
+  <body class="h-full w-full bg-[#0a0b0e] text-zinc-400 font-sans-clean p-4 flex flex-col gap-4 overflow-y-auto broadcast-grid relative uppercase tracking-wider text-xs antialiased">
+    <div class="absolute inset-0 pointer-events-none feed-scanline z-50"></div>
 
-    <nav class="w-full bg-zinc-950/80 backdrop-blur-md border-b border-blue-950/60 sticky top-0 z-50 px-4 lg:px-8 py-3 flex justify-between items-center">
-      <div class="flex items-center gap-6">
-        <a href="index.html" class="font-mono-tech font-extrabold text-xl text-white tracking-widest flex items-center gap-2 group">
-          <span class="text-blue-500 group-hover:text-red-500 transition-colors">AZAIRE</span>
-          <span class="bg-blue-950 border border-blue-800 text-[11px] font-bold px-1.5 py-0.5 rounded text-blue-400 tracking-normal">TV</span>
-        </a>
-        <div class="hidden md:flex items-center gap-1 text-xs font-mono-tech tracking-wider uppercase">
-          <a href="#" class="px-3 py-1.5 text-white bg-blue-950/40 border border-blue-900/50 rounded">01 // Broadcasts</a>
-          <a href="profile_preliminary.html" class="px-3 py-1.5 text-zinc-400 hover:text-white transition">02 // Profile_Core</a>
-          <a href="Mith_Logs.html" class="px-3 py-1.5 text-zinc-400 hover:text-red-400 transition">03 // Mith_Logs</a>
+    <!-- TRANSMISSION CONTROL NAVIGATION HEADER -->
+    <header class="w-full bg-black/90 border border-zinc-900 p-4 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 z-40 relative rounded-sm shadow-xl">
+      <div class="space-y-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
+          <h1 class="text-white font-mono-tech font-black tracking-widest text-base">AZAIRE_TV // TRANSMISSION_INFRASTRUCTURE</h1>
         </div>
+        <div class="text-zinc-600 font-mono-tech text-[10px] mt-0.5">MEDIA_CANON_LAYER // POV_DELIVERY_SYSTEM</div>
       </div>
 
-      <div class="font-mono-tech text-[11px] flex items-center gap-4">
-        <div class="hidden sm:flex items-center gap-1.5 text-zinc-500">
-          <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-          <span>NODE: DC_METRO_SIGNAL</span>
+      <!-- OBSERVATION CLEARANCE ACCESS SWITCH (IN-UNIVERSE ACCOUNT CONTROLLER) -->
+      <div id="clearance-module" class="flex items-center gap-4 border-t lg:border-t-0 border-zinc-900 pt-3 lg:pt-0 w-full lg:w-auto font-mono-tech">
+        <div class="flex flex-col text-right leading-none gap-0.5">
+          <span class="text-zinc-500 text-[10px]">OBSERVER_CLEARANCE:</span>
+          <span id="clearance-status" class="text-blue-400 font-bold tracking-wider">LEVEL_01 // PUBLIC_ACCESS</span>
         </div>
-        <div class="flex items-center gap-2 bg-black border border-zinc-800 px-3 py-1 rounded">
-          <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-          <span class="text-white font-bold tracking-widest">LIVE_FEED</span>
-        </div>
-      </div>
-    </nav>
-
-    <header class="w-full max-w-7xl mx-auto px-4 lg:px-8 pt-6 pb-10">
-      <div class="relative w-full min-h-[400px] md:h-[480px] bg-zinc-950 border border-blue-900/40 rounded-lg overflow-hidden group shadow-2xl flex flex-col justify-end">
-        
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-950/30 via-black to-black object-cover opacity-80 mix-blend-screen"></div>
-        
-        <div class="absolute inset-0 font-mono-tech text-[9px] text-zinc-800 p-4 pointer-events-none select-none z-0 hidden sm:block">
-          [AZAIRE_TV_STREAM_STREAMING_BAK_ONLINE_V4.0]<br>
-          LATENCY: 14ms // RESOLUTION: 2160p // BITRATE: SOURCE
-        </div>
-
-        <div class="p-6 md:p-10 z-20 relative max-w-2xl">
-          <div class="font-mono-tech text-xs text-blue-400 font-bold tracking-widest mb-2 flex items-center gap-2">
-            <span class="bg-red-900/30 border border-red-800/60 text-red-400 px-1.5 py-0.5 text-[10px] rounded uppercase">Premiere Event</span>
-            <span>THE FISSURE-VERSE S01</span>
-          </div>
-          <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight font-sans-clean leading-none">
-            The Day the<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400">Library Failed</span>
-          </h1>
-          <p class="mt-4 text-zinc-400 text-sm md:text-base font-sans-clean leading-relaxed">
-            When the centralized index data arrays completely collapsed, alternative temporal timelines began leaking directly into the localized terminal displays. Trace the timeline network before access drops entirely.
-          </p>
-          
-          <div class="mt-6 flex flex-wrap items-center gap-3 font-mono-tech text-xs tracking-wider uppercase">
-            <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded flex items-center gap-2 transition blue-glow cursor-pointer">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Initialize Stream
-            </button>
-            <a href="Mith_Logs.html" class="px-5 py-3 bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-zinc-200 font-medium rounded transition text-center">
-              Review Dossier Data
-            </a>
-          </div>
-        </div>
+        <button id="auth-trigger" class="border border-blue-950/60 bg-blue-950/10 text-blue-400 hover:border-blue-400 px-3 py-1.5 font-bold transition-all rounded-sm">
+          [AUTHORIZE_NETWORK_KEY]
+        </button>
       </div>
     </header>
 
-    <main class="w-full max-w-7xl mx-auto px-4 lg:px-8 pb-20 space-y-12">
+    <!-- CRITICAL SYSTEM PHILOSOPHY ticker / NOTIFICATION -->
+    <div class="border border-blue-900/20 bg-blue-950/5 p-3 rounded-sm font-mono-tech text-[11px] text-blue-400/80 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span>[NOTICE: NO SINGLE SOURCE REVEALS THE ENTIRE STORY]</span>
+      </div>
+      <span class="text-zinc-600 hidden md:inline">CROSS-REFERENCE RECONSTRUCTION MANDATORY</span>
+    </div>
+
+    <!-- CORE WORKSPACE ENVIRONMENT Split -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 items-start z-40 relative">
       
-      <section class="space-y-4">
-        <div class="border-b border-blue-950/60 pb-2 flex justify-between items-baseline font-mono-tech">
-          <h2 class="text-sm font-bold uppercase tracking-widest text-white flex items-center gap-2">
-            <span class="w-1.5 h-3 bg-blue-600 inline-block"></span> 01 // Current Transmission Rotations
-          </h2>
-          <span class="text-[11px] text-zinc-500">3 CHANNELS FOUND</span>
+      <!-- LEFT TERMINAL CONTROLLER: PERSPECTIVE FILTERS & MATRIX DATA -->
+      <aside class="lg:col-span-1 bg-black/60 border border-zinc-900 p-4 space-y-4 rounded-sm">
+        <div class="text-white font-mono-tech font-bold border-b border-zinc-900 pb-2 text-[11px] flex justify-between">
+          <span>// POV_FILTER_MATRIX</span>
+          <span class="text-zinc-600">STATE: LIVE</span>
+        </div>
+        
+        <!-- Philosophy Blurb -->
+        <p class="text-zinc-500 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+          Azaire TV is a cultural archive and transmission network. Use the filters below to segment broadcasts by source perspective to dissect conflicting timeline parameters.
+        </p>
+
+        <!-- Perspective Filtering Actions (Visual Toggles) -->
+        <div class="space-y-1.5 font-mono-tech text-[11px]">
+          <button class="w-full p-2 border border-blue-950/40 bg-zinc-950/40 text-blue-400 text-left hover:border-blue-500 transition-all flex justify-between items-center">
+            <span>• PUBLIC_POV (NEWS)</span>
+            <span class="text-[9px] bg-blue-950 px-1 font-bold">02_FEEDS</span>
+          </button>
+          <button class="w-full p-2 border border-zinc-900 text-zinc-500 text-left hover:border-zinc-700 transition-all flex justify-between items-center">
+            <span>• CORPORATE_POV (ADS)</span>
+            <span class="text-[9px] bg-zinc-900 px-1 font-bold">01_FEED</span>
+          </button>
+          <button class="w-full p-2 border border-zinc-900 text-zinc-500 text-left hover:border-zinc-700 transition-all flex justify-between items-center">
+            <span>• CULTURAL_POV (SHOWS)</span>
+            <span class="text-[9px] bg-zinc-900 px-1 font-bold">01_FEED</span>
+          </button>
+          <!-- Locked Transmissions indicator -->
+          <div id="locked-filter-tag" class="w-full p-2 border border-red-950/40 bg-red-950/5 text-red-500/40 text-left flex justify-between items-center cursor-not-allowed">
+            <span>• FORBIDDEN_POV (LEAKS)</span>
+            <span class="text-[9px] animate-pulse">LOCKED_KEY</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- INTEGRATION TREE VIEW -->
+        <div class="border border-zinc-900 bg-black/40 p-3 rounded-sm space-y-2 text-[11px] font-mono-tech">
+          <div class="text-zinc-500 font-bold border-b border-zinc-900 pb-1">// PARALLEL_STREAM_INDEX:</div>
+          <p class="text-zinc-600 font-sans-clean text-[11px] leading-tight normal-case tracking-normal">
+            Isolate the cross-over points between "The Fairy Future" broadcasts and the Operational Case Files.
+          </p>
+          <a href="index.html" class="block text-center text-blue-500 hover:underline pt-1">&larr; MASTER_SYSTEM_INDEX</a>
+        </div>
+      </aside>
+
+      <!-- RIGHT WORKSPACE: ATMOSPHERIC BROADCAST DECK -->
+      <section class="lg:col-span-3 space-y-4">
+        
+        <!-- PARALLEL BROADCAST MODULE 01 -->
+        <article class="border border-zinc-900 bg-black/60 p-4 md:p-6 rounded-sm relative flex flex-col md:flex-row justify-between gap-6 hover:border-zinc-700 transition-all">
+          <div class="space-y-3 flex-1">
+            <div class="flex items-center gap-3 font-mono-tech text-[10px]">
+              <span class="text-blue-500 font-bold">[PUBLIC_POV]</span>
+              <span class="text-zinc-600">||</span>
+              <span class="text-zinc-400">ID: AZTV-NEWS-041</span>
+              <span class="text-zinc-600">||</span>
+              <span class="text-zinc-500">TRANSMISSION: ARCHIVED_FEED</span>
+            </div>
+            
+            <h3 class="text-white font-mono-tech text-base font-bold tracking-widest uppercase">THE_FAIRY_FUTURE // SANITIZED_PUBLIC_REPORT</h3>
+            
+            <p class="text-zinc-400 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+              The official broadcast layout from government-approved news channels details the relocation operations. The framing presents total coordination, concealing physical asset degradation and missing personnel tracking numbers entirely.
+            </p>
+
+            <!-- Linked Cross-Reference Anchor System -->
+            <div class="pt-2 flex flex-wrap gap-2 font-mono-tech text-[10px]">
+              <span class="text-zinc-600 flex items-center">COMPARE_CROSS_PERSPECTIVE:</span>
+              <a href="character_template.html?char=watcher" class="bg-zinc-900 hover:bg-blue-950 hover:text-blue-400 border border-zinc-800 px-2 py-0.5 rounded-sm transition-all">
+                [CHARACTER_POV // THE_WATCHER]
+              </a>
+              <a href="lab_index.html" class="bg-zinc-900 hover:bg-lofvmil-900 hover:text-lofvgold-400 border border-zinc-800 px-2 py-0.5 rounded-sm transition-all">
+                [OPERATIONAL_CASE // RELIC_DISCOVERY]
+              </a>
+            </div>
+          </div>
+
+          <!-- Streaming Node Simulation Container -->
+          <div class="w-full md:w-48 bg-zinc-950 border border-zinc-900 rounded-sm p-3 flex flex-col justify-between items-center text-center shrink-0 min-h-[120px]">
+            <div class="font-mono-tech text-[10px] text-zinc-600">[FEED_READY]</div>
+            <div class="w-10 h-10 border border-blue-950 bg-blue-950/10 rounded-full flex items-center justify-center text-blue-400 font-mono-tech font-bold text-xs cursor-pointer hover:bg-blue-500 hover:text-black transition-all">
+              PLAY
+            </div>
+            <div class="font-mono-tech text-[9px] text-zinc-500 tracking-widest">DURATION: 00:04:12</div>
+          </div>
+        </article>
+
+        <!-- PARALLEL BROADCAST MODULE 02 -->
+        <article class="border border-zinc-900 bg-black/60 p-4 md:p-6 rounded-sm relative flex flex-col md:flex-row justify-between gap-6 hover:border-zinc-700 transition-all">
+          <div class="space-y-3 flex-1">
+            <div class="flex items-center gap-3 font-mono-tech text-[10px]">
+              <span class="text-amber-500 font-bold">[CORPORATE_POV]</span>
+              <span class="text-zinc-600">||</span>
+              <span class="text-zinc-400">ID: HW-COMMERCIAL-09</span>
+              <span class="text-zinc-600">||</span>
+              <span class="text-zinc-500">TRANSMISSION: SYNDICATED</span>
+            </div>
+            
+            <h3 class="text-white font-mono-tech text-base font-bold tracking-widest uppercase">HARDWELL_TECHNOLOGIES // "ANOMALY_CLEANSE"</h3>
+            
+            <p class="text-zinc-400 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+              A heavily stylized corporate commercial piece promoting baseline civilian tracking software modules. Subtextual code layouts hidden in the background frames point directly to timeline exploitation paradigms.
+            </p>
+
+            <div class="pt-2 flex flex-wrap gap-2 font-mono-tech text-[10px]">
+              <span class="text-zinc-600 flex items-center">COMPARE_CROSS_PERSPECTIVE:</span>
+              <a href="lofv/vault.html" class="bg-zinc-900 hover:bg-lofvmil-900 hover:text-lofvgold-400 border border-zinc-800 px-2 py-0.5 rounded-sm transition-all">
+                [HIDDEN_CANON // LOFV_VAULT]
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full md:w-48 bg-zinc-950 border border-zinc-900 rounded-sm p-3 flex flex-col justify-between items-center text-center shrink-0 min-h-[120px]">
+            <div class="font-mono-tech text-[10px] text-zinc-600">[FEED_READY]</div>
+            <div class="w-10 h-10 border border-amber-950 bg-amber-950/10 rounded-full flex items-center justify-center text-amber-500 font-mono-tech font-bold text-xs cursor-pointer hover:bg-amber-500 hover:text-black transition-all">
+              PLAY
+            </div>
+            <div class="font-mono-tech text-[9px] text-zinc-500 tracking-widest">DURATION: 00:01:30</div>
+          </div>
+        </article>
+
+        <!-- REGISTERED/CLASSIFIED ACCESS STATE LAYER (CONDITIONAL COMPONENT) -->
+        <article id="classified-feed-wrapper" class="border border-dashed border-red-900/60 bg-red-950/5 p-4 md:p-6 rounded-sm relative flex flex-col items-center justify-center text-center min-h-[180px] space-y-4">
+          <!-- Visual lock shield indicators -->
+          <div class="absolute top-2 right-2 font-mono-tech text-[9px] text-red-900/80 tracking-widest font-bold">SECURE_ARCHIVE_NODE</div>
           
-          <div class="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden hover:border-blue-900/60 transition group flex flex-col justify-between">
-            <div class="aspect-video w-full bg-zinc-900 relative overflow-hidden flex items-center justify-center border-b border-zinc-900">
-              <div class="absolute inset-0 bg-gradient-to-br from-blue-950/20 to-black opacity-60 z-0"></div>
-              <span class="font-mono-tech text-xs text-zinc-700 z-10 select-none">[PREVIEW_FEED_COLB]</span>
-              <span class="absolute bottom-2 left-2 font-mono-tech text-[10px] bg-black/80 px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-400">42:10</span>
-            </div>
-            <div class="p-4 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="text-sm font-bold text-zinc-200 group-hover:text-white transition uppercase tracking-wide">Colby // Signal Echoes</h3>
-                <p class="text-xs text-zinc-500 mt-1 line-clamp-2">Tracking data crumbs left behind across regional infrastructure relays by Subject: Colby.</p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-zinc-900/60 flex justify-between items-center font-mono-tech text-[11px]">
-                <span class="text-blue-500">STREAM // 01</span>
-                <span class="text-zinc-600">RECOVERED_1991</span>
-              </div>
-            </div>
+          <div class="space-y-1 max-w-md">
+            <h4 class="text-red-500 font-mono-tech font-bold tracking-widest text-xs">// TRANSMISSIONS_RESTRICTED //</h4>
+            <p class="text-zinc-600 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+              Three parallel leaked signals (Forbidden POV / Hidden Canon) tracking contradictions and corrupted footage are actively buffered in this region. Elevate observer network clearance to mount records.
+            </p>
           </div>
+          <button id="auth-inline-btn" class="border border-red-900/80 bg-black hover:bg-red-950/20 text-red-400 font-mono-tech text-[11px] px-4 py-2 transition-all font-bold">
+            AUTHORIZE_SESSION_KEY
+          </button>
+        </article>
 
-          <div class="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden hover:border-blue-900/60 transition group flex flex-col justify-between">
-            <div class="aspect-video w-full bg-zinc-900 relative overflow-hidden flex items-center justify-center border-b border-zinc-900">
-              <div class="absolute inset-0 bg-gradient-to-br from-red-950/10 to-black opacity-60 z-0"></div>
-              <span class="font-mono-tech text-xs text-zinc-700 z-10 select-none">[PREVIEW_FEED_ALTC]</span>
-              <span class="absolute bottom-2 left-2 font-mono-tech text-[10px] bg-black/80 px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-400">1:15:32</span>
-            </div>
-            <div class="p-4 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="text-sm font-bold text-zinc-200 group-hover:text-white transition uppercase tracking-wide">Future Alt Colby Records</h3>
-                <p class="text-xs text-zinc-500 mt-1 line-clamp-2">Encrypted logs streaming from a cross-timeline intersection vector. High fragmentation risk.</p>
-              </div>
-              <div class="mt-4 pt-3 border-t border-zinc-900/60 flex justify-between items-center font-mono-tech text-[11px]">
-                <span class="text-red-400">STREAM // 02</span>
-                <span class="text-zinc-600">RECOVERED_2025</span>
-              </div>
-            </div>
-          </div>
+      </section>
+    </div>
 
-          <div class="bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden hover:border-blue-900/60 transition group flex flex-col justify-between">
-            <div class="aspect-video w-full bg-zinc-900 relative overflow-hidden flex items-center justify-center border-b border-zinc-900">
-              <div class="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black opacity-60 z-0"></div>
-              <span class="font-mono-tech text-xs text-zinc-700 z-10 select-none">[PREVIEW_FEED_BASE]</span>
-              <span class="absolute bottom-2 left-2 font-mono-tech text-[10px] bg-black/80 px-1.5 py-0.5 rounded border border-zinc-800 text-zinc-400">18:45</span>
+    <!-- PERSISTENT FOOTER METADATA -->
+    <footer class="w-full bg-black/40 border-t border-zinc-900 py-4 px-4 text-center text-zinc-600 font-mono-tech text-[10px] tracking-widest uppercase mt-auto">
+      AZAIREN BROADCAST MONITORING DECK // ATMOSPHERIC INTEGRITY CONTROLLER // TIME CHARACTER TRACKER ACTIVE
+    </footer>
+
+    <!-- LIGHTWEIGHT IN-UNIVERSE AUTHENTICATION SWITCH SCRIPT -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const authTrigger = document.getElementById('auth-trigger');
+        const authInlineBtn = document.getElementById('auth-inline-btn');
+        const clearanceStatus = document.getElementById('clearance-status');
+        const lockedFilterTag = document.getElementById('locked-filter-tag');
+        const classifiedWrapper = document.getElementById('classified-feed-wrapper');
+
+        function elevateClearance() {
+          // Alter Clearance UI State to Registered View
+          clearanceStatus.innerText = "LEVEL_02 // REGISTERED_OBSERVER";
+          clearanceStatus.className = "text-emerald-400 font-bold tracking-wider";
+          
+          // Unlock filter parameters visual elements
+          lockedFilterTag.className = "w-full p-2 border border-emerald-900 bg-emerald-950/10 text-emerald-400 text-left hover:border-emerald-400 transition-all flex justify-between items-center cursor-pointer";
+          lockedFilterTag.querySelector('span:last-child').innerText = "03_FEEDS";
+          lockedFilterTag.querySelector('span:last-child').className = "text-[9px] bg-emerald-950 px-1 font-bold";
+
+          // Dynamically transform the locked zone into an active decrypted transmission card
+          classifiedWrapper.className = "border border-emerald-900 bg-black/60 p-4 md:p-6 rounded-sm relative flex flex-col md:flex-row justify-between gap-6 hover:border-emerald-700 transition-all text-left";
+          classifiedWrapper.innerHTML = `
+            <div class="space-y-3 flex-1 text-left">
+              <div class="flex items-center gap-3 font-mono-tech text-[10px]">
+                <span class="text-emerald-400 font-bold">[FORBIDDEN_POV]</span>
+                <span class="text-zinc-600">||</span>
+                <span class="text-zinc-400">ID: LEAK-SIG-00A</span>
+                <span class="text-zinc-600">||</span>
+                <span class="text-red-400 font-bold">RAW_CORRUPTED_STREAM</span>
+              </div>
+              <h3 class="text-white font-mono-tech text-base font-bold tracking-widest uppercase">THE_FAIRY_FUTURE // UNREDACTED_SIGNAL_LEAK</h3>
+              <p class="text-zinc-400 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+                Intercepted raw feedback transmission directly breaking the sanitized public framing. Audio layers contain structural telemetry parameters confirming chronological displacement coordinates.
+              </p>
             </div>
-            <div class="p-4 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="text-sm font-bold text-zinc-200 group-hover:text-white transition uppercase tracking-wide">The Baseline Drift</h3>
-                <p class="text-xs text-zinc-500 mt-1 line-clamp-2">A technical video
+            <div class="w-full md:w-48 bg-zinc-950 border border-emerald-900 rounded-sm p-3 flex flex-col justify-between items-center text-center shrink-0 min-h-[120px]">
+              <div class="font-mono-tech text-[10px] text-emerald-500">[DECRYPTED]</div>
+              <div class="w-10 h-10 border border-emerald-950 bg-emerald-950/10 rounded-full flex items-center justify-center text-emerald-400 font-mono-tech font-bold text-xs cursor-pointer hover:bg-emerald-500 hover:text-black transition-all">
+                STREAM
+              </div>
+              <div class="font-mono-tech text-[9px] text-zinc-500 tracking-widest">DURATION: 00:08:44</div>
+            </div>
+          `;
+        }
+
+        authTrigger.addEventListener('click', elevateClearance);
+        authInlineBtn.addEventListener('click', elevateClearance);
+      });
+    </script>
+  </body>
+</html>
