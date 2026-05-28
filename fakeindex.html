@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#0c0d12]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AZAIREN // SYSTEM_INDEX</title>
+
+    <!-- Tailwind CSS & Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lofvmil: {
+                700: '#3f4b35',
+                800: '#2b3324',
+                900: '#151b10',
+              },
+              lofvgold: {
+                400: '#fbbf24',
+                500: '#d97706',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body { font-family: 'Share Tech Mono', monospace; }
+      .matrix-grid {
+        background-size: 32px 32px;
+        background-image: 
+          linear-gradient(to right, rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+      }
+    </style>
+  </head>
+
+  <body class="h-full w-full bg-[#0c0d12] text-zinc-400 p-4 flex flex-col gap-4 overflow-y-auto uppercase tracking-wider text-xs matrix-grid antialiased">
+    
+    <!-- MASTER MAIN TERMINAL HEADER -->
+    <header class="w-full bg-black/80 border border-zinc-900 p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 z-40 relative">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-blue-500 rounded-sm animate-pulse"></span>
+          <h1 class="text-white font-black tracking-widest text-base">AZAIREN // MAIN_INDEX</h1>
+        </div>
+        <div class="text-zinc-600 text-[10px] mt-0.5">CORE_NET_STATUS: OPERATIONAL // LINKS_INTEGRATED</div>
+      </div>
+
+      <!-- SYSTEM INTEGRATION GATEWAYS -->
+      <div class="flex items-center gap-4 text-[11px] font-bold w-full md:w-auto justify-between md:justify-end">
+        <div class="text-zinc-500">SYSTEM_BRIDGES:</div>
+        <a href="lab_index.html" class="border border-lofvmil-800 bg-lofvmil-900/20 text-lofvgold-400 hover:border-lofvgold-400 px-3 py-1.5 transition-all">
+          [OPEN_CONTAINMENT_LABS]
+        </a>
+      </div>
+    </header>
+
+    <!-- CONTENT MATRIX ARCHITECTURE -->
+    <main class="grid grid-cols-1 lg:grid-cols-4 gap-4 items-start">
+      
+      <!-- LEFT DESK: SYSTEM ANNOUNCEMENTS & ROUTING SCHEMATICS -->
+      <aside class="lg:col-span-1 bg-black/40 border border-zinc-900 p-4 space-y-4">
+        <div class="text-blue-400 font-bold border-b border-zinc-900 pb-2 text-[11px]">
+          // DATABASE_LOGSTREAM
+        </div>
+        <p class="text-zinc-500 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+          Welcome to the baseline database. The primary character assets are cataloged inside the standard system modules. Deep sub-directories point directly to localized file anomalies.
+        </p>
+
+        <!-- LIVE CROSS-LINK MAP SUMMARY -->
+        <div class="border border-lofvmil-800 bg-lofvmil-900/10 p-3 text-[11px] space-y-2">
+          <div class="text-lofvgold-400 font-bold tracking-wider">// LOFV_CROSS_LINKS:</div>
+          <div class="text-zinc-500 space-y-1 font-mono-tech text-[10px]">
+            <div>• INDEX &rarr; VAULT (BYPASS)</div>
+            <div>• INDEX &rarr; LAB_INDEX (12 NODES)</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT SIDE: THE INTEGRATED CHARACTER GRID (WITH LOFV CROSS-OVER) -->
+      <section class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <!-- STANDARD CHARACTER NODE 01 -->
+        <div class="border border-zinc-900 bg-black/60 p-4 flex flex-col justify-between hover:border-blue-500 transition-all group">
+          <div class="space-y-2">
+            <div class="flex justify-between text-[10px] text-zinc-600">
+              <span>REF_ID: // COLBY</span>
+              <span class="text-blue-500">SYS_STANDARD</span>
+            </div>
+            <h3 class="text-white text-base font-bold tracking-widest group-hover:text-blue-400 transition-colors">COLBY</h3>
+            <p class="text-zinc-500 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+              Primary configuration parameters mapped to baseline physical constraints. Historical memory files stable.
+            </p>
+          </div>
+          <a href="character_template.html?char=colby" class="border border-zinc-800 text-zinc-400 group-hover:border-blue-500 group-hover:text-blue-400 text-center py-1.5 mt-4 transition-all">
+            VIEW_DOSSIER &rarr;
+          </a>
+        </div>
+
+        <!-- STANDARD CHARACTER NODE 02 -->
+        <div class="border border-zinc-900 bg-black/60 p-4 flex flex-col justify-between hover:border-blue-500 transition-all group">
+          <div class="space-y-2">
+            <div class="flex justify-between text-[10px] text-zinc-600">
+              <span>REF_ID: // ALT_COLBY</span>
+              <span class="text-blue-500">SYS_STANDARD</span>
+            </div>
+            <h3 class="text-white text-base font-bold tracking-widest group-hover:text-blue-400 transition-colors">ALT_COLBY</h3>
+            <p class="text-zinc-500 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+              Secondary variant structural baseline tracking perfectly in adjacent file structures. 
+            </p>
+          </div>
+          <a href="character_template.html?char=alt_colby" class="border border-zinc-800 text-zinc-400 group-hover:border-blue-500 group-hover:text-blue-400 text-center py-1.5 mt-4 transition-all">
+            VIEW_DOSSIER &rarr;
+          </a>
+        </div>
+
+        <!-- CRITICAL TARGET: THE WATCHER (LOFV DIRECT VAULT BYPASS) -->
+        <div class="border border-lofvmil-800 bg-black p-4 flex flex-col justify-between hover:border-lofvgold-500 hover:bg-lofvmil-900/10 transition-all group relative">
+          <!-- Small Visual Anchor Point -->
+          <div class="absolute top-0 right-0 w-2 h-2 bg-lofvgold-500 animate-pulse"></div>
+          
+          <div class="space-y-2">
+            <div class="flex justify-between text-[10px]">
+              <span class="text-lofvmil-700">REF_ID: // ANOMALY_00</span>
+              <span class="text-lofvgold-400 font-bold animate-pulse">LOFV_BYPASS_NODE</span>
+            </div>
+            <h3 class="text-lofvgold-400 text-base font-black tracking-widest">THE_WATCHER</h3>
+            <p class="text-zinc-400 font-sans-clean text-xs leading-relaxed normal-case tracking-normal">
+              WARNING: Accessing this node transmits the signature array required to unlock the locked chrono container located deep in the sub-directories.
+            </p>
+          </div>
+          
+          <!-- Direct decryption key link to the vault -->
+          <a href="lofv/vault.html?unlock=watcher" class="border border-lofvmil-800 bg-black text-lofvgold-400 group-hover:bg-lofvgold-500 group-hover:text-black text-center font-bold py-1.5 mt-4 transition-all">
+            INITIALIZE_VAULT_DECRYPT &rarr;
+          </a>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- FOOTER TERMINAL TELEMETRY -->
+    <footer class="w-full bg-black/40 border-t border-zinc-900 py-4 px-4 text-center text-zinc-600 font-mono-tech text-[10px] tracking-widest uppercase mt-auto">
+      AZAIREN NETWORK MAIN INTERCONNECTIVITY CONSOLE // CHRONO-BUILT SYSTEM COMPLETE
+    </footer>
+
+  </body>
+</html>
