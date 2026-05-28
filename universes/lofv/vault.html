@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#090b08]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOFV://CONTAINMENT_VAULT</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lofvmil: {
+                700: '#3f4b35',
+                800: '#2b3324',
+                900: '#151b10',
+                950: '#090b08',
+              },
+              lofvtan: {
+                300: '#e5e0da',
+                400: '#cdc5b9',
+                600: '#918673',
+              },
+              lofvgold: {
+                400: '#fbbf24',
+                500: '#d97706',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body { font-family: 'Share Tech Mono', monospace; }
+      .lab-grid {
+        background-size: 16px 16px;
+        background-image: 
+          linear-gradient(to right, rgba(63, 75, 53, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(63, 75, 53, 0.04) 1px, transparent 1px);
+      }
+      .scanlines {
+        background: linear-gradient(rgba(21, 27, 16, 0) 50%, rgba(9, 11, 8, 0.4) 50%);
+        background-size: 100% 4px;
+      }
+    </style>
+  </head>
+
+  <body class="h-full w-full bg-lofvmil-950 text-lofvtan-400 flex flex-col p-4 lab-grid relative overflow-y-auto uppercase tracking-wider text-xs antialiased">
+    <div class="absolute inset-0 pointer-events-none scanlines z-50"></div>
+
+    <header class="w-full bg-black border border-lofvmil-800 p-3 flex justify-between items-center shrink-0 z-40">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 bg-lofvgold-500 rounded-sm"></span>
+        <span class="text-lofvgold-400 font-bold tracking-widest text-sm">LOFV://SECURE_CHRONO_VAULT</span>
+      </div>
+      <a href="../index.html" class="text-lofvmil-700 hover:text-lofvtan-400 transition-colors">[RETURN_TO_INDEX]</a>
+    </header>
+
+    <div class="flex-1 flex items-center justify-center py-10 z-40">
+      
+      <div id="vault-locked" class="w-full max-w-md bg-black border border-red-900/60 p-6 space-y-6 rounded shadow-2xl relative">
+        <div class="absolute top-0 left-0 w-2 h-2 bg-red-600"></div>
+        
+        <div class="space-y-2 border-b border-red-950 pb-3">
+          <div class="text-red-500 font-bold text-sm tracking-widest animate-pulse">// ACCESS_DENIED //</div>
+          <h2 class="text-white text-base font-bold">VAULT_FILE_LOCKED</h2>
+        </div>
+
+        <p class="text-zinc-500 text-[11px] font-sans-clean leading-relaxed normal-case tracking-normal">
+          This chronological container is physically locked. Decryption requires an anchor signature validation. Locate and initial terminal surveillance files for <span class="text-lofvgold-400 font-mono-tech uppercase text-xs tracking-wider">"THE_WATCHER"</span> to pipe the decryption stream into this node.
+        </p>
+
+        <div class="bg-red-950/20 border border-red-900/40 p-3 text-[10px] text-red-400 font-bold">
+          STATUS: AWAITING_STREAM_HANDSHAKE...
+        </div>
+      </div>
+
+      <div id="vault-unlocked" class="hidden w-full max-w-3xl bg-black border border-lofvmil-800 p-6 md:p-8 space-y-6 rounded shadow-2xl relative">
+        <div class="absolute top-0 left-0 w-2 h-2 bg-lofvgold-500"></div>
+        
+        <div class="flex justify-between items-start border-b border-lofvmil-800 pb-4">
+          <div class="space-y-1">
+            <div class="text-emerald-400 font-bold text-[11px] tracking-widest">// ACCESS_GRANTED // SIGNATURE: THE_WATCHER_FOUND</div>
+            <h2 class="text-xl font-black text-lofvtan-300 tracking-wider">RESTORED_VERSION_MANIFEST</h2>
+          </div>
+          <span class="text-[10px] bg-lofvmil-800 text-lofvgold-400 px-2 py-0.5 font-bold">SECURE_FILE</span>
+        </div>
+
+        <div class="space-y-4 font-sans-clean text-sm text-lofvtan-400 leading-relaxed normal-case tracking-normal">
+          <p class="font-mono-tech text-[11px] uppercase tracking-wider text-lofvgold-400 font-bold">// CLASSIFIED_TIMELINE_LOG:</p>
+          <p>
+            By unlocking this vault through the lens of The Watcher, the system has stabilized the target data matrix. The files stored here details the iteration boundaries before the final alignment algorithm was activated by corporate network protocols.
+          </p>
+          <blockquote class="border-l-2 border-lofvgold-500 bg-lofvmil-900/40 p-4 italic text-lofvtan-300 text-xs">
+            "We thought observing them would change the tracking variable. It didn't. The Watcher simply recorded the speed at which the blue code dissolved into the tactical layer."
+          </blockquote>
+          <p>
+            You have bypassed the baseline parameters. This structural failure record is now wide open for ongoing development.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 font-mono-tech text-[11px] border-t border-lofvmil-800 pt-4">
+          <div>
+            <span class="text-lofvmil-700 block uppercase">ORIGIN_RUN:</span>
+            <span class="text-lofvtan-300">LOFV_VAULT_DECRYPTED</span>
+          </div>
+          <div>
+            <span class="text-lofvmil-700 block uppercase">INTEGRITY:</span>
+            <span class="text-emerald-400 font-bold">100% SECURE</span>
+          </div>
+          <div class="col-span-2 md:col-span-1">
+            <span class="text-lofvmil-700 block uppercase">BUFFER_MASK:</span>
+            <span class="text-lofvgold-400 font-bold">BYPASS_ACTIVE</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Look at the URL query string parameters (e.g., vault.html?unlock=watcher)
+        const urlParams = new URLSearchParams(window.location.search);
+        const unlockKey = urlParams.get('unlock');
+
+        const lockedScreen = document.getElementById('vault-locked');
+        const unlockedScreen = document.getElementById('vault-unlocked');
+
+        // Check if the correct key string is present
+        if (unlockKey === 'watcher') {
+          lockedScreen.classList.add('hidden');
+          unlockedScreen.classList.remove('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>
