@@ -1,145 +1,315 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="h-full bg-black">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Characters | Azairen Studios</title>
+    <title>AZAIREN://CHARACTER_DATABASE_INDEX</title>
 
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
 
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
+      .font-mono-tech { font-family: 'Share Tech Mono', monospace; }
+      .font-sans-clean { font-family: 'Inter', sans-serif; }
+      
+      /* Cyberpunk Scanline Grid */
+      .matrix-grid {
+        background-size: 20px 20px;
+        background-image: 
+          linear-gradient(to right, rgba(29, 78, 216, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(29, 78, 216, 0.03) 1px, transparent 1px);
       }
+      
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #09090b; }
+      ::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
     </style>
   </head>
 
-  <body class="bg-black text-white">
-    <!-- NAV -->
+  <body class="h-full w-full bg-black text-zinc-300 font-sans-clean matrix-grid overflow-y-auto selection:bg-red-600 selection:text-white antialiased">
 
-    <header
-      class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur border-b border-gray-800 z-50"
-    >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
-        <a href="/../../index.html" class="text-xl font-semibold tracking-wide">
-          AZAIREN
+    <!-- NAVIGATION Telemetry Bar -->
+    <nav class="w-full bg-zinc-950/90 backdrop-blur-md border-b border-blue-950/60 sticky top-0 z-50 px-4 lg:px-8 py-3 flex justify-between items-center font-mono-tech text-xs tracking-wider uppercase">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="font-extrabold text-white tracking-widest flex items-center gap-2 group">
+          <span class="text-blue-500 group-hover:text-red-500 transition-colors">AZAIREN://</span>
+          <span class="text-zinc-400">CORE_DATABASE_INDEX</span>
         </a>
-
-        <div class="space-x-6 text-sm text-gray-300">
-          <a href="/../../index.html" class="hover:text-white">Home</a>
-          <a href="/../universes.html" class="hover:text-white">Universes</a>
-          <a href="/../../mithbusters.html" class="hover:text-white"
-            >Mithbusters</a
-          >
-          <a href="/../../projects.html" class="hover:text-white">Projects</a>
-
-          <a href="/../../about.html" class="hover:text-white">About</a>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <div class="hidden sm:flex items-center gap-1.5 text-zinc-500">
+          <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span>
+          <span>INDEX_BUFFER_ONLINE</span>
         </div>
-      </nav>
-    </header>
-
-    <!-- HEADER -->
-
-    <section class="pt-32 pb-16 text-center px-6">
-      <h1 class="text-4xl md:text-5xl font-light mb-4">CHARACTERS</h1>
-      <p class="text-gray-400 max-w-xl mx-auto">
-        Individuals connected to events across multiple systems.
-      </p>
-    </section>
-
-    <!-- CHARACTER GRID -->
-
-    <section class="px-6 pb-20 max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-10">
-        <!-- ASH -->
-        <a
-          href="/universes/characters/ash.html"
-          class="border border-gray-800 overflow-hidden hover:border-white transition block"
-        >
-          <div
-            class="h-64 bg-gray-900 flex items-center justify-center text-gray-600 text-sm"
-          >
-            Image
-          </div>
-
-          <div class="p-6">
-            <h2 class="text-xl mb-2">Ash</h2>
-            <p class="text-gray-400 text-sm mb-4">
-              Linked to a sequence of events that should not have occurred.
-            </p>
-            <p class="text-xs text-gray-500">Status: Active</p>
-          </div>
-        </a>
-
-        <!-- ONIKA -->
-        <a
-          href="/universes/characters/onika.html"
-          class="border border-gray-800 overflow-hidden hover:border-white transition block"
-        >
-          <div
-            class="h-64 bg-gray-900 flex items-center justify-center text-gray-600 text-sm"
-          >
-            Image
-          </div>
-
-          <div class="p-6">
-            <h2 class="text-xl mb-2">Onika</h2>
-            <p class="text-gray-400 text-sm mb-4">
-              Operating beyond conventional observation and control.
-            </p>
-            <p class="text-xs text-gray-500">Status: Unknown</p>
-          </div>
-        </a>
-
-        <!-- KIRA -->
-        <a
-          href="/universes/characters/kira.html"
-          class="border border-gray-800 overflow-hidden hover:border-white transition block"
-        >
-          <div
-            class="h-64 bg-gray-900 flex items-center justify-center text-gray-600 text-sm"
-          >
-            Image
-          </div>
-
-          <div class="p-6">
-            <h2 class="text-xl mb-2">Kira</h2>
-            <p class="text-gray-400 text-sm mb-4">
-              Searching for something she cannot fully define.
-            </p>
-            <p class="text-xs text-gray-500">Status: Investigating</p>
-          </div>
-        </a>
+        <div class="bg-black border border-blue-950 px-3 py-1 rounded text-blue-400 font-bold">
+          DB//V1.2
+        </div>
       </div>
+    </nav>
 
-      <div class="border border-red-800 p-6 text-red-500 text-sm">
-        ███████████████
-        <p class="text-xs mt-2">Access Restricted</p>
+    <!-- MAIN INTERFACE MAIN FRAME -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+      
+      <!-- DATABASE HEADER STATUS CONTROL BOARD -->
+      <header class="border border-blue-900/40 bg-zinc-950/60 backdrop-blur-sm p-6 md:p-8 rounded-lg relative overflow-hidden shadow-2xl">
+        <div class="absolute -top-[1px] -left-[1px] w-3 h-3 bg-blue-600"></div>
+        <div class="absolute -bottom-[1px] -right-[1px] w-3 h-3 bg-red-600"></div>
+        
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div class="space-y-2">
+            <div class="font-mono-tech text-xs text-blue-500 font-bold tracking-widest uppercase">
+              // SECURE INTEL NODE CENTRAL DICTIONARY
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
+              PERSONNEL & ENTITY ARCHIVES
+            </h1>
+            <p class="text-zinc-500 font-mono-tech text-xs uppercase tracking-wide">
+              DIRECTORY REFERENCE: MASTER_MANIFEST_RECORDS
+            </p>
+          </div>
+          
+          <!-- SYSTEM STATISTICS PANEL -->
+          <div class="grid grid-cols-3 gap-4 font-mono-tech text-xs border-t md:border-t-0 md:border-l border-blue-950 pt-4 md:pt-0 md:pl-6 w-full md:w-auto shrink-0">
+            <div>
+              <span class="text-zinc-600 block uppercase">TOTAL NODES</span>
+              <span class="text-white text-lg font-bold">04 //</span>
+            </div>
+            <div>
+              <span class="text-zinc-600 block uppercase">ACTIVE RUNS</span>
+              <span class="text-emerald-400 text-lg font-bold">03 //</span>
+            </div>
+            <div>
+              <span class="text-zinc-600 block uppercase">ARCHIVED</span>
+              <span class="text-red-500 text-lg font-bold">01 //</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- SEARCH / FILTER CONTROLS HUB BAR -->
+      <section class="bg-zinc-950/40 border border-blue-950 p-4 rounded-lg flex flex-col md:flex-row gap-4 justify-between items-center font-mono-tech text-xs">
+        <div class="w-full md:w-72 relative">
+          <input type="text" placeholder="QUERY_ID OR ALIAS_SEARCH..." class="w-full bg-black border border-blue-950/60 rounded px-3 py-2 text-zinc-300 placeholder-zinc-700 focus:outline-none focus:border-blue-500 transition-colors uppercase tracking-wider text-[11px]" />
+        </div>
+        <div class="flex flex-wrap gap-2 w-full md:w-auto justify-end">
+          <button class="bg-blue-950/40 border border-blue-800 text-white px-3 py-1.5 rounded uppercase font-bold text-[11px] hover:bg-blue-900/40 transition-all tracking-wider">ALL_ENTITIES</button>
+          <button class="bg-black border border-blue-950/60 text-zinc-500 px-3 py-1.5 rounded uppercase text-[11px] hover:border-blue-800 hover:text-zinc-300 transition-all tracking-wider">ACTIVE</button>
+          <button class="bg-black border border-blue-950/60 text-zinc-500 px-3 py-1.5 rounded uppercase text-[11px] hover:border-blue-800 hover:text-zinc-300 transition-all tracking-wider">ARCHIVED</button>
+          <button class="bg-black border border-blue-950/60 text-zinc-500 px-3 py-1.5 rounded uppercase text-[11px] hover:border-blue-800 hover:text-zinc-300 transition-all tracking-wider">UNKNOWN</button>
+        </div>
+      </section>
+
+      <!-- DATABASE GRID GRID DISPLAY -->
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        <!-- CARD NODE 01 -->
+        <article class="border border-blue-950 bg-zinc-950/30 rounded-lg p-5 flex flex-col justify-between hover:border-blue-800/80 hover:bg-zinc-950/50 transition-all group relative overflow-hidden shadow-xl">
+          <div class="absolute top-0 left-0 w-2 h-[1px] bg-blue-500"></div>
+          <div class="absolute top-0 left-0 w-[1px] h-2 bg-blue-500"></div>
+          
+          <div class="space-y-4">
+            <!-- Card Identity Section Header -->
+            <div class="flex gap-4 items-center">
+              <!-- Avatar Node Placeholder -->
+              <div class="w-14 h-14 bg-black border border-blue-950 flex items-center justify-center shrink-0 rounded overflow-hidden relative">
+                <div class="absolute inset-0 opacity-10" style="background-size: 4px 4px; background-image: linear-gradient(to right, rgba(29, 78, 216, 0.15) 1px, transparent 1px);"></div>
+                <svg class="w-5 h-5 text-zinc-800 group-hover:text-blue-500/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              
+              <!-- Primary Tracking Metadata -->
+              <div class="space-y-0.5">
+                <span class="text-[10px] font-mono-tech text-red-500 tracking-widest block uppercase">// AZR-011</span>
+                <h3 class="font-sans-clean font-extrabold text-white group-hover:text-blue-400 transition-colors uppercase tracking-tight text-base leading-tight">Colby</h3>
+                <span class="text-[11px] font-mono-tech text-zinc-500 uppercase tracking-wide block">Fissure Hybrid</span>
+              </div>
+            </div>
+
+            <!-- Profile Parameters Preview Grid -->
+            <div class="border-t border-b border-zinc-900/60 py-3 my-2 font-mono-tech text-[11px] space-y-1.5">
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">STATUS:</span>
+                <span class="text-emerald-400 font-bold uppercase tracking-wide">ACTIVE</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">LOCATION:</span>
+                <span class="text-zinc-400 uppercase text-right">Sector-4 / Terminal</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">THREAT INDEX:</span>
+                <span class="text-red-400 font-bold">SEVERE</span>
+              </div>
+            </div>
+
+            <!-- Condensed Ability Text Block Segment -->
+            <p class="text-xs text-zinc-400 font-sans-clean line-clamp-2 leading-relaxed">
+              Spatial distortion generation and structural field conversion. Primary defensive anchor for sector teams.
+            </p>
+          </div>
+
+          <!-- Bottom Activation Utility Action -->
+          <div class="pt-5 mt-auto">
+            <a href="character_template.html" class="w-full bg-zinc-950 border border-blue-950 font-mono-tech text-center text-xs tracking-widest uppercase py-2 block rounded text-zinc-400 group-hover:bg-blue-950/30 group-hover:text-white group-hover:border-blue-800/80 transition-all">
+              INITIALIZE_DOSSIER_STRM
+            </a>
+          </div>
+        </article>
+
+        <!-- CARD NODE 02 -->
+        <article class="border border-blue-950 bg-zinc-950/30 rounded-lg p-5 flex flex-col justify-between hover:border-blue-800/80 hover:bg-zinc-950/50 transition-all group relative overflow-hidden shadow-xl">
+          <div class="absolute top-0 left-0 w-2 h-[1px] bg-blue-500"></div>
+          <div class="absolute top-0 left-0 w-[1px] h-2 bg-blue-500"></div>
+          
+          <div class="space-y-4">
+            <div class="flex gap-4 items-center">
+              <div class="w-14 h-14 bg-black border border-blue-950 flex items-center justify-center shrink-0 rounded overflow-hidden relative">
+                <svg class="w-5 h-5 text-zinc-800 group-hover:text-blue-500/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="space-y-0.5">
+                <span class="text-[10px] font-mono-tech text-red-500 tracking-widest block uppercase">// AZR-012</span>
+                <h3 class="font-sans-clean font-extrabold text-white group-hover:text-blue-400 transition-colors uppercase tracking-tight text-base leading-tight">Alt Colby</h3>
+                <span class="text-[11px] font-mono-tech text-zinc-500 uppercase tracking-wide block">System Entity</span>
+              </div>
+            </div>
+
+            <div class="border-t border-b border-zinc-900/60 py-3 my-2 font-mono-tech text-[11px] space-y-1.5">
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">STATUS:</span>
+                <span class="text-amber-400 font-bold uppercase tracking-wide">ARCHIVED</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">LOCATION:</span>
+                <span class="text-zinc-400 uppercase text-right">LOFV / Vault Room</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">THREAT INDEX:</span>
+                <span class="text-red-500 font-bold">WORLD-LEVEL</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-zinc-400 font-sans-clean line-clamp-2 leading-relaxed">
+              Iterative remnant variant recovered from failed history runs. Extreme logical and structural data stability risk.
+            </p>
+          </div>
+
+          <div class="pt-5 mt-auto">
+            <a href="#" class="w-full bg-zinc-950 border border-blue-950 font-mono-tech text-center text-xs tracking-widest uppercase py-2 block rounded text-zinc-400 group-hover:bg-blue-950/30 group-hover:text-white group-hover:border-blue-800/80 transition-all">
+              INITIALIZE_DOSSIER_STRM
+            </a>
+          </div>
+        </article>
+
+        <!-- CARD NODE 03 -->
+        <article class="border border-blue-950 bg-zinc-950/30 rounded-lg p-5 flex flex-col justify-between hover:border-blue-800/80 hover:bg-zinc-950/50 transition-all group relative overflow-hidden shadow-xl">
+          <div class="absolute top-0 left-0 w-2 h-[1px] bg-blue-500"></div>
+          <div class="absolute top-0 left-0 w-[1px] h-2 bg-blue-500"></div>
+          
+          <div class="space-y-4">
+            <div class="flex gap-4 items-center">
+              <div class="w-14 h-14 bg-black border border-blue-950 flex items-center justify-center shrink-0 rounded overflow-hidden relative">
+                <svg class="w-5 h-5 text-zinc-800 group-hover:text-blue-500/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="space-y-0.5">
+                <span class="text-[10px] font-mono-tech text-red-500 tracking-widest block uppercase">// AZR-044</span>
+                <h3 class="font-sans-clean font-extrabold text-white group-hover:text-blue-400 transition-colors uppercase tracking-tight text-base leading-tight">Konner</h3>
+                <span class="text-[11px] font-mono-tech text-zinc-500 uppercase tracking-wide block">Canid Construct</span>
+              </div>
+            </div>
+
+            <div class="border-t border-b border-zinc-900/60 py-3 my-2 font-mono-tech text-[11px] space-y-1.5">
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">STATUS:</span>
+                <span class="text-emerald-400 font-bold uppercase tracking-wide">ACTIVE</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">LOCATION:</span>
+                <span class="text-zinc-400 uppercase text-right">Cyber-Alley Zone</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">THREAT INDEX:</span>
+                <span class="text-zinc-400 font-bold">MODERATE</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-zinc-400 font-sans-clean line-clamp-2 leading-relaxed">
+              High-agility tracking specialist utilizing customized visual masking array systems and sensory gear layers.
+            </p>
+          </div>
+
+          <div class="pt-5 mt-auto">
+            <a href="#" class="w-full bg-zinc-950 border border-blue-950 font-mono-tech text-center text-xs tracking-widest uppercase py-2 block rounded text-zinc-400 group-hover:bg-blue-950/30 group-hover:text-white group-hover:border-blue-800/80 transition-all">
+              INITIALIZE_DOSSIER_STRM
+            </a>
+          </div>
+        </article>
+
+        <!-- CARD NODE 04 -->
+        <article class="border border-blue-950 bg-zinc-950/30 rounded-lg p-5 flex flex-col justify-between hover:border-blue-800/80 hover:bg-zinc-950/50 transition-all group relative overflow-hidden shadow-xl">
+          <div class="absolute top-0 left-0 w-2 h-[1px] bg-blue-500"></div>
+          <div class="absolute top-0 left-0 w-[1px] h-2 bg-blue-500"></div>
+          
+          <div class="space-y-4">
+            <div class="flex gap-4 items-center">
+              <div class="w-14 h-14 bg-black border border-blue-950 flex items-center justify-center shrink-0 rounded overflow-hidden relative">
+                <svg class="w-5 h-5 text-zinc-800 group-hover:text-blue-500/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="space-y-0.5">
+                <span class="text-[10px] font-mono-tech text-red-500 tracking-widest block uppercase">// AZR-089</span>
+                <h3 class="font-sans-clean font-extrabold text-white group-hover:text-blue-400 transition-colors uppercase tracking-tight text-base leading-tight">Braxton</h3>
+                <span class="text-[11px] font-mono-tech text-zinc-500 uppercase tracking-wide block">Grounded Entity</span>
+              </div>
+            </div>
+
+            <div class="border-t border-b border-zinc-900/60 py-3 my-2 font-mono-tech text-[11px] space-y-1.5">
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">STATUS:</span>
+                <span class="text-emerald-400 font-bold uppercase tracking-wide">ACTIVE</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">LOCATION:</span>
+                <span class="text-zinc-400 uppercase text-right">Monochrome Buffer</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-600 uppercase">THREAT INDEX:</span>
+                <span class="text-zinc-500 font-bold">LOW</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-zinc-400 font-sans-clean line-clamp-2 leading-relaxed">
+              Heavy structural support construct featuring reinforced protective housing matrices. Internal systems stable.
+            </p>
+          </div>
+
+          <div class="pt-5 mt-auto">
+            <a href="#" class="w-full bg-zinc-950 border border-blue-950 font-mono-tech text-center text-xs tracking-widest uppercase py-2 block rounded text-zinc-400 group-hover:bg-blue-950/30 group-hover:text-white group-hover:border-blue-800/80 transition-all">
+              INITIALIZE_DOSSIER_STRM
+            </a>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <!-- SYSTEM SUB-FOOTER METADATA -->
+    <footer class="w-full bg-zinc-950 border-t border-zinc-900/60 py-6 px-4 text-center font-mono-tech text-[11px] text-zinc-600 tracking-widest uppercase mt-20">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div>SYS_NODE_INDEX // MANIFEST_LOAD_STABLE</div>
+        <div class="flex gap-4">
+          <span>BUFF_0091</span>
+          <span>//</span>
+          <span class="text-blue-500">SYSTEM_SECURE</span>
+        </div>
       </div>
-    </section>
-
-    <!-- SYSTEM NOTE -->
-
-    <section class="py-20 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-sm">
-        Not all individuals are currently indexed within the system.
-      </p>
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer
-      class="border-t border-gray-800 py-10 text-center text-gray-500 text-sm"
-    >
-      © 2026 Azairen Studios. All systems active.
     </footer>
+
   </body>
 </html>

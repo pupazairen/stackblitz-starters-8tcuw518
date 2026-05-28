@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#0d0f0d]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AZAIREN://INTRUSION_DETECTED//LOFV_RECORD</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // LOFV Palette Map
+              lofvmil: {
+                800: '#2b3324',
+                900: '#1b2216',
+                950: '#0c100a',
+              },
+              lofvtan: {
+                300: '#dcd6cd',
+                400: '#c8beaf',
+                600: '#968a76',
+              },
+              lofvgold: {
+                400: '#f59e0b',
+                500: '#d97706',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      .font-mono-tech { font-family: 'Share Tech Mono', monospace; }
+      .font-sans-clean { font-family: 'Inter', sans-serif; }
+      
+      /* BASE REMNANT: The blue scanline grid is still fighting underneath */
+      .base-remnant-grid {
+        background-size: 30px 30px;
+        background-image: 
+          linear-gradient(to right, rgba(29, 78, 216, 0.02) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(29, 78, 216, 0.02) 1px, transparent 1px);
+      }
+
+      /* LOFV Tactical Horizontal Overlays */
+      .tactical-overlay {
+        background: linear-gradient(rgba(27, 34, 22, 0.3) 50%, transparent 50%), linear-gradient(90deg, rgba(217, 119, 6, 0.02), rgba(27, 34, 22, 0.02));
+        background-size: 100% 4px, 6px 100%;
+      }
+    </style>
+  </head>
+
+  <body class="h-full w-full bg-lofvmil-950 text-lofvtan-400 font-sans-clean base-remnant-grid tactical-overlay overflow-y-auto selection:bg-lofvgold-500 selection:text-black antialiased">
+
+    <nav class="w-full bg-black/90 border-b border-lofvmil-800 sticky top-0 z-50 px-4 lg:px-8 py-3 flex justify-between items-center font-mono-tech text-xs tracking-wider uppercase">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="font-extrabold tracking-widest flex items-center gap-2 group">
+          <span class="text-blue-500 opacity-40 group-hover:opacity-100 transition-opacity">AZAIREN://</span>
+          <span class="text-lofvgold-400">LOFV_CORRUPTION_LAYER</span>
+        </a>
+      </div>
+      
+      <div class="flex items-center gap-4 text-[11px]">
+        <div class="flex items-center gap-1.5 text-lofvgold-400 animate-pulse">
+          <span>[SYSTEM_OVERWRITE_IN_PROGRESS]</span>
+        </div>
+        <div class="bg-lofvgold-500/10 border border-lofvgold-500/40 px-3 py-1 rounded text-lofvgold-400 font-bold">
+          TIMELINE//ERR_00
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      
+      <div class="border border-red-500/30 bg-red-950/10 p-4 rounded font-mono-tech text-xs flex justify-between items-center gap-4">
+        <div class="flex items-center gap-3 text-red-400">
+          <span class="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
+          <span>WARNING: BUFFER CONVERSION DETECTED. FUTURE MANIFEST TERMINAL INSERTING REGIONAL ARRAYS into PAST SUBNET.</span>
+        </div>
+        <span class="text-zinc-600 hidden md:block">ANCHOR_ID: LOFV-VECTOR-ALPHA</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        
+        <div class="lg:col-span-2 space-y-6">
+          
+          <section class="border border-lofvmil-800 bg-zinc-950/80 p-6 md:p-8 rounded-lg relative overflow-hidden shadow-2xl">
+            <div class="absolute -top-[1px] -left-[1px] w-3 h-3 bg-lofvgold-500"></div>
+            <div class="absolute -bottom-[1px] -right-[1px] w-3 h-3 bg-lofvmil-800"></div>
+            
+            <div class="space-y-4">
+              <div class="font-mono-tech text-xs text-lofvgold-400 font-bold tracking-widest uppercase">
+                // PROJECT ARCHIVE // THE LIBRARY OF FAILED VERSIONS
+              </div>
+              <h1 class="text-2xl md:text-4xl font-black text-lofvtan-300 uppercase tracking-tight leading-none">
+                THE NARRATIVE CORRECTION SEQUENCE
+              </h1>
+              <p class="text-lofvtan-600 font-sans-clean text-sm leading-relaxed max-w-2xl">
+                The Library operates outside standard timeline intervals, maintaining data points on structural histories that were executed, corrupted, and ultimately deleted by system core adjustments.
+              </p>
+            </div>
+          </section>
+
+          <section class="border border-lofvmil-800 bg-lofvmil-950/40 p-5 md:p-6 rounded-lg space-y-6">
+            <div class="border-b border-lofvmil-800 pb-2 font-mono-tech text-xs font-bold uppercase tracking-widest text-lofvtan-300 flex items-center gap-2">
+              <span class="w-1.5 h-3 bg-lofvgold-500 inline-block"></span> CORE_LOG_ENTRY // TRANSMISSION_01
+            </div>
+
+            <div class="space-y-4 font-sans-clean text-sm leading-relaxed text-lofvtan-400">
+              <p>
+                When a universe iteration falls below the threshold of operational stability, it is not erased cleanly. Traces pool in the baseline architecture—creating a digital bottleneck where versions of individuals, landscapes, and execution keys remain trapped.
+              </p>
+              <blockquote class="border-l-2 border-lofvgold-500 bg-lofvmil-900/60 p-4 italic text-lofvtan-300 text-xs font-medium">
+                “We did not realize that by building the final baseline, we were forcing the failures into the past's system registers. They are bleeding back into the source arrays.”
+              </blockquote>
+              <p>
+                As a result, current active network files (like those indexed in the central stream console) will display active structural decay. The military configurations of the future versions are rewriting the baseline parameters right now.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 font-mono-tech text-[11px] border-t border-lofvmil-800/60 pt-4">
+              <div>
+                <span class="text-lofvtan-600 block uppercase">TIMELINE ORIGIN:</span>
+                <span class="text-lofvgold-400 font-bold">[RUN_UNIVERSE_V3.9]</span>
+              </div>
+              <div>
+                <span class="text-lofvtan-600 block uppercase">CORRUPTION DEPTH:</span>
+                <span class="text-red-400 font-bold">84.22% DATA_FLUIDITY</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="lg:col-span-1 space-y-6">
+          
+          <aside class="w-full border border-blue-900/60 bg-black p-4 flex flex-col justify-between relative shadow-[0_0_15px_rgba(29,78,216,0.05)] rounded">
+            <div class="absolute -top-[1px] -left-[1px] w-2 h-2 bg-blue-600"></div>
+            <div class="absolute -bottom-[1px] -right-[1px] w-2 h-2 bg-blue-500"></div>
+
+            <div class="space-y-4">
+              <div class="flex justify-between items-center border-b border-blue-950 pb-2">
+                <div class="font-mono-tech text-[10px] text-blue-400 tracking-widest uppercase">
+                  // AZAIREN_BASE_BUFFER
+                </div>
+                <span class="text-[9px] font-mono-tech px-1 bg-red-950 text-red-400 font-extrabold animate-pulse">DECAY</span>
+              </div>
+              
+              <div class="space-y-2">
+                <h3 class="font-mono-tech text-xs font-bold text-white uppercase tracking-wider">REMNANT_INDEX_STREAM</h3>
+                <p class="text-[11px] text-zinc-500 font-sans-clean leading-relaxed">
+                  This segment of the sidebar widget has resisted the LOFV gold deployment. It remains tethered to your original system layout configuration variables.
+                </p>
+              </div>
+
+              <div class="space-y-1.5 font-mono-tech text-[11px]">
+                <div class="p-2 border border-blue-950/40 bg-zinc-950 text-blue-500/40 line-through flex justify-between">
+                  <span>00// ROOT</span>
+                  <span>LOST_SIG</span>
+                </div>
+                <div class="p-2 border border-blue-950/40 bg-zinc-950 text-blue-500/40 line-through flex justify-between">
+                  <span>01// UNV_CORE</span>
+                  <span>LOST_SIG</span>
+                </div>
+                <div class="p-2 border border-blue-950 bg-black text-blue-400 flex justify-between items-center animate-pulse">
+                  <span>02// MITH_LOGS</span>
+                  <span class="text-[9px] bg-blue-950 text-blue-300 px-1 font-bold">STANDBY</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-blue-950 font-mono-tech text-[9px] text-zinc-600 uppercase tracking-widest text-center">
+              LOCAL_MATRIX_BOUNDS_FAILING
+            </div>
+          </aside>
+
+          <section class="border border-lofvmil-800 bg-zinc-950/40 p-4 rounded font-mono-tech text-xs space-y-3">
+            <div class="text-lofvtan-600 uppercase text-[10px] tracking-wider font-bold">// TIMELINE_OVERLAP_METRICS</div>
+            
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-lofvtan-400 text-[11px]">
+                  <span>FUTURE_REWRITE_PRESSURE</span>
+                  <span class="text-lofvgold-400 font-bold">88%</span>
+                </div>
+                <div class="w-full bg-lofvmil-900 h-1 mt-1 rounded overflow-hidden">
+                  <div class="bg-lofvgold-500 h-full w-[88%]"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-lofvtan-400 text-[11px]">
+                  <span>PAST_SUBNET_RESISTANCE</span>
+                  <span class="text-blue-400 font-bold">12%</span>
+                </div>
+                <div class="w-full bg-lofvmil-900 h-1 mt-1 rounded overflow-hidden">
+                  <div class="bg-blue-600 h-full w-[12%]"></div>
+                </div>
+              </div>
+            </div>
+            <p class="text-[10px] text-lofvtan-600 font-sans-clean leading-normal">
+              When resistance metrics drop to zero, the layout frame will automatically lock completely into monochrome tactical configurations.
+            </p>
+          </section>
+
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="w-full bg-black border-t border-lofvmil-900/60 py-6 px-4 text-center font-mono-tech text-[11px] text-lofvtan-600 tracking-widest uppercase mt-20">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div>LOFV_NODE_STREAM // HISTORICAL_INTRUSION_MONITOR</div>
+        <div class="flex gap-4">
+          <span>BUFF_ERR_90</span>
+          <span>//</span>
+          <span class="text-lofvgold-400">UNSTABLE_STREAM</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
