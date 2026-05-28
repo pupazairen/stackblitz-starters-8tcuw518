@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-black">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AZAIREN://CHARACTER_DOSSIER_TEMPLATE</title>
+
+    <!-- Tailwind CSS & Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+    <style>
+      .font-mono-tech { font-family: 'Share Tech Mono', monospace; }
+      .font-sans-clean { font-family: 'Inter', sans-serif; }
+      
+      /* Cyberpunk Scanline Grid */
+      .matrix-grid {
+        background-size: 20px 20px;
+        background-image: 
+          linear-gradient(to right, rgba(29, 78, 216, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(29, 78, 216, 0.03) 1px, transparent 1px);
+      }
+      
+      /* Custom Scrollbar for Terminal aesthetic */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #09090b; }
+      ::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
+    </style>
+  </head>
+
+  <body class="h-full w-full bg-black text-zinc-300 font-sans-clean matrix-grid overflow-y-auto selection:bg-red-600 selection:text-white antialiased">
+
+    <!-- NAVIGATION Telemetry Bar -->
+    <nav class="w-full bg-zinc-950/90 backdrop-blur-md border-b border-blue-950/60 sticky top-0 z-50 px-4 lg:px-8 py-3 flex justify-between items-center font-mono-tech text-xs tracking-wider uppercase">
+      <div class="flex items-center gap-4">
+        <a href="network_root.html" class="font-extrabold text-white tracking-widest flex items-center gap-2 group">
+          <span class="text-blue-500 group-hover:text-red-500 transition-colors">AZAIREN://</span>
+          <span class="text-zinc-400">DOSSIER_SUB_BUFFER</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <div class="hidden sm:flex items-center gap-1.5 text-zinc-500">
+          <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-ping"></span>
+          <span>SECURE_DATA_STREAM</span>
+        </div>
+        <div class="bg-black border border-blue-950 px-3 py-1 rounded text-blue-400 font-bold">
+          TEMPLATE//V1.0
+        </div>
+      </div>
+    </nav>
+
+    <!-- CORE CONTENT FRAME -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+      
+     <!-- HEADER COMPONENT -->
+     <header class="border border-blue-900/40 bg-zinc-950/60 backdrop-blur-sm p-6 md:p-8 rounded-lg relative overflow-hidden shadow-2xl">
+        <div class="absolute -top-[1px] -left-[1px] w-3 h-3 bg-red-600"></div>
+        <div class="absolute -bottom-[1px] -right-[1px] w-3 h-3 bg-blue-600"></div>
+        <div class="absolute top-0 right-0 w-48 h-48 bg-blue-900/5 blur-[80px] pointer-events-none"></div>
+
+        <div class="flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+          
+          <!-- LEFT SIDE: NAME, SUBSCRIPT, AND THE NEW IMAGE CONTAINER -->
+          <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center w-full">
+            
+            <!-- IMAGE PLACEHOLDER NODE -->
+            <div class="relative w-24 h-24 bg-black border border-blue-950/80 flex items-center justify-center shrink-0 rounded group overflow-hidden">
+              <!-- Grid Overlay Inside Avatar -->
+              <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-size: 8px 8px; background-image: linear-gradient(to right, rgba(29, 78, 216, 0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(29, 78, 216, 0.15) 1px, transparent 1px);"></div>
+              
+              <!-- Subtle Vector Corner Marks -->
+              <div class="absolute top-1 left-1 w-1 h-1 bg-blue-500/40"></div>
+              <div class="absolute bottom-1 right-1 w-1 h-1 bg-red-500/40"></div>
+              
+              <!-- Placeholder Graphic Asset -->
+              <svg class="w-8 h-8 text-zinc-800 group-hover:text-blue-500/50 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              
+              <!-- Scanning status string -->
+              <span class="absolute bottom-1 left-0 right-0 text-center font-mono-tech text-[8px] tracking-widest text-zinc-600 group-hover:text-blue-400 uppercase transition-colors">NO_SIG</span>
+            </div>
+
+            <!-- NAME & TITLES -->
+            <div class="space-y-2">
+              <div class="font-mono-tech text-xs text-red-500 font-bold tracking-widest uppercase">
+                // CLASSIFIED ARCHIVE FILE
+              </div>
+              <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
+                [CHARACTER NAME]
+              </h1>
+              <p class="text-zinc-500 font-mono-tech text-xs uppercase tracking-wide">
+                SYSTEM_ID: AZR-CHAR-000 // MATRIX_RECORD
+              </p>
+            </div>
+
+          </div>
+
+          <!-- RIGHT SIDE: THREAT READING -->
+          <div class="font-mono-tech text-xs space-y-1 md:text-right shrink-0 border-l md:border-l-0 md:border-r border-blue-950 pl-4 md:pl-0 md:pr-4 w-full md:w-auto">
+            <div class="text-zinc-500">THREAT / INFLUENCE LEVEL:</div>
+            <div class="text-red-500 font-extrabold text-lg tracking-widest uppercase">[LEVEL]</div>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- DATA SECTIONS GRID -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        
+        <!-- LEFT RAIL: DATA FIELDS & METRICS -->
+        <div class="lg:col-span-1 space-y-6">
+          
+          <!-- 🏷️ CORE PROFILE -->
+          <section class="border border-blue-950 bg-zinc-950/40 p-4 rounded-lg relative space-y-4">
+            <div class="border-b border-blue-950 pb-2 flex items-center gap-2">
+              <span class="text-blue-500 font-mono-tech text-xs">◆</span>
+              <h2 class="font-mono-tech text-xs font-bold uppercase tracking-widest text-white">Core Profile</h2>
+            </div>
+            
+            <div class="space-y-3 font-mono-tech text-xs">
+              <div>
+                <span class="text-zinc-600 block uppercase tracking-wider">Aliases / Designations:</span>
+                <span class="text-zinc-300 font-sans-clean text-sm">[Nicknames, titles, codenames]</span>
+              </div>
+              <div>
+                <span class="text-zinc-600 block uppercase tracking-wider">Species / Classification:</span>
+                <span class="text-zinc-300 font-sans-clean text-sm">[Human, Entity, Construct, etc.]</span>
+              </div>
+              <div>
+                <span class="text-zinc-600 block uppercase tracking-wider">Age:</span>
+                <span class="text-zinc-300 font-sans-clean text-sm">[Chronological / Physical]</span>
+              </div>
+              <div>
+                <span class="text-zinc-600 block uppercase tracking-wider">Affiliation(s):</span>
+                <span class="text-zinc-300 font-sans-clean text-sm">[Factions, organizations, systems]</span>
+              </div>
+              <div>
+                <span class="text-zinc-600 block uppercase tracking-wider">Current Status:</span>
+                <span class="text-emerald-400 font-bold tracking-wider uppercase">[ACTIVE / ARCHIVED]</span>
+              </div>
+              <div>
+                <span class="text-zinc-600 block uppercase tracking-wider">Primary Location:</span>
+                <span class="text-zinc-300 font-sans-clean text-sm">[City, zone, timeline]</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 📊 SYSTEM ATTRIBUTES -->
+          <section class="border border-blue-950 bg-zinc-950/40 p-4 rounded-lg relative space-y-4">
+            <div class="border-b border-blue-950 pb-2 flex justify-between items-baseline">
+              <div class="flex items-center gap-2">
+                <span class="text-blue-500 font-mono-tech text-xs">◆</span>
+                <h2 class="font-mono-tech text-xs font-bold uppercase tracking-widest text-white">System Attributes</h2>
+              </div>
+              <span class="text-[9px] text-zinc-600 font-mono-tech">SCALE: 0-10</span>
+            </div>
+
+            <div class="space-y-3 font-mono-tech text-xs">
+              <!-- Attribute Row Structure -->
+              <div class="space-y-1">
+                <div class="flex justify-between font-bold">
+                  <span class="text-zinc-400 uppercase">STRENGTH</span>
+                  <span class="text-blue-400">0/10</span>
+                </div>
+                <div class="w-full bg-zinc-900 h-1.5 rounded-sm overflow-hidden border border-zinc-950">
+                  <div class="bg-blue-600 h-full w-[0%]"></div> <!-- Adjust width% dynamically -->
+                </div>
+                <p class="text-[10px] text-zinc-600 font-sans-clean">Physical force and striking power.</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between font-bold">
+                  <span class="text-zinc-400 uppercase">AGILITY</span>
+                  <span class="text-blue-400">0/10</span>
+                </div>
+                <div class="w-full bg-zinc-900 h-1.5 rounded-sm overflow-hidden border border-zinc-950">
+                  <div class="bg-blue-600 h-full w-[0%]"></div>
+                </div>
+                <p class="text-[10px] text-zinc-600 font-sans-clean">Reflexes, speed, mobility.</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between font-bold">
+                  <span class="text-zinc-400 uppercase">ENDURANCE</span>
+                  <span class="text-blue-400">0/10</span>
+                </div>
+                <div class="w-full bg-zinc-900 h-1.5 rounded-sm overflow-hidden border border-zinc-950">
+                  <div class="bg-blue-600 h-full w-[0%]"></div>
+                </div>
+                <p class="text-[10px] text-zinc-600 font-sans-clean">Durability, stamina, recovery.</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between font-bold">
+                  <span class="text-zinc-400 uppercase">INTELLIGENCE</span>
+                  <span class="text-blue-400">0/10</span>
+                </div>
+                <div class="w-full bg-zinc-900 h-1.5 rounded-sm overflow-hidden border border-zinc-950">
+                  <div class="bg-blue-600 h-full w-[0%]"></div>
+                </div>
+                <p class="text-[10px] text-zinc-600 font-sans-clean">Strategy, adaptability, technical skill.</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between font-bold">
+                  <span class="text-zinc-400 uppercase">WILLPOWER</span>
+                  <span class="text-blue-400">0/10</span>
+                </div>
+                <div class="w-full bg-zinc-900 h-1.5 rounded-sm overflow-hidden border border-zinc-950">
+                  <div class="bg-blue-600 h-full w-[0%]"></div>
+                </div>
+                <p class="text-[10px] text-zinc-600 font-sans-clean">Mental resilience and emotional control.</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between font-bold">
+                  <span class="text-zinc-400 uppercase">AWARENESS</span>
+                  <span class="text-blue-400">0/10</span>
+                </div>
+                <div class="w-full bg-zinc-900 h-1.5 rounded-sm overflow-hidden border border-zinc-950">
+                  <div class="bg-blue-600 h-full w-[0%]"></div>
+                </div>
+                <p class="text-[10px] text-zinc-600 font-sans-clean">Perception, instincts, environmental reading.</p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between font-bold">
+                  <span class="text-zinc-400 uppercase">POWER OUTPUT</span>
+                  <span class="text-blue-400">0/10</span>
+                </div>
+                <div class="w-full bg-zinc-900 h-1.5 rounded-sm overflow-hidden border border-zinc-950">
+                  <div class="bg-blue-600 h-full w-[0%]"></div>
+                </div>
+                <p class="text-[10px] text-zinc-600 font-sans-clean">Magical, technological, or anomalous capability.</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- RIGHT RAIL: MAIN INTEL ANALYSIS -->
+        <div class="lg:col-span-2 space-y-6">
+          
+          <!-- ⚡ ABILITIES & SYSTEMS -->
+          <section class="border border-blue-950 bg-zinc-950/20 p-5 md:p-6 rounded-lg space-y-4">
+            <div class="border-b border-blue-950 pb-2 font-mono-tech text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
+              <span class="w-1.5 h-3 bg-blue-600 inline-block"></span> 01 // Abilities & Systems
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div class="border border-zinc-900 bg-black p-3 rounded">
+                <span class="text-blue-400 font-mono-tech uppercase tracking-wider block mb-1">Core Ability</span>
+                <p class="text-zinc-400 font-sans-clean leading-relaxed">[Describe defining ability, mutation, core weapon, or system interaction here.]</p>
+              </div>
+              <div class="border border-zinc-900 bg-black p-3 rounded">
+                <span class="text-blue-400 font-mono-tech uppercase tracking-wider block mb-1">Combat Style</span>
+                <p class="text-zinc-400 font-sans-clean leading-relaxed">[Close-range, tactical, improvisational, ritual-based, defensive, etc.]</p>
+              </div>
+              <div class="border border-zinc-900 bg-black p-3 rounded">
+                <span class="text-blue-400 font-mono-tech uppercase tracking-wider block mb-1">Equipment / Artifacts</span>
+                <p class="text-zinc-400 font-sans-clean leading-relaxed">[List weapons, relics, technical devices, armor, implants, masks, etc.]</p>
+              </div>
+              <div class="border border-zinc-900 bg-black p-3 rounded border-red-950/40">
+                <span class="text-red-400 font-mono-tech uppercase tracking-wider block mb-1">Weaknesses / Instabilities</span>
+                <p class="text-zinc-400 font-sans-clean leading-relaxed">[Physical limits, emotional flaws, internal system corruption, vulnerabilities.]</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 📖 NARRATIVE PROFILE -->
+          <section class="border border-blue-950 bg-zinc-950/20 p-5 md:p-6 rounded-lg space-y-4">
+            <div class="border-b border-blue-950 pb-2 font-mono-tech text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
+              <span class="w-1.5 h-3 bg-blue-600 inline-block"></span> 02 // Narrative Analysis
+            </div>
+            
+            <div class="space-y-4 text-sm leading-relaxed">
+              <div>
+                <h4 class="font-mono-tech text-xs uppercase text-zinc-500 tracking-wider mb-1">Origin / Backstory</h4>
+                <p class="text-zinc-300 font-sans-clean">[Foundational history, origins, defining trauma, awakening events, or turning points.]</p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div>
+                  <h4 class="font-mono-tech text-xs uppercase text-zinc-500 tracking-wider mb-1">Current Role</h4>
+                  <p class="text-zinc-300 font-sans-clean text-xs">[Present narrative function within the timeline or specific faction framework.]</p>
+                </div>
+                <div>
+                  <h4 class="font-mono-tech text-xs uppercase text-zinc-500 tracking-wider mb-1">Motivation</h4>
+                  <p class="text-zinc-300 font-sans-clean text-xs">[What they want, fear, protect, avoid, or obsess over beneath the surface.]</p>
+                </div>
+                <div>
+                  <h4 class="font-mono-tech text-xs uppercase text-zinc-500 tracking-wider mb-1">Internal Conflict</h4>
+                  <p class="text-zinc-300 font-sans-clean text-xs">[The emotional, philosophical, or psychological struggle driving the character.]</p>
+                </div>
+                <div>
+                  <h4 class="font-mono-tech text-xs uppercase text-zinc-500 tracking-wider mb-1">Character Arc</h4>
+                  <p class="text-zinc-300 font-sans-clean text-xs">[How they evolve, decay, ascend, fracture, or transform across structural iterations.]</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 🎬 CONTINUITY & CANON -->
+          <section class="border border-blue-950 bg-zinc-950/20 p-5 md:p-6 rounded-lg space-y-4">
+            <div class="border-b border-blue-950 pb-2 font-mono-tech text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
+              <span class="w-1.5 h-3 bg-blue-600 inline-block"></span> 03 // Continuity Matrix
+            </div>
+            
+            <div class="space-y-4 text-xs font-mono-tech">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="border border-zinc-900 bg-black p-3 rounded">
+                  <div class="text-blue-500 font-bold uppercase tracking-widest mb-1">// FIRST APPEARANCE</div>
+                  <div class="text-white font-sans-clean font-semibold mb-1"><span class="text-zinc-500 font-mono-tech font-normal">Project:</span> [Series / Film / Case]</div>
+                  <div class="text-zinc-400 font-sans-clean mb-2"><span class="text-zinc-500 font-mono-tech">Marker:</span> [Identifier Node]</div>
+                  <p class="text-zinc-500 font-sans-clean leading-relaxed border-t border-zinc-900 pt-1.5">[Brief introduction tracking summary.]</p>
+                </div>
+                <div class="border border-zinc-900 bg-black p-3 rounded">
+                  <div class="text-red-400 font-bold uppercase tracking-widest mb-1">// LATEST APPEARANCE</div>
+                  <div class="text-white font-sans-clean font-semibold mb-1"><span class="text-zinc-500 font-mono-tech font-normal">Project:</span> [Series / Film / Case]</div>
+                  <div class="text-zinc-400 font-sans-clean mb-2"><span class="text-zinc-500 font-mono-tech">Marker:</span> [Identifier Node]</div>
+                  <p class="text-zinc-500 font-sans-clean leading-relaxed border-t border-zinc-900 pt-1.5">[Latest known configuration or status event.]</p>
+                </div>
+              </div>
+              <div class="pt-2">
+                <span class="text-zinc-500 uppercase tracking-wider block mb-1">Canon Connections:</span>
+                <ul class="list-none space-y-1 text-zinc-300 font-sans-clean text-xs">
+                  <li class="flex items-center gap-2"><span class="text-blue-500 font-mono-tech">•</span> [Connected characters reference logs]</li>
+                  <li class="flex items-center gap-2"><span class="text-blue-500 font-mono-tech">•</span> [Important events, milestones, or narrative splits]</li>
+                  <li class="flex items-center gap-2"><span class="text-blue-500 font-mono-tech">•</span> [Cases, timelines, artifacts, or locations tied to identity]</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 🎨 VISUAL IDENTITY -->
+          <section class="border border-blue-950 bg-zinc-950/20 p-5 md:p-6 rounded-lg space-y-4">
+            <div class="border-b border-blue-950 pb-2 font-mono-tech text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
+              <span class="w-1.5 h-3 bg-blue-600 inline-block"></span> 04 // Visual Identity Data
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans-clean">
+              <div class="space-y-1">
+                <span class="font-mono-tech text-[11px] text-zinc-500 uppercase tracking-wider block">Appearance:</span>
+                <p class="text-zinc-300 leading-relaxed">[Physical parameters, stance, scars, silhouette structure.]</p>
+              </div>
+              <div class="space-y-1">
+                <span class="font-mono-tech text-[11px] text-zinc-500 uppercase tracking-wider block">Clothing / Gear:</span>
+                <p class="text-zinc-300 leading-relaxed">[Outfit iterations, unique accessories, symbolic gear tags.]</p>
+              </div>
+              <div class="space-y-1">
+                <span class="font-mono-tech text-[11px] text-zinc-500 uppercase tracking-wider block">Color Language:</span>
+                <p class="text-zinc-300 leading-relaxed">[Primary, secondary, and alternative utility palette maps.]</p>
+              </div>
+              <div class="space-y-1">
+                <span class="font-mono-tech text-[11px] text-zinc-500 uppercase tracking-wider block">Visual Motifs:</span>
+                <p class="text-zinc-300 leading-relaxed">[Static noise, wolves, broken halo vectors, terminal lighting fields.]</p>
+              </div>
+              <div class="sm:col-span-2 border-t border-zinc-900/60 pt-3">
+                <span class="font-mono-tech text-[11px] text-zinc-500 uppercase tracking-wider block mb-1">Overall Aesthetic Style:</span>
+                <p class="text-blue-400 font-mono-tech uppercase text-xs tracking-wide">[Cyberpunk Noir, Occult Realism, Corporate Gothic, Grounded Sci-Fi]</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 🧠 ADDITIONAL NOTES -->
+          <section class="border border-blue-950 bg-zinc-950/20 p-5 md:p-6 rounded-lg space-y-4">
+            <div class="border-b border-blue-950 pb-2 font-mono-tech text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
+              <span class="w-1.5 h-3 bg-blue-600 inline-block"></span> 05 // Deep Sub-Buffer Notes
+            </div>
+            
+            <div class="space-y-4 text-xs">
+              <div class="border-l-2 border-red-500 bg-zinc-950 p-3 italic font-sans-clean text-zinc-300 text-sm">
+                “ [Quotes / Dialogue Signature Phrase Example] ”
+                <span class="block not-italic text-[10px] text-zinc-500 font-mono-tech uppercase tracking-widest mt-1.5">— CADENCE / TONE NOTE</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono-tech pt-2">
+                <div>
+                  <span class="text-zinc-500 uppercase tracking-wider block">Theme Association:</span>
+                  <p class="text-zinc-300 font-sans-clean text-xs mt-0.5">[Identity, evolution, systemic grief, fracture, core memory arrays.]</p>
+                </div>
+                <div>
+                  <span class="text-zinc-500 uppercase tracking-wider block">Sound / Music Profile:</span>
+                  <p class="text-zinc-300 font-sans-clean text-xs mt-0.5">[Acoustic motifs, dark ambient frequencies, industrial genres.]</p>
+                </div>
+              </div>
+              <div class="border border-zinc-900 bg-black/60 p-3 rounded">
+                <span class="font-mono-tech text-[11px] text-zinc-600 uppercase tracking-widest block mb-1">Archive Entry Notes:</span>
+                <p class="text-zinc-400 font-sans-clean leading-relaxed text-xs">[Supplemental lore modules, draft ideas, timeline continuity anomalies, or production background data.]</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- SYSTEM SUB-FOOTER METADATA -->
+    <footer class="w-full bg-zinc-950 border-t border-zinc-900/60 py-6 px-4 text-center font-mono-tech text-[11px] text-zinc-600 tracking-widest uppercase">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div>SYS_NODE_STREAM // RECONSTRUCTION_COMPLETE</div>
+        <div class="flex gap-4">
+          <span>BUFF_4112</span>
+          <span>//</span>
+          <span class="text-blue-500">MATRIX_STABLE</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
