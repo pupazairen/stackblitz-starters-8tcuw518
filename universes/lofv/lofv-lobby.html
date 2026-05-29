@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#07080a]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOFV // LIBRARY_LOBBY</title>
+
+    <!-- Tailwind CSS & Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Courier+Prime&display=swap" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lofvmil: {
+                800: '#22291b',
+                900: '#11140e',
+                950: '#07080a',
+              },
+              lofvtan: {
+                300: '#e1dbd2',
+                400: '#c7beaf',
+                700: '#6e6556',
+              },
+              lofvgold: {
+                400: '#f5b041',
+                500: '#ca7d14',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      .font-mono-tech { font-family: 'Share Tech Mono', monospace; }
+      .font-archive { font-family: 'Courier Prime', monospace; }
+      
+      /* Subtle blueprint/structural grid */
+      .lobby-grid {
+        background-size: 40px 40px;
+        background-image: 
+          linear-gradient(to right, rgba(199, 190, 175, 0.015) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(199, 190, 175, 0.015) 1px, transparent 1px);
+      }
+    </style>
+  </head>
+
+  <body class="h-full w-full bg-[#07080a] text-lofvtan-400 font-mono-tech p-4 md:p-6 flex flex-col gap-4 overflow-y-auto lobby-grid uppercase tracking-wider text-xs antialiased">
+    
+    <!-- LOBBY SECURITY HEADER -->
+    <header class="w-full bg-black border border-zinc-900 p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 rounded-sm shadow-xl relative">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 bg-lofvgold-500 rounded-none"></span>
+          <h1 class="text-white font-black tracking-widest text-sm">LOFV // MAIN_RECEPTION_LOBBY</h1>
+        </div>
+        <div class="text-zinc-600 text-[10px] mt-0.5">LOCATION: THE LIBRARY OF FAILED VERSIONS // SYSTEM_ENTRANCE</div>
+      </div>
+      <a href="../index.html" class="text-zinc-500 hover:text-lofvtan-300 transition-colors">[EXIT_TO_MAIN_INDEX]</a>
+    </header>
+
+    <!-- ARCHITECTURAL SPLIT: LOBBY RECEPTION CONSOLE -->
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch flex-1">
+      
+      <!-- DESK 01: THE LOBBY MANIFEST & PHILOSOPHY -->
+      <section class="lg:col-span-1 bg-black/60 border border-zinc-900 p-4 flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="text-lofvgold-400 font-bold border-b border-zinc-900 pb-2 text-[11px]">
+            // RECEPTION_DESK_MANIFEST
+          </div>
+          <div class="font-archive normal-case tracking-normal text-xs text-lofvtan-400 leading-relaxed space-y-3">
+            <p>
+              Welcome to the threshold. The Library does not archive successes. It catalogs the drift—the structural failures, the abandoned algorithmic baselines, and the timelines that collapsed before synchronization.
+            </p>
+            <p class="text-zinc-500 italic">
+              "Every book here is a version of reality that someone had to delete."
+            </p>
+          </div>
+        </div>
+
+        <!-- System Diagnostic Readout -->
+        <div class="bg-lofvmil-900/20 border border-lofvmil-800 p-3 text-[10px] space-y-1 text-zinc-500">
+          <div>TOTAL_FAILED_VERSIONS: RUNNING_INDEFINITE</div>
+          <div>LOBBY_GEOMETRY: STABLE</div>
+          <div class="text-lofvgold-400 animate-pulse">AWAITING_DESK_SELECTION...</div>
+        </div>
+      </section>
+
+      <!-- DESK 02 & 03: THE ACCESS ARCHES (THE INTERCONNECTED WINGS) -->
+      <section class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- ARCHWAY 01: THE ACTIVE MONITORING LAB -->
+        <div class="border border-zinc-900 bg-black/40 p-5 flex flex-col justify-between hover:border-lofvgold-500/50 hover:bg-lofvmil-900/10 transition-all group">
+          <div class="space-y-3">
+            <div class="flex justify-between text-[10px] text-zinc-600">
+              <span>WING_ID: // TELEMETRY_LAB</span>
+              <span class="text-lofvgold-400 font-bold">STAGE_12</span>
+            </div>
+            <h3 class="text-white text-base font-bold tracking-widest group-hover:text-lofvgold-400 transition-colors">CONTAINMENT_SECTOR</h3>
+            <p class="text-zinc-500 font-archive text-xs normal-case tracking-normal leading-relaxed">
+              Step into the active test-bench environments. Houses the ongoing data feeds, systemic tracking layers, and telemetry logs measuring the speed of structural collapse.
+            </p>
+          </div>
+          <a href="../lab_index.html" class="border border-zinc-800 text-lofvtan-400 group-hover:border-lofvgold-400 group-hover:text-lofvgold-400 text-center py-2 mt-6 transition-all bg-black/80">
+            ENTER_LAB_INDEX &rarr;
+          </a>
+        </div>
+
+        <!-- ARCHWAY 02: THE HISTORICAL DOSSIERS -->
+        <div class="border border-zinc-900 bg-black/40 p-5 flex flex-col justify-between hover:border-lofvgold-500/50 hover:bg-lofvmil-900/10 transition-all group">
+          <div class="space-y-3">
+            <div class="flex justify-between text-[10px] text-zinc-600">
+              <span>WING_ID: // CORE_MEMORIES</span>
+              <span class="text-blue-400">HISTORICAL</span>
+            </div>
+            <h3 class="text-white text-base font-bold tracking-widest group-hover:text-lofvgold-400 transition-colors">RECORDS_WING</h3>
+            <p class="text-zinc-500 font-archive text-xs normal-case tracking-normal leading-relaxed">
+              Contains the narrative overwrite logs, system files, and baseline character profile variants that managed to leave an architectural footprint before liquidation.
+            </p>
+          </div>
+          <a href="lofv_dossier.html" class="border border-zinc-800 text-lofvtan-400 group-hover:border-lofvgold-400 group-hover:text-lofvgold-400 text-center py-2 mt-6 transition-all bg-black/80">
+            ACCESS_DOSSIERS &rarr;
+          </a>
+        </div>
+
+        <!-- ARCHWAY 03: THE CHRONO CONTAINMENT VAULT -->
+        <div class="border border-zinc-900 bg-black/40 p-5 flex flex-col justify-between hover:border-red-900/60 hover:bg-red-950/5 transition-all group md:col-span-2">
+          <div class="space-y-2">
+            <div class="flex justify-between text-[10px] text-zinc-600">
+              <span>WING_ID: // EXTRALIMITAL</span>
+              <span class="text-red-500 animate-pulse font-bold">LOCKED_NODE</span>
+            </div>
+            <h3 class="text-white text-base font-bold tracking-widest group-hover:text-red-400 transition-colors">DEEP_CHRONO_VAULT</h3>
+            <p class="text-zinc-500 font-archive text-xs normal-case tracking-normal leading-relaxed">
+              A heavily isolated structural vault block designed to store the highest-priority target data. Bypassing the system handshake requires a localized anchor signature validation from an external source.
+            </p>
+          </div>
+          <a href="vault.html" class="border border-zinc-800 text-red-400/70 group-hover:border-red-500 group-hover:text-red-400 text-center py-2 mt-4 transition-all bg-black/80">
+            ATTEMPT_VAULT_DECRYPTION &rarr;
+          </a>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- FOOTER TERMINAL TELEMETRY -->
+    <footer class="w-full bg-black/40 border-t border-zinc-900 py-3 px-4 flex justify-between items-center text-zinc-600 font-mono-tech text-[10px] tracking-widest mt-auto">
+      <span>LOFV_LOBBY_TERMINAL // V_4.0</span>
+      <span class="hidden sm:inline">AUTHENTICATION_GATEWAY: CLOSED_UNTIL_SELECTION</span>
+    </footer>
+
+  </body>
+</html>
